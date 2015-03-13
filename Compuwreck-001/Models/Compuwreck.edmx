@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CompuwreckModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="County">
+          <Key>
+            <PropertyRef Name="County_id" />
+          </Key>
+          <Property Name="County_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Location" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Event_id" />
+          </Key>
+          <Property Name="Event_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Event" Type="nvarchar" MaxLength="255" />
+          <Property Name="Event_Description" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Location_id" />
+          </Key>
+          <Property Name="Location_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Shipwreck_FK" Type="int" Nullable="false" />
+          <Property Name="LTD" Type="float" />
+          <Property Name="LNG" Type="float" />
+          <Property Name="lat" Type="nvarchar(max)" />
+          <Property Name="long" Type="nvarchar(max)" />
+          <Property Name="GeoLocation" Type="geography" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="Photo_id" />
+          </Key>
+          <Property Name="Photo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Details" Type="nvarchar" MaxLength="50" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="50" />
+          <Property Name="URL" Type="nvarchar" MaxLength="50" />
+          <Property Name="Source" Type="nvarchar(max)" />
+          <Property Name="Shipwreck_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shipwreck">
+          <Key>
+            <PropertyRef Name="Shipwreck_id" />
+          </Key>
+          <Property Name="Shipwreck_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimensions" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tonnage" Type="nvarchar" MaxLength="255" />
+          <Property Name="Armament" Type="nvarchar" MaxLength="255" />
+          <Property Name="DateLost" Type="datetime2" Precision="0" />
+          <Property Name="DateExtn" Type="nvarchar" MaxLength="255" />
+          <Property Name="Locality" Type="nvarchar" MaxLength="255" />
+          <Property Name="PosExtn" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cargo" Type="nvarchar" MaxLength="255" />
+          <Property Name="WindDir" Type="nvarchar" MaxLength="255" />
+          <Property Name="WindForce" Type="nvarchar" MaxLength="255" />
+          <Property Name="References" Type="nvarchar" MaxLength="255" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="255" />
+          <Property Name="U-Boat" Type="nvarchar" MaxLength="255" />
+          <Property Name="Event_FK" Type="int" />
+          <Property Name="County_FK" Type="int" />
+        </EntityType>
+        <Association Name="FK__SHIPWRECK__Event__07020F21">
+          <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+          <End Role="Shipwreck" Type="Self.Shipwreck" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Event_id" />
+            </Principal>
+            <Dependent Role="Shipwreck">
+              <PropertyRef Name="Event_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_County">
+          <End Role="County" Type="Self.County" Multiplicity="0..1" />
+          <End Role="Shipwreck" Type="Self.Shipwreck" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="County">
+              <PropertyRef Name="County_id" />
+            </Principal>
+            <Dependent Role="Shipwreck">
+              <PropertyRef Name="County_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Shipwreck">
+          <End Role="Shipwreck" Type="Self.Shipwreck" Multiplicity="1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shipwreck">
+              <PropertyRef Name="Shipwreck_id" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="Shipwreck_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipwreckID">
+          <End Role="Shipwreck" Type="Self.Shipwreck" Multiplicity="1" />
+          <End Role="Photo" Type="Self.Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shipwreck">
+              <PropertyRef Name="Shipwreck_id" />
+            </Principal>
+            <Dependent Role="Photo">
+              <PropertyRef Name="Shipwreck_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CompuwreckModelStoreContainer">
+          <EntitySet Name="County" EntityType="Self.County" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Photo" EntityType="Self.Photo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shipwreck" EntityType="Self.Shipwreck" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__SHIPWRECK__Event__07020F21" Association="Self.FK__SHIPWRECK__Event__07020F21">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="Shipwreck" EntitySet="Shipwreck" />
+          </AssociationSet>
+          <AssociationSet Name="fk_County" Association="Self.fk_County">
+            <End Role="County" EntitySet="County" />
+            <End Role="Shipwreck" EntitySet="Shipwreck" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Shipwreck" Association="Self.FK_Location_Shipwreck">
+            <End Role="Shipwreck" EntitySet="Shipwreck" />
+            <End Role="Location" EntitySet="Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipwreckID" Association="Self.FK_ShipwreckID">
+            <End Role="Shipwreck" EntitySet="Shipwreck" />
+            <End Role="Photo" EntitySet="Photo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CompuwreckModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="County">
+          <Key>
+            <PropertyRef Name="County_id" />
+          </Key>
+          <Property Name="County_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Shipwrecks" Relationship="Self.fk_County" FromRole="County" ToRole="Shipwreck" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Event_id" />
+          </Key>
+          <Property Name="Event_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Event1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Event_Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Shipwrecks" Relationship="Self.FK__SHIPWRECK__Event__07020F21" FromRole="Event" ToRole="Shipwreck" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Location_id" />
+          </Key>
+          <Property Name="Location_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Shipwreck_FK" Type="Int32" Nullable="false" />
+          <Property Name="LTD" Type="Double" />
+          <Property Name="LNG" Type="Double" />
+          <Property Name="lat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="long" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GeoLocation" Type="Geography" />
+          <NavigationProperty Name="Shipwreck" Relationship="Self.FK_Location_Shipwreck" FromRole="Location" ToRole="Shipwreck" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="Photo_id" />
+          </Key>
+          <Property Name="Photo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Shipwreck_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Shipwreck" Relationship="CompuwreckModel.FK_ShipwreckID" FromRole="Photo" ToRole="Shipwreck" />
+        </EntityType>
+        <EntityType Name="Shipwreck">
+          <Key>
+            <PropertyRef Name="Shipwreck_id" />
+          </Key>
+          <Property Name="Shipwreck_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Dimensions" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Tonnage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Armament" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DateLost" Type="DateTime" Precision="0" />
+          <Property Name="DateExtn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Locality" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PosExtn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Cargo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="WindDir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="WindForce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="References" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="U_Boat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Event_FK" Type="Int32" />
+          <Property Name="County_FK" Type="Int32" />
+          <NavigationProperty Name="County" Relationship="Self.fk_County" FromRole="Shipwreck" ToRole="County" />
+          <NavigationProperty Name="Event" Relationship="Self.FK__SHIPWRECK__Event__07020F21" FromRole="Shipwreck" ToRole="Event" />
+          <NavigationProperty Name="Locations" Relationship="Self.FK_Location_Shipwreck" FromRole="Shipwreck" ToRole="Location" />
+          <NavigationProperty Name="Photos" Relationship="CompuwreckModel.FK_ShipwreckID" FromRole="Shipwreck" ToRole="Photo" />
+        </EntityType>
+        <Association Name="fk_County">
+          <End Role="County" Type="Self.County" Multiplicity="0..1" />
+          <End Role="Shipwreck" Type="Self.Shipwreck" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="County">
+              <PropertyRef Name="County_id" />
+            </Principal>
+            <Dependent Role="Shipwreck">
+              <PropertyRef Name="County_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SHIPWRECK__Event__07020F21">
+          <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+          <End Role="Shipwreck" Type="Self.Shipwreck" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Event_id" />
+            </Principal>
+            <Dependent Role="Shipwreck">
+              <PropertyRef Name="Event_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Shipwreck">
+          <End Role="Shipwreck" Type="Self.Shipwreck" Multiplicity="1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shipwreck">
+              <PropertyRef Name="Shipwreck_id" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="Shipwreck_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CompuwreckEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Counties" EntityType="Self.County" />
+          <EntitySet Name="Events" EntityType="Self.Event" />
+          <EntitySet Name="Locations" EntityType="Self.Location" />
+          <EntitySet Name="Photos" EntityType="Self.Photo" />
+          <EntitySet Name="Shipwrecks" EntityType="Self.Shipwreck" />
+          <AssociationSet Name="fk_County" Association="Self.fk_County">
+            <End Role="County" EntitySet="Counties" />
+            <End Role="Shipwreck" EntitySet="Shipwrecks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SHIPWRECK__Event__07020F21" Association="Self.FK__SHIPWRECK__Event__07020F21">
+            <End Role="Event" EntitySet="Events" />
+            <End Role="Shipwreck" EntitySet="Shipwrecks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Shipwreck" Association="Self.FK_Location_Shipwreck">
+            <End Role="Shipwreck" EntitySet="Shipwrecks" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipwreckID" Association="CompuwreckModel.FK_ShipwreckID">
+            <End Role="Shipwreck" EntitySet="Shipwrecks" />
+            <End Role="Photo" EntitySet="Photos" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_ShipwreckID">
+          <End Type="CompuwreckModel.Shipwreck" Role="Shipwreck" Multiplicity="1" />
+          <End Type="CompuwreckModel.Photo" Role="Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shipwreck">
+              <PropertyRef Name="Shipwreck_id" />
+            </Principal>
+            <Dependent Role="Photo">
+              <PropertyRef Name="Shipwreck_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CompuwreckModelStoreContainer" CdmEntityContainer="CompuwreckEntities">
+          <EntitySetMapping Name="Counties">
+            <EntityTypeMapping TypeName="CompuwreckModel.County">
+              <MappingFragment StoreEntitySet="County">
+                <ScalarProperty Name="County_id" ColumnName="County_id" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="CompuwreckModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="Event_id" ColumnName="Event_id" />
+                <ScalarProperty Name="Event1" ColumnName="Event" />
+                <ScalarProperty Name="Event_Description" ColumnName="Event_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="CompuwreckModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="Location_id" ColumnName="Location_id" />
+                <ScalarProperty Name="Shipwreck_FK" ColumnName="Shipwreck_FK" />
+                <ScalarProperty Name="LTD" ColumnName="LTD" />
+                <ScalarProperty Name="LNG" ColumnName="LNG" />
+                <ScalarProperty Name="lat" ColumnName="lat" />
+                <ScalarProperty Name="long" ColumnName="long" />
+                <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Photos">
+            <EntityTypeMapping TypeName="CompuwreckModel.Photo">
+              <MappingFragment StoreEntitySet="Photo">
+                <ScalarProperty Name="Photo_id" ColumnName="Photo_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Shipwreck_id" ColumnName="Shipwreck_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shipwrecks">
+            <EntityTypeMapping TypeName="CompuwreckModel.Shipwreck">
+              <MappingFragment StoreEntitySet="Shipwreck">
+                <ScalarProperty Name="Shipwreck_id" ColumnName="Shipwreck_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Dimensions" ColumnName="Dimensions" />
+                <ScalarProperty Name="Tonnage" ColumnName="Tonnage" />
+                <ScalarProperty Name="Armament" ColumnName="Armament" />
+                <ScalarProperty Name="DateLost" ColumnName="DateLost" />
+                <ScalarProperty Name="DateExtn" ColumnName="DateExtn" />
+                <ScalarProperty Name="Locality" ColumnName="Locality" />
+                <ScalarProperty Name="PosExtn" ColumnName="PosExtn" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="WindDir" ColumnName="WindDir" />
+                <ScalarProperty Name="WindForce" ColumnName="WindForce" />
+                <ScalarProperty Name="References" ColumnName="References" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="U_Boat" ColumnName="U-Boat" />
+                <ScalarProperty Name="Event_FK" ColumnName="Event_FK" />
+                <ScalarProperty Name="County_FK" ColumnName="County_FK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

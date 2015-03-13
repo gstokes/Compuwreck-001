@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="51c08507992742c5bb4dd611548678e3" Name="Diagram1">
+        <EntityTypeShape EntityType="CompuwreckModel.County" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompuwreckModel.Event" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompuwreckModel.Location" Width="1.5" PointX="5.375" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompuwreckModel.Photo" Width="1.5" PointX="5.375" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompuwreckModel.Shipwreck" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="CompuwreckModel.fk_County" ManuallyRouted="false" />
+        <AssociationConnector Association="CompuwreckModel.FK__SHIPWRECK__Event__07020F21" ManuallyRouted="false" />
+        <AssociationConnector Association="CompuwreckModel.FK_Location_Shipwreck" ManuallyRouted="false" />
+        <AssociationConnector Association="CompuwreckModel.FK_ShipwreckID" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,154 @@
+﻿@model Compuwreck_001.Models.Shipwreck
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Shipwreck</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dimensions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dimensions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tonnage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tonnage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Armament)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Armament)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateLost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateLost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateExtn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateExtn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Locality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Locality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PosExtn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PosExtn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WindDir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WindDir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WindForce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WindForce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.References)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.References)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.U_Boat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.U_Boat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.County.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.County.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.Event1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Event.Event1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Shipwreck_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

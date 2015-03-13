@@ -1,0 +1,95 @@
+﻿@model PagedList.IPagedList<Compuwreck_001.Models.Shipwreck>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Search";
+}
+<div class="row">
+    <h2 class="pageTitle">Search Shipwrecks</h2>
+
+    @using (Html.BeginForm()) {
+        <fieldset class="search">
+            <div class="large-3 columns">
+                @Html.Label("Find by name")
+                @Html.TextBox("searchString")
+            </div>
+            <div class="small-3 columns">
+                @Html.Label("Find By County")
+                @Html.DropDownList("searchCounty", "-select county-")
+            </div>
+            <div class="large-2 columns">
+                @Html.Label("Find by Start Date")
+                @Html.TextBox("searchDateStart", null, new { @class = "fdatepicker" })
+            </div>
+            <div class="large-2 columns">
+                @Html.Label("Find by End Date")
+                @Html.TextBox("searchDateEnd", null, new { @class = "fdatepicker left" })
+            </div>
+            <div class="large-2 columns" style="padding-top: 20px;">
+                <input type="submit" value="Search" class="button" />
+            </div>
+        </fieldset> <br />
+    }
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        <div class="pageCount">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        </div>
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+            new { page, sortOrder = ViewBag.currentSort, currentFilter = ViewBag.currentFilter, currentCounty = ViewBag.currentCounty, currentDateStart = ViewBag.currentDateStart, currentDateEnd = ViewBag.currentDateEnd }))
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        <table class="table">
+            <tr>
+                <th width="30%">
+                    @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+                </th>
+                <th width="10%">
+                    @Html.ActionLink("Date Lost", "Index", new { sortOrder = ViewBag.DateSortParm })
+                </th>
+                <th width="30%">
+                    Type
+                </th>
+                <th>
+                    County
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateLost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.County.Location)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Shipwreck_id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Shipwreck_id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Shipwreck_id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <br />
+        <div class="pageCount">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        </div>
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+            new { page, sortOrder = ViewBag.currentSort, currentFilter = ViewBag.currentFilter, currentCounty = ViewBag.currentCounty, dateEnd = ViewBag.dateEnd }))
+
+    </div>
+</div>

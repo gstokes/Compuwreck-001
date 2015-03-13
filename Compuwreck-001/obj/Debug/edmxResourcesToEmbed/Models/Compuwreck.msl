@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CompuwreckModelStoreContainer" CdmEntityContainer="CompuwreckEntities">
+    <EntitySetMapping Name="Counties">
+      <EntityTypeMapping TypeName="CompuwreckModel.County">
+        <MappingFragment StoreEntitySet="County">
+          <ScalarProperty Name="County_id" ColumnName="County_id" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="CompuwreckModel.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="Event_id" ColumnName="Event_id" />
+          <ScalarProperty Name="Event1" ColumnName="Event" />
+          <ScalarProperty Name="Event_Description" ColumnName="Event_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="CompuwreckModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="Location_id" ColumnName="Location_id" />
+          <ScalarProperty Name="Shipwreck_FK" ColumnName="Shipwreck_FK" />
+          <ScalarProperty Name="LTD" ColumnName="LTD" />
+          <ScalarProperty Name="LNG" ColumnName="LNG" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="long" ColumnName="long" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Photos">
+      <EntityTypeMapping TypeName="CompuwreckModel.Photo">
+        <MappingFragment StoreEntitySet="Photo">
+          <ScalarProperty Name="Photo_id" ColumnName="Photo_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Shipwreck_id" ColumnName="Shipwreck_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shipwrecks">
+      <EntityTypeMapping TypeName="CompuwreckModel.Shipwreck">
+        <MappingFragment StoreEntitySet="Shipwreck">
+          <ScalarProperty Name="Shipwreck_id" ColumnName="Shipwreck_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Dimensions" ColumnName="Dimensions" />
+          <ScalarProperty Name="Tonnage" ColumnName="Tonnage" />
+          <ScalarProperty Name="Armament" ColumnName="Armament" />
+          <ScalarProperty Name="DateLost" ColumnName="DateLost" />
+          <ScalarProperty Name="DateExtn" ColumnName="DateExtn" />
+          <ScalarProperty Name="Locality" ColumnName="Locality" />
+          <ScalarProperty Name="PosExtn" ColumnName="PosExtn" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="WindDir" ColumnName="WindDir" />
+          <ScalarProperty Name="WindForce" ColumnName="WindForce" />
+          <ScalarProperty Name="References" ColumnName="References" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="U_Boat" ColumnName="U-Boat" />
+          <ScalarProperty Name="Event_FK" ColumnName="Event_FK" />
+          <ScalarProperty Name="County_FK" ColumnName="County_FK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

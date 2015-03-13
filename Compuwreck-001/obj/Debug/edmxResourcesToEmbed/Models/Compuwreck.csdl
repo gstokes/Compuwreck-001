@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CompuwreckModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="County">
+    <Key>
+      <PropertyRef Name="County_id" />
+    </Key>
+    <Property Name="County_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Shipwrecks" Relationship="Self.fk_County" FromRole="County" ToRole="Shipwreck" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="Event_id" />
+    </Key>
+    <Property Name="Event_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Event1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Event_Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Shipwrecks" Relationship="Self.FK__SHIPWRECK__Event__07020F21" FromRole="Event" ToRole="Shipwreck" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Location_id" />
+    </Key>
+    <Property Name="Location_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Shipwreck_FK" Type="Int32" Nullable="false" />
+    <Property Name="LTD" Type="Double" />
+    <Property Name="LNG" Type="Double" />
+    <Property Name="lat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="long" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GeoLocation" Type="Geography" />
+    <NavigationProperty Name="Shipwreck" Relationship="Self.FK_Location_Shipwreck" FromRole="Location" ToRole="Shipwreck" />
+  </EntityType>
+  <EntityType Name="Photo">
+    <Key>
+      <PropertyRef Name="Photo_id" />
+    </Key>
+    <Property Name="Photo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Shipwreck_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Shipwreck" Relationship="CompuwreckModel.FK_ShipwreckID" FromRole="Photo" ToRole="Shipwreck" />
+  </EntityType>
+  <EntityType Name="Shipwreck">
+    <Key>
+      <PropertyRef Name="Shipwreck_id" />
+    </Key>
+    <Property Name="Shipwreck_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dimensions" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Tonnage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Armament" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DateLost" Type="DateTime" Precision="0" />
+    <Property Name="DateExtn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Locality" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PosExtn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Cargo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="WindDir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="WindForce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="References" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="U_Boat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Event_FK" Type="Int32" />
+    <Property Name="County_FK" Type="Int32" />
+    <NavigationProperty Name="County" Relationship="Self.fk_County" FromRole="Shipwreck" ToRole="County" />
+    <NavigationProperty Name="Event" Relationship="Self.FK__SHIPWRECK__Event__07020F21" FromRole="Shipwreck" ToRole="Event" />
+    <NavigationProperty Name="Locations" Relationship="Self.FK_Location_Shipwreck" FromRole="Shipwreck" ToRole="Location" />
+    <NavigationProperty Name="Photos" Relationship="CompuwreckModel.FK_ShipwreckID" FromRole="Shipwreck" ToRole="Photo" />
+  </EntityType>
+  <Association Name="fk_County">
+    <End Role="County" Type="Self.County" Multiplicity="0..1" />
+    <End Role="Shipwreck" Type="Self.Shipwreck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="County">
+        <PropertyRef Name="County_id" />
+      </Principal>
+      <Dependent Role="Shipwreck">
+        <PropertyRef Name="County_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SHIPWRECK__Event__07020F21">
+    <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+    <End Role="Shipwreck" Type="Self.Shipwreck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="Event_id" />
+      </Principal>
+      <Dependent Role="Shipwreck">
+        <PropertyRef Name="Event_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_Shipwreck">
+    <End Role="Shipwreck" Type="Self.Shipwreck" Multiplicity="1" />
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shipwreck">
+        <PropertyRef Name="Shipwreck_id" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="Shipwreck_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CompuwreckEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Counties" EntityType="Self.County" />
+    <EntitySet Name="Events" EntityType="Self.Event" />
+    <EntitySet Name="Locations" EntityType="Self.Location" />
+    <EntitySet Name="Photos" EntityType="Self.Photo" />
+    <EntitySet Name="Shipwrecks" EntityType="Self.Shipwreck" />
+    <AssociationSet Name="fk_County" Association="Self.fk_County">
+      <End Role="County" EntitySet="Counties" />
+      <End Role="Shipwreck" EntitySet="Shipwrecks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SHIPWRECK__Event__07020F21" Association="Self.FK__SHIPWRECK__Event__07020F21">
+      <End Role="Event" EntitySet="Events" />
+      <End Role="Shipwreck" EntitySet="Shipwrecks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_Shipwreck" Association="Self.FK_Location_Shipwreck">
+      <End Role="Shipwreck" EntitySet="Shipwrecks" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipwreckID" Association="CompuwreckModel.FK_ShipwreckID">
+      <End Role="Shipwreck" EntitySet="Shipwrecks" />
+      <End Role="Photo" EntitySet="Photos" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_ShipwreckID">
+    <End Type="CompuwreckModel.Shipwreck" Role="Shipwreck" Multiplicity="1" />
+    <End Type="CompuwreckModel.Photo" Role="Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shipwreck">
+        <PropertyRef Name="Shipwreck_id" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="Shipwreck_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
