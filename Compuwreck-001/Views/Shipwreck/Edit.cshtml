@@ -165,6 +165,7 @@
             <th>Photo Name</th>
             <th>Shipwreck ID</th>
             <th>Photo ID</th>
+            <th>Edit</th>
         </tr>
         @foreach (var item in Model.Photos)
         {
@@ -172,6 +173,9 @@
                 <td>@Html.DisplayFor(modelItem => item.Name)</td>
                 <td>@Html.DisplayFor(modelItem => item.Shipwreck_id)</td>
                 <td>@Html.DisplayFor(modelItem => item.Photo_id)</td>
+                <td>@Html.ActionLink("Delete Photo", "Delete", "Photo", new { id = item.Photo_id }, null)
+                     
+                </td>
             </tr>
         }
     </table>

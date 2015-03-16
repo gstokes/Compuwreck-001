@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Compuwreck_001.Helpers;
 using Compuwreck_001.Models;
 
 namespace Compuwreck_001.Controllers
@@ -51,29 +52,23 @@ namespace Compuwreck_001.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(HttpPostedFileBase file, Photo photo) {
-            if (file != null) {
-                //string filename = photo.FileName;
-                string FileName = Path.GetFileName(file.FileName);
-                string URL = Path.Combine(Server.MapPath("~/shipwreckImages/" + photo.Shipwreck_id), photo.FileName);
-                string dirPath = Path.Combine(Server.MapPath("~/shipwreckImages/" + photo.Shipwreck_id));
+           
+            photo.FileName = Path.GetFileName(file.FileName);
+            photo.URL = Path.Combine(("~/shipwreckImages/" + photo.Shipwreck_id), photo.FileName);
+            
+            int uploadStatus = ImageHelper.UploadImage(file, photo);
 
-                if (!Directory.Exists(dirPath)) {
-                    Directory.CreateDirectory(dirPath);
-                }
-
-                file.SaveAs(URL);
-
-                using (MemoryStream ms = new MemoryStream()) {
-                    file.InputStream.CopyTo(ms);
-                    byte[] array = ms.GetBuffer();
+            if (uploadStatus == 1)
+            {
+                if (ModelState.IsValid) {
+                    db.Photos.Add(photo);
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "Shipwreck");
                 }
             }
-            
-            if (ModelState.IsValid)
+            else
             {
-                db.Photos.Add(photo);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.ErrorMessage = "There was Problem uplaoding, please contact Administrator";
             }
 
             ViewBag.Shipwreck_id = new SelectList(db.Shipwrecks, "Shipwreck_id", "Name", photo.Shipwreck_id);
@@ -136,7 +131,7 @@ namespace Compuwreck_001.Controllers
             Photo photo = db.Photos.Find(id);
             db.Photos.Remove(photo);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Edit", "Shipwreck", new {id=photo.Shipwreck_id});
         }
 
         protected override void Dispose(bool disposing)
