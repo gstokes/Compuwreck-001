@@ -1,0 +1,124 @@
+﻿@model Compuwreck_001.Models.Shipwreck
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <h2 class="pageTitle">Details</h2>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        <h4>@Html.DisplayFor(model => model.Name)</h4>
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="large-6 columns">
+        <dl class="dlleft">
+            <dt>@Html.DisplayNameFor(model => model.DateLost)</dt>
+            <dd>@Html.DisplayFor(model => model.DateLost)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.County.Location)</dt>
+            <dd>@Html.DisplayFor(model => model.County.Location)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Locality)</dt>
+            <dd>@Html.DisplayFor(model => model.Locality)</dd>
+        </dl>
+    </div>
+
+    <div class="large-6 columns">
+        <dl class="dlleft">
+            <dt>@Html.DisplayNameFor(model => model.Type)</dt>
+            <dd>@Html.DisplayFor(model => model.Type)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Dimensions)</dt>
+            <dd>@Html.DisplayFor(model => model.Dimensions)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Tonnage)</dt>
+            <dd>@Html.DisplayFor(model => model.Tonnage)</dd>
+        </dl>
+    </div>
+    <hr />
+</div>
+
+
+
+<div class="row">
+    <div class="large-6 columns">
+        <dl class="dlleft">
+            <dt>@Html.DisplayNameFor(model => model.Armament)</dt>
+            <dd>@Html.DisplayFor(model => model.Armament)</dd>
+            <dt>@Html.DisplayNameFor(model => model.Cargo)</dt>
+            <dd>@Html.DisplayFor(model => model.Cargo)</dd>
+        </dl>
+    </div>
+
+    <div class="large-6 columns">
+        <dl class="dlleft">
+            <dt>@Html.DisplayNameFor(model => model.WindDir)</dt>
+            <dd>@Html.DisplayFor(model => model.WindDir)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.WindForce)</dt>
+            <dd>@Html.DisplayFor(model => model.WindForce)</dd>
+        </dl>
+    </div>
+    <hr />
+</div>
+
+
+
+
+
+<div class="row">
+    <div class="large-12 columns">
+        <dl class="dlleft">
+            <dt>@Html.DisplayNameFor(model => model.References)</dt>
+            <dd>@Html.DisplayFor(model => model.References)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Remarks)</dt>
+            <dd>@Html.DisplayFor(model => model.Remarks)</dd>
+
+            @*<dt>@Html.DisplayNameFor(model => model.U_Boat)</dt>
+                <dd>@Html.DisplayFor(model => model.U_Boat)</dd>*@
+
+            @*<dt>@Html.DisplayNameFor(model => model.Event.Event1)</dt>
+                <dd>@Html.DisplayFor(model => model.Event.Event1)</dd>*@
+        </dl>
+    </div>
+    <hr />
+</div>
+
+<div class="row">
+    <div class="large-12 columns">
+        <table class="table">
+            <tr>
+                <th>Photo Name</th>
+                <th>Shipwreck ID</th>
+                <th>Photo ID</th>
+            </tr>
+            @foreach (var item in Model.Photos) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Shipwreck_id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Photo_id)</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <hr />
+</div>
+
+
+
+
+
+
+
+
+<div class="row">
+    <p>
+        @Html.ActionLink("Edit", "Edit", null, new { id = Model.Shipwreck_id, @class = "button" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "button" })
+    </p>
+</div>

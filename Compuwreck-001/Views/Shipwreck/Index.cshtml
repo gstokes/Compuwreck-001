@@ -1,7 +1,7 @@
 ﻿@model PagedList.IPagedList<Compuwreck_001.Models.Shipwreck>
 @using PagedList.Mvc;
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
-
+<link rel="stylesheet" href="~/Content/css/foundation-datepicker.css">
 @{
     ViewBag.Title = "Search";
 }
@@ -46,10 +46,10 @@
         <table class="table">
             <tr>
                 <th width="30%">
-                    @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+                    @Html.ActionLink("Last Name", "Index", new {sortOrder = ViewBag.NameSortParm})
                 </th>
                 <th width="10%">
-                    @Html.ActionLink("Date Lost", "Index", new { sortOrder = ViewBag.DateSortParm })
+                    @Html.ActionLink("Date Lost", "Index", new {sortOrder = ViewBag.DateSortParm})
                 </th>
                 <th width="30%">
                     Type
@@ -61,7 +61,8 @@
                 <th></th>
             </tr>
 
-            @foreach (var item in Model) {
+            @foreach (var item in Model)
+            {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
@@ -76,20 +77,27 @@
                         @Html.DisplayFor(modelItem => item.County.Location)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Shipwreck_id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Shipwreck_id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Shipwreck_id })
+                        @Html.ActionLink("Edit", "Edit", new {id = item.Shipwreck_id}) |
+                        @Html.ActionLink("Details", "Details", new {id = item.Shipwreck_id}) |
+                        @Html.ActionLink("Delete", "Delete", new {id = item.Shipwreck_id})
                     </td>
                 </tr>
             }
 
         </table>
-        <br />
+        <br/>
         <div class="pageCount">
             Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
         </div>
         @Html.PagedListPager(Model, page => Url.Action("Index",
-            new { page, sortOrder = ViewBag.currentSort, currentFilter = ViewBag.currentFilter, currentCounty = ViewBag.currentCounty, dateEnd = ViewBag.dateEnd }))
+            new {page, sortOrder = ViewBag.currentSort, currentFilter = ViewBag.currentFilter, currentCounty = ViewBag.currentCounty, dateEnd = ViewBag.dateEnd}))
 
     </div>
 </div>
+
+
+
+<script src="~/Scripts/foundation/foundation-datepicker.js"></script>
+<script>
+    $('.fdatepicker').fdatepicker()
+</script>

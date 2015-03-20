@@ -4,151 +4,124 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Shipwreck</h4>
-	<hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Dimensions)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dimensions)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tonnage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tonnage)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Armament)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Armament)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DateLost)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DateLost)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DateExtn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DateExtn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Locality)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Locality)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PosExtn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PosExtn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cargo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cargo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WindDir)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WindDir)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WindForce)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WindForce)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.References)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.References)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Remarks)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Remarks)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.U_Boat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.U_Boat)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.County.Location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.County.Location)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Event.Event1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Event.Event1)
-        </dd>
-
-    </dl>
+<div class="row">
+    <h2 class="pageTitle">Details</h2>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Shipwreck_id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="row">
+    <div class="large-12 columns">
+        <h4>@Html.DisplayFor(model => model.Name)</h4>
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="large-6 columns">
+        <dl class="dlleft">
+            <dt>@Html.DisplayNameFor(model => model.DateLost)</dt>
+            <dd>@Html.DisplayFor(model => model.DateLost)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.County.Location)</dt>
+            <dd>@Html.DisplayFor(model => model.County.Location)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Locality)</dt>
+            <dd>@Html.DisplayFor(model => model.Locality)</dd>
+        </dl>
+    </div>
+
+    <div class="large-6 columns">
+        <dl class="dlleft">
+            <dt>@Html.DisplayNameFor(model => model.Type)</dt>
+            <dd>@Html.DisplayFor(model => model.Type)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Dimensions)</dt>
+            <dd>@Html.DisplayFor(model => model.Dimensions)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Tonnage)</dt>
+            <dd>@Html.DisplayFor(model => model.Tonnage)</dd>
+        </dl>
+    </div>
+    <hr />
+</div>
+
+
+
+<div class="row">
+    <div class="large-6 columns">
+        <dl class="dlleft">
+            <dt>@Html.DisplayNameFor(model => model.Armament)</dt>
+            <dd>@Html.DisplayFor(model => model.Armament)</dd>
+            <dt>@Html.DisplayNameFor(model => model.Cargo)</dt>
+            <dd>@Html.DisplayFor(model => model.Cargo)</dd>
+        </dl>
+    </div>
+
+    <div class="large-6 columns">
+        <dl class="dlleft">
+            <dt>@Html.DisplayNameFor(model => model.WindDir)</dt>
+            <dd>@Html.DisplayFor(model => model.WindDir)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.WindForce)</dt>
+            <dd>@Html.DisplayFor(model => model.WindForce)</dd>
+        </dl>
+    </div>
+    <hr />
+</div>
+
+
+<div class="row">
+    <div class="large-12 columns">
+        <dl class="dlleft">
+            <dt>@Html.DisplayNameFor(model => model.References)</dt>
+            <dd>@Html.DisplayFor(model => model.References)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Remarks)</dt>
+            <dd>@Html.DisplayFor(model => model.Remarks)</dd>
+        </dl>
+    </div>
+    <hr />
+</div>
+
+<div class="row">
+    <div class="large-12 columns">
+        <table class="table">
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+            @foreach (var item in Model.Photos) {
+                <tr>
+                    <td width="30%"><img src="@Url.Content(item.URL + "/thumbs/" + item.FileName)" width="100" height="90" /></td>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td width="15%"><a href="#" data-reveal-id="myModal" id="@item.Photo_id" class="viewImage">View</a></td>
+                    <td>@Html.DisplayFor(modelItem => item.Photo_id, new { id = "PhotoId" })</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <hr />
+</div>
+
+
+<div class="row">
+    <p>
+        @Html.ActionLink("Edit", "Edit", null, new {id = Model.Shipwreck_id, @class = "button"})
+        @Html.ActionLink("Back to List", "Index", null, new {@class = "button right"})
+    </p>
+</div>
+
+
+
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    @foreach (var item in Model.Photos.Where(p => p.Photo_id == 213))
+    {
+        <img src="@Url.Content(item.URL + "/" + item.FileName)" width="400" height="400" />
+    }
+    <h2 id="modalTitle">Awesome. I have it.</h2>
+    <p class="lead">Your couch. It is mine.</p>
+    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+
+@*<script src="~/Scripts/foundation/foundation.reveal.js"></script>*@
+

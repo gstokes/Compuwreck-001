@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    @Styles.Render("~/Content/css/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="contain-to-grid sticky">
+        <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="http://localhost:52107/Shipwreck/Index">Compuwreck</a>
+                    </h1>
+                </li>
+                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            </ul>
+
+            <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="right">
+                    <li>@Html.ActionLink("Search", "Index", "Shipwreck")</li>
+                    <li>@Html.ActionLink("Add", "Create", "Shipwreck")</li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/foundation/foundation.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+
+    <script>
+        $('.fdatepicker').fdatepicker()
+    </script>
+</body>
+</html>

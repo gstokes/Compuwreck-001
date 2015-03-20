@@ -54,7 +54,7 @@ namespace Compuwreck_001.Controllers
         public ActionResult Create(HttpPostedFileBase file, Photo photo) {
            
             photo.FileName = Path.GetFileName(file.FileName);
-            photo.URL = Path.Combine(("~/shipwreckImages/" + photo.Shipwreck_id), photo.FileName);
+            photo.URL = Path.Combine(("~/shipwreckImages/" + photo.Shipwreck_id));
             
             int uploadStatus = ImageHelper.UploadImage(file, photo);
 
@@ -109,13 +109,13 @@ namespace Compuwreck_001.Controllers
         }
 
         // GET: /Photo/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? photoId)
         {
-            if (id == null)
+            if (photoId == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Photo photo = db.Photos.Find(id);
+            Photo photo = db.Photos.Find(photoId);
             if (photo == null)
             {
                 return HttpNotFound();
@@ -126,9 +126,9 @@ namespace Compuwreck_001.Controllers
         // POST: /Photo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int photoId)
         {
-            Photo photo = db.Photos.Find(id);
+            Photo photo = db.Photos.Find(photoId);
             db.Photos.Remove(photo);
             db.SaveChanges();
             return RedirectToAction("Edit", "Shipwreck", new {id=photo.Shipwreck_id});
