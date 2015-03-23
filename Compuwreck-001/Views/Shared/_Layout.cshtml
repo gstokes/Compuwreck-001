@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     @Styles.Render("~/Content/css/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @*@Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
     <div class="contain-to-grid sticky">
@@ -39,10 +39,13 @@
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/foundation/foundation.js"></script>
     <script src="~/Scripts/foundation/foundation.reveal.js"></script>
+    
 
     <script>
         $(document).foundation();
     </script>
+
+
 
 </body>
 </html>
