@@ -52,12 +52,15 @@ namespace Compuwreck_001.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(HttpPostedFileBase file, Photo photo) {
-           
+
             photo.FileName = Path.GetFileName(file.FileName);
             photo.URL = Path.Combine(("~/shipwreckImages/" + photo.Shipwreck_id));
             
             int uploadStatus = ImageHelper.UploadImage(file, photo);
 
+            var changedFile = Path.ChangeExtension(photo.FileName, ".jpg");
+            photo.FileName = changedFile;
+            
             if (uploadStatus == 1)
             {
                 if (ModelState.IsValid) {

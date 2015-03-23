@@ -89,12 +89,13 @@
                 <th>Action</th>
             </tr>
             @foreach (var item in Model.Photos) {
-                <tr>
+                <tr >
                     <td width="30%"><img src="@Url.Content(item.URL + "/thumbs/" + item.FileName)" width="100" height="90" /></td>
                     <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                    <td width="15%"><a href="#" data-reveal-id="myModal" id="@item.Photo_id" class="editForm">View</a></td>
-                    <td>@Html.DisplayFor(modelItem => item.Photo_id)</td>
-                    <td>@item.FileName @Html.DisplayFor(modelItem => item.FileName)</td>
+                    <td width="15%">
+                        <textarea readonly="readonly" class="@item.Photo_id" style="display:none;" >@item.FileName</textarea>
+                        <a href="#" data-reveal-id="myModal" id="@item.Photo_id" class="@item.Shipwreck_id editForm">View</a>
+                    </td>
                 </tr>
             }
         </table>
@@ -113,28 +114,42 @@
 
 
 <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-    @foreach (var item in Model.Photos.Where(p => p.Photo_id == 213))
-    {
-        <img src="@Url.Content(item.URL + "/" + item.FileName)" width="400" height="400" />
-    }
-    <h2 id="modalTitle">Awesome. I have it.</h2>
-    <p class="lead">Your couch. It is mine.</p>
-    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <img src="" id ="largeIamge" />
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    <ul><li id="new">test</li></ul>
 </div>
-
-
 
 
 
 
 <script>
     $(".editForm").click(function () {
-        alert(this.id);
-        $("#new").text(this.id);
-    });
-</script>
+            //--Declare vars and assign values
+            var photoId = this.id;
+            var shipwerckId = (jQuery(this).attr('class').split(' ')[0]);
+            var imageName = $("." + photoId).val();
+
+            //--Create url using vars
+            var url = "/shipwreckImages/" + shipwerckId + "/" + imageName;
+
+            //--Set values in modal
+            $("#largeIamge").attr("src", url);
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -56,7 +56,6 @@ c:\Users\gstokes.SDCCW2K\Documents\Visual Studio 2013\Projects\Compuwreck-001\Co
 c:\Users\gstokes.SDCCW2K\Documents\Visual Studio 2013\Projects\Compuwreck-001\Compuwreck-001\bin\PagedList.Mvc.dll
 c:\Users\gstokes.SDCCW2K\Documents\Visual Studio 2013\Projects\Compuwreck-001\Compuwreck-001\bin\PagedList.xml
 c:\Users\gstokes.SDCCW2K\Documents\Visual Studio 2013\Projects\Compuwreck-001\Compuwreck-001\bin\PagedList.Mvc.xml
-C:\Users\gstokes.SDCCW2K\Documents\Visual Studio 2013\Projects\Compuwreck-001\Compuwreck-001\obj\Debug\Compuwreck-001.csprojResolveAssemblyReference.cache
 D:\Websites\Compuwreck-001\Compuwreck-001\bin\Compuwreck-001.dll.config
 D:\Websites\Compuwreck-001\Compuwreck-001\bin\Compuwreck-001.dll
 D:\Websites\Compuwreck-001\Compuwreck-001\bin\Compuwreck-001.pdb
@@ -116,3 +115,4 @@ D:\Websites\Compuwreck-001\Compuwreck-001\bin\Microsoft.Owin.Security.MicrosoftA
 D:\Websites\Compuwreck-001\Compuwreck-001\obj\Debug\Compuwreck-001.csprojResolveAssemblyReference.cache
 D:\Websites\Compuwreck-001\Compuwreck-001\obj\Debug\Compuwreck-001.dll
 D:\Websites\Compuwreck-001\Compuwreck-001\obj\Debug\Compuwreck-001.pdb
+C:\Users\gstokes.SDCCW2K\Documents\Visual Studio 2013\Projects\Compuwreck-001\Compuwreck-001\obj\Debug\Compuwreck-001.csprojResolveAssemblyReference.cache
