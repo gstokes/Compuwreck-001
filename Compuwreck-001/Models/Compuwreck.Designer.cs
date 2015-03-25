@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'c:\users\gstokes.sdccw2k\documents\visual studio 2013\Projects\Compuwreck-001\Compuwreck-001\Models\Compuwreck.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\gstokes.SDCCW2K\Documents\Visual Studio 2013\Projects\Compuwreck-001\Compuwreck-001\Models\Compuwreck.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

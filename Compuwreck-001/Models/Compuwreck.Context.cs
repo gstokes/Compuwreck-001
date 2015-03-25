@@ -30,5 +30,9 @@ namespace Compuwreck_001.Models
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Photo> Photos { get; set; }
         public virtual DbSet<Shipwreck> Shipwrecks { get; set; }
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
     }
 }
