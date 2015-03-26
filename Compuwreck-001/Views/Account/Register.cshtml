@@ -3,62 +3,47 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <h2 class="pageTitle">@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary()
-    <div class="form-group">
-        @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new {@class = "col-md-2 control-label"})
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new {@class = "form-control"})
-        </div>
-    </div>
-    
-    // Add new properties here:
-    <div class="form-group">
-        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
-        </div>
-    </div>
-    
-    <div class="form-group">
-        @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
-        </div>
-    </div>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
+        <div class="large-6 small-centered columns">
+            <span class="alert-box alert">@Html.ValidationSummary()</span>
+            <div class="panel callout radius">
+                Use the form below to create a new account. Passwords are required to be a minimum of @Membership.MinRequiredPasswordLength characters in length.
+            </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new {@class = "col-md-2 control-label"})
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new {@class = "form-control"})
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+            <fieldset class="account">
+                <legend>Account Information</legend>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+                @Html.LabelFor(m => m.UserName, new {@class = "col-md-2 control-label"})
+                @Html.TextBoxFor(m => m.UserName, new {@class = "form-control"})
+
+                @Html.LabelFor(m => m.Password, new {@class = "col-md-2 control-label"})
+                @Html.PasswordFor(m => m.Password, new {@class = "form-control"})
+
+
+                @Html.LabelFor(m => m.ConfirmPassword, new {@class = "col-md-2 control-label"})
+                @Html.PasswordFor(m => m.ConfirmPassword, new {@class = "form-control"})
+
+                <hr/>
+
+                @Html.LabelFor(m => m.FirstName, new {@class = "col-md-2 control-label"})
+                @Html.TextBoxFor(m => m.FirstName, new {@class = "form-control"})
+
+                @Html.LabelFor(m => m.LastName, new {@class = "col-md-2 control-label"})
+                @Html.TextBoxFor(m => m.LastName, new {@class = "form-control"})
+
+
+                @Html.LabelFor(m => m.Email, new {@class = "col-md-2 control-label"})
+                @Html.TextBoxFor(m => m.Email, new {@class = "form-control"})
+
+                <input type="submit" value="Register" class="button expand" />
+            </fieldset>
+        </div>
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</div>

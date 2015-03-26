@@ -9,38 +9,22 @@
     @*@Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
-    <div class="contain-to-grid sticky">
-        <nav class="top-bar" data-topbar role="navigation">
-            <ul class="title-area">
-                <li class="name">
-                    <h1><a href="http://localhost:52107/Shipwreck/Index">Compuwreck</a>
-                    </h1>
-                </li>
-                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-            </ul>
 
-            <section class="top-bar-section">
-                <!-- Right Nav Section -->
-                <ul class="right">
-                    <li>@Html.ActionLink("Search", "Index", "Shipwreck")</li>
-                    <li>@Html.ActionLink("Add", "Create", "Shipwreck")</li>
-                    <li>@Html.ActionLink("Admin", "Index", "Account")</li>
-                </ul>
-            </section>
-        </nav>
-    </div>
+        @Html.Partial("_PrimaryNavigation")
+
+
 
     @RenderBody()
-    <hr />
-    <footer>
-        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-    </footer>
-
+    <div class="row">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - IrishWrecks</p>
+        </footer>
+    </div>
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/foundation/foundation.js"></script>
     <script src="~/Scripts/foundation/foundation.reveal.js"></script>
-    
+
 
     <script>
         $(document).foundation();
