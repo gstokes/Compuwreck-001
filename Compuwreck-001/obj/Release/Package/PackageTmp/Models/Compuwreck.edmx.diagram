@@ -14,6 +14,13 @@
         <AssociationConnector Association="CompuwreckModel.FK__SHIPWRECK__Event__07020F21" ManuallyRouted="false" />
         <AssociationConnector Association="CompuwreckModel.FK_Location_Shipwreck" ManuallyRouted="false" />
         <AssociationConnector Association="CompuwreckModel.FK_ShipwreckID" />
+        <EntityTypeShape EntityType="CompuwreckModel.AspNetRole" Width="1.5" PointX="7.25" PointY="0.625" />
+        <EntityTypeShape EntityType="CompuwreckModel.AspNetUserClaim" Width="1.5" PointX="7.25" PointY="2.875" />
+        <EntityTypeShape EntityType="CompuwreckModel.AspNetUserLogin" Width="1.5" PointX="9.375" PointY="3.5" />
+        <EntityTypeShape EntityType="CompuwreckModel.AspNetUser" Width="1.5" PointX="9.375" PointY="0.625" />
+        <AssociationConnector Association="CompuwreckModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" />
+        <AssociationConnector Association="CompuwreckModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="CompuwreckModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

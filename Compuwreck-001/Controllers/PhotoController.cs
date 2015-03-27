@@ -51,6 +51,7 @@ namespace Compuwreck_001.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(HttpPostedFileBase file, Photo photo) {
 
             photo.FileName = Path.GetFileName(file.FileName);
@@ -79,6 +80,7 @@ namespace Compuwreck_001.Controllers
         }
 
         // GET: /Photo/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -99,6 +101,7 @@ namespace Compuwreck_001.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include="Photo_id,Name,Details,FileName,URL,Source,Shipwreck_id")] Photo photo)
         {
             if (ModelState.IsValid)
@@ -112,6 +115,7 @@ namespace Compuwreck_001.Controllers
         }
 
         // GET: /Photo/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? photoId)
         {
             if (photoId == null)
@@ -129,6 +133,7 @@ namespace Compuwreck_001.Controllers
         // POST: /Photo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int photoId)
         {
             Photo photo = db.Photos.Find(photoId);

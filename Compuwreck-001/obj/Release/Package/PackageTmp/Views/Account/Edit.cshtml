@@ -1,0 +1,55 @@
+﻿@model Compuwreck_001.Models.EditUserViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <h2 class="pageTitle">Edit User Details</h2>
+</div>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="row">
+            @Html.ValidationSummary(true)
+            <div class="large-6 columns">
+                @Html.LabelFor(model => model.FirstName)
+                @Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelFor(model => model.LastName)
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelFor(model => model.UserName)
+                @Html.EditorFor(model => model.UserName)
+                @Html.ValidationMessageFor(model => model.UserName)
+            </div>
+
+            <div class="large-6 columns">
+                @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

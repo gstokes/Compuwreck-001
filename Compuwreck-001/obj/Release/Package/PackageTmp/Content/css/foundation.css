@@ -1752,7 +1752,12 @@ meta.foundation-mq-topbar {
   .top-bar .name {
     height: 2.8125rem;
     margin: 0;
-    font-size: 16px; }
+    font-size: 19px; 
+    color: #fff;
+    font-weight: 900;
+    padding: 10px 10px 0 0;
+
+  }
     .top-bar .name h1, .top-bar .name h2, .top-bar .name h3, .top-bar .name h4, .top-bar .name p, .top-bar .name span {
       line-height: 2.8125rem;
       font-size: 1.6rem;

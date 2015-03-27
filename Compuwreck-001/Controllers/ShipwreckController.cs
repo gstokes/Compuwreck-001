@@ -100,6 +100,7 @@ namespace Compuwreck_001.Controllers
         }
 
         // GET: /Shipwreck/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.County_FK = new SelectList(_countyRepository.GetCounties(), "County_id", "Location");
@@ -112,6 +113,7 @@ namespace Compuwreck_001.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(Shipwreck shipwreck) {
             try {
                 if (ModelState.IsValid) {
@@ -135,6 +137,7 @@ namespace Compuwreck_001.Controllers
         }
 
         // GET: /Shipwreck/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
             //if (id == null)
@@ -155,6 +158,7 @@ namespace Compuwreck_001.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult EditPost(int id) {
 
             //if (id == null) {
@@ -182,6 +186,7 @@ namespace Compuwreck_001.Controllers
         }
 
         // GET: /Shipwreck/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id, bool? saveChangesError = false) {
             //if (id == null)
             //{
@@ -200,6 +205,7 @@ namespace Compuwreck_001.Controllers
         }
 
         // POST: /Shipwreck/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id) {

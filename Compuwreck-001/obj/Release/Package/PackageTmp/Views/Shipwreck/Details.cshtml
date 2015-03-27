@@ -67,9 +67,6 @@
 </div>
 
 
-
-
-
 <div class="row">
     <div class="large-12 columns">
         <dl class="dlleft">
@@ -78,12 +75,6 @@
 
             <dt>@Html.DisplayNameFor(model => model.Remarks)</dt>
             <dd>@Html.DisplayFor(model => model.Remarks)</dd>
-
-            @*<dt>@Html.DisplayNameFor(model => model.U_Boat)</dt>
-                <dd>@Html.DisplayFor(model => model.U_Boat)</dd>*@
-
-            @*<dt>@Html.DisplayNameFor(model => model.Event.Event1)</dt>
-                <dd>@Html.DisplayFor(model => model.Event.Event1)</dd>*@
         </dl>
     </div>
     <hr />
@@ -93,15 +84,18 @@
     <div class="large-12 columns">
         <table class="table">
             <tr>
-                <th>Photo Name</th>
-                <th>Shipwreck ID</th>
-                <th>Photo ID</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Action</th>
             </tr>
             @foreach (var item in Model.Photos) {
-                <tr>
+                <tr >
+                    <td width="30%"><img src="@Url.Content(item.URL + "/thumbs/" + item.FileName)" width="100" height="90" /></td>
                     <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Shipwreck_id)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Photo_id)</td>
+                    <td width="15%">
+                        <textarea readonly="readonly" class="@item.Photo_id" style="display:none;" >@item.FileName</textarea>
+                        <a href="#" data-reveal-id="myModal" id="@item.Photo_id" class="@item.Shipwreck_id editForm">View</a>
+                    </td>
                 </tr>
             }
         </table>
@@ -110,15 +104,65 @@
 </div>
 
 
-
-
-
-
-
-
 <div class="row">
     <p>
-        @Html.ActionLink("Edit", "Edit", null, new { id = Model.Shipwreck_id, @class = "button" })
-        @Html.ActionLink("Back to List", "Index", null, new { @class = "button" })
+        @Html.ActionLink("Edit", "Edit", null, new {id = Model.Shipwreck_id, @class = "button"})
+        @Html.ActionLink("Back to List", "Index", null, new {@class = "button right"})
     </p>
 </div>
+
+
+
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <img src="" id ="largeIamge" />
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+
+
+
+<script>
+    $(".editForm").click(function () {
+            //--Declare vars and assign values
+            var photoId = this.id;
+            var shipwerckId = (jQuery(this).attr('class').split(' ')[0]);
+            var imageName = $("." + photoId).val();
+
+            //--Create url using vars
+            var url = "/compuwreck/shipwreckImages/" + shipwerckId + "/" + imageName;
+
+            //--Set values in modal
+            $("#largeIamge").attr("src", url);
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

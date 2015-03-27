@@ -77,9 +77,16 @@
                         @Html.DisplayFor(modelItem => item.County.Location)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new {id = item.Shipwreck_id}) |
-                        @Html.ActionLink("Details", "Details", new {id = item.Shipwreck_id}) |
-                        @Html.ActionLink("Delete", "Delete", new {id = item.Shipwreck_id})
+                        @if (@User.IsInRole("Admin")) {
+                            @Html.ActionLink("Edit", "Edit", new {id = item.Shipwreck_id})
+                        }
+                        
+                        @Html.ActionLink("Details", "Details", new {id = item.Shipwreck_id})
+
+                        @if (@User.IsInRole("Admin"))
+                        {
+                            @Html.ActionLink("Delete", "Delete", new {id = item.Shipwreck_id})
+                        }
                     </td>
                 </tr>
             }

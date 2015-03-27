@@ -1,0 +1,155 @@
+﻿<div class="row">
+
+    <div class="large-6 columns">
+
+        @Html.LabelFor(m => m.ReportingPeriod.Name, "Reporting Period Name:")
+
+        @Model.ReportingPeriod.Name
+
+    </div>
+
+    <div class="large-6 columns">
+
+        @Html.LabelFor(m => m.ReportingPeriod.DueDate, "Due Date:")
+
+        @Model.ReportingPeriod.DueDate
+
+    </div>
+
+</div>
+
+<hr />
+
+@foreach (ExpectedStrategyDto strategy in @Model.ExpectedStrategies)
+{
+
+    <div class="row">
+        <div class="large-12 columns">
+
+            @Html.Label(strategy.StrategyName, new { @class = "StrategyHeading" })
+
+            <div class="StrategyText">
+                <textarea readonly="readonly" class="@strategy.Id">@strategy.TextUpdate</textarea>
+                <a href='#' class="editForm button tinySup   right" id="@strategy.Id">edit</a>
+                <a href="#" class="showPrevious button tinySup  right">Show Previous</a>
+            </div>
+
+            @foreach (FinalisedStrategyDto finalisedStrategy in Model.FinalisedStrategies.Where(x => x.StrategyId == strategy.Id))
+            {
+                <hr />
+                @Html.Label(finalisedStrategy.Value);
+                <hr />
+            }
+        </div>
+    </div>
+    <hr />
+}
+
+
+
+<div id="dialog" title="Dialog Form">
+
+    <label id="dialogUserId" style="display: none;">@Model.UserId</label><br />
+    Strategy Update:<textarea id="dialogStrategyValue" class="DialogTextArea"></textarea>
+    <div class="alert-box" style="display: none;"></div>
+</div>
+
+
+
+<style type="text/css">
+    .StrategyHeading {
+        font-size: large;
+        font-weight: bold;
+    }
+
+
+    .StrategyText {
+        /*  border: 1px solid lightgray;
+        margin: 1em 0 1em 0;
+        padding: 5px 5px 5px 5px;*/
+    }
+
+        .StrategyText textarea[readonly] {
+            border: none;
+            background-color: whitesmoke;
+            resize: none;
+        }
+
+    .StrategyEdit {
+        float: left;
+        font-size: small;
+    }
+
+    .DialogTextArea {
+        width: 100%;
+        height: 140px;
+        padding: 5px;
+    }
+</style>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $(function() {
+            $("#dialog").dialog({
+                autoOpen: false,
+                modal: true,
+                height: 400,
+                width: 600
+            });
+
+            $(".editForm").click(function (e) {
+                e.preventDefault();
+                var dialog = $("#dialog");
+                var strategyId = $(this).attr("id");
+                var strategyText = $("." + strategyId).val();
+                 $("#dialogStrategyValue").val(strategyText);
+
+                                dialog.dialog({
+                                    title: "Update Strategy",
+                                    position: {
+                                        my: "center",
+                                        at: "center",
+                                        of: window,
+                                    },
+
+                                    buttons: {
+                                        "Update": function() {
+                                            var update ={
+                                                Id: strategyId,
+                                                TextUpdate:
+                                            $("#dialogStrategyValue").val(),
+                                                UserId: $("#dialogUserId").text()
+                                            };
+                                            $.ajax({
+                                                url: "/CouncilReportGenerator/ExpectedStrategy/UpdateStrategy",
+                                                type: "POST",
+                                                data: JSON.stringify(update),
+                                                contentType: "application/json;charset=3Dutf-8",
+
+                                                success: function (data) {
+                                                    if (data.success == true) {
+                                                        $("." + strategyId).val(update.TextUpdate);
+                                                        $("#dialog").dialog("close");
+                                                    } else {
+                                                        $(".alert-box").text("Update text is required").show();
+                                                    }
+                                                },
+                                                error: function() {
+                                                    alert("An error has occurred and the  update has not been applied, please contact itsupport@sdublincoco.ie");
+                                                }
+                                            });
+                                        },
+                                        "Cancel": function() {
+                                            $(this).dialog("close");
+                                        }
+                                    }
+                                });
+                                dialog.dialog("open");
+            });                        
+        });               
+    });
+
+</script>

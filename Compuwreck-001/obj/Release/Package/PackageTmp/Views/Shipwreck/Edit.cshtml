@@ -4,13 +4,9 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
-
-@using (Html.BeginForm())
-{
+@using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
- <div class="row">
+    <div class="row">
         <h2 class="pageTitle">Edit Shipwreck Record</h2>
         <hr />
         @Html.ValidationSummary(true)
@@ -23,7 +19,7 @@
             @Html.ValidationMessageFor(model => model.Name)
         </div>
     </div>
-    
+
     <div class="row">
         <div class="large-4 columns">
             @Html.LabelFor(model => model.Type)
@@ -59,7 +55,7 @@
             @Html.EditorFor(model => model.Locality)
             @Html.ValidationMessageFor(model => model.Locality)
         </div>
-        <hr/>
+        <hr />
     </div>
 
     <div class="row">
@@ -112,26 +108,27 @@
             @Html.EditorFor(model => model.U_Boat)
             @Html.ValidationMessageFor(model => model.U_Boat)
         </div>
+        <hr />
     </div>
-    
+
     <div class="row">
         <div class="large-12 columns">
             <table class="table">
                 <tr>
-                    <th>Photo Name</th>
-                    <th>Shipwreck ID</th>
-                    <th>Photo ID</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Edit</th>
                 </tr>
-                @foreach (var item in Model.Photos)
-                {
+                @foreach (var item in Model.Photos) {
                     <tr>
+                        <td width="30%"><img src="@Url.Content(item.URL + "/thumbs/" + item.FileName)" width="100" height="90" /></td>
                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Shipwreck_id)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Photo_id)</td>
+                        <td width ="20%">@Html.ActionLink("Delete Photo", "Delete", "Photo", new { photoId = item.Photo_id }, null)</td>
                     </tr>
                 }
             </table>
-           @Html.ActionLink("Add new Photo", "Create", "Photo", new { shipwreckId = Model.Shipwreck_id }, null)
+            @Html.ActionLink("Add new Photo", "Create", "Photo", new { shipwreckId = Model.Shipwreck_id }, new { @class = "button right" })
+            <br /><br />
 
         </div>
         <hr />
@@ -139,13 +136,10 @@
 
     <div class="row">
         <div class="large-6 columns">
-            @Html.ActionLink("Back to List", "Index", null, new {@class = "button left"})
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "button left" })
         </div>
         <div class="large-6 columns">
-            <input type="submit" value="Save" class="button right"/>
+            <input type="submit" value="Save" class="button right" />
         </div>
     </div>
 }
-<div>
-    
-</div>

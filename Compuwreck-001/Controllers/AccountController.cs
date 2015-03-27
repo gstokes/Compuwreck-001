@@ -82,13 +82,22 @@ namespace Compuwreck_001.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [Authorize(Roles = "Admin")] //[AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            using (var context = new ApplicationDbContext())
             if (ModelState.IsValid) {
                 var user = model.GetUser();
                 var result = await UserManager.CreateAsync(user, model.Password);
+
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+
+                var userStore = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(userStore);
+                userManager.AddToRole(user.Id, "User");
+                
                 if (result.Succeeded) {
                     return RedirectToAction("Index", "Account");
                 }
@@ -96,7 +105,8 @@ namespace Compuwreck_001.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, User")]
+
         public ActionResult Edit(string id, ManageMessageId? Message = null) {
             var Db = new ApplicationDbContext();
             var user = Db.Users.First(u => u.UserName == id);
@@ -104,8 +114,10 @@ namespace Compuwreck_001.Controllers
             ViewBag.MessageId = Message;
             return View(model);
         }
+
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, User")]
+
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(EditUserViewModel model) {
             if (ModelState.IsValid) {

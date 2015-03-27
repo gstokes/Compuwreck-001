@@ -13,6 +13,9 @@
                 Use the form below to create a new account. Passwords are required to be a minimum of @Membership.MinRequiredPasswordLength characters in length.
             </div>
 
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
             <fieldset class="account">
                 <legend>Account Information</legend>
 
