@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Compuwreck_001.Models
 {
     using System;
@@ -26,6 +28,7 @@ namespace Compuwreck_001.Models
         public string Dimensions { get; set; }
         public string Tonnage { get; set; }
         public string Armament { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public Nullable<System.DateTime> DateLost { get; set; }
         public string DateExtn { get; set; }
         public string Locality { get; set; }

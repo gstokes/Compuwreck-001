@@ -20,11 +20,11 @@
             </div>
             <div class="large-2 columns">
                 @Html.Label("Find by Start Date")
-                @Html.TextBox("searchDateStart", null, new { @class = "fdatepicker" })
+                @Html.TextBox("searchDateStart", null, new { @class = "fdatepicker", @placeholder = "01/01/1900" })
             </div>
             <div class="large-2 columns">
                 @Html.Label("Find by End Date")
-                @Html.TextBox("searchDateEnd", null, new { @class = "fdatepicker left" })
+                @Html.TextBox("searchDateEnd", null, new { @class = "fdatepicker left", @placeholder = "01/01/1900" })
             </div>
             <div class="large-2 columns" style="padding-top: 20px;">
                 <input type="submit" value="Search" class="button" />
@@ -78,7 +78,7 @@
                     </td>
                     <td>
                         @if (@User.IsInRole("Admin")) {
-                            @Html.ActionLink("Edit", "Edit", new {id = item.Shipwreck_id})
+                            @Html.ActionLink("Edit", "Edit", new {id = item.Shipwreck_id, @class="button"})
                         }
                         
                         @Html.ActionLink("Details", "Details", new {id = item.Shipwreck_id})

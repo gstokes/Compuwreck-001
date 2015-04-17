@@ -14,43 +14,59 @@ namespace Compuwreck_001.DAL {
         }
 
         public IEnumerable<Shipwreck> GetShipwrecks(string searchString, int? searchCounty, string searchDateStart, string searchDateEnd, string sortOrder) {
-            var shipwrecks = _db.Shipwrecks.Include(s => s.County).Include(s => s.Event);
 
-            // Keyword filter
-            if (!String.IsNullOrEmpty(searchString)) {
-                shipwrecks = shipwrecks.Where(s => s.Name.ToLower().Contains(searchString.ToLower()));
+            IQueryable<Shipwreck> shipwrecks;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+
+                shipwrecks = _db.Shipwrecks.Include(s => s.County).Include(s => s.Event);
+
+                // Keyword filter
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    shipwrecks = shipwrecks.Where(s => s.Name.ToLower().Contains(searchString.ToLower()));
+                }
+
+                // County filter
+                if (searchCounty != null)
+                {
+                    shipwrecks = shipwrecks.Where(s => s.County_FK == searchCounty);
+                }
+
+                // Date filter TODO: Catch partial date search
+                if (!String.IsNullOrEmpty(searchDateEnd) && !String.IsNullOrEmpty(searchDateStart))
+                {
+                    DateTime dtStart = Convert.ToDateTime(searchDateStart); //TODO: DateTimetype
+                    DateTime dtEnd = Convert.ToDateTime(searchDateEnd);
+                    shipwrecks = shipwrecks.Where(s => s.DateLost >= dtStart && s.DateLost <= dtEnd);
+                }
+
+                if (String.IsNullOrEmpty(searchDateEnd) && !String.IsNullOrEmpty(searchDateStart))
+                {
+                    DateTime dt = Convert.ToDateTime(searchDateStart); //TODO: DateTimetype
+                    shipwrecks = shipwrecks.Where(s => s.DateLost == dt);
+                }
+
+                switch (sortOrder)
+                {
+                    case "name_desc":
+                        shipwrecks = shipwrecks.OrderBy(s => s.Name);
+                        break;
+                    case "Date":
+                        shipwrecks = shipwrecks.OrderBy(s => s.DateLost);
+                        break;
+                    case "date_desc":
+                        shipwrecks = shipwrecks.OrderByDescending(s => s.DateLost);
+                        break;
+                    default:
+                        shipwrecks = shipwrecks.OrderBy(s => s.Name);
+                        break;
+                }
             }
-
-            // County filter
-            if (searchCounty != null) {
-                shipwrecks = shipwrecks.Where(s => s.County_FK == searchCounty);
-            }
-
-            // Date filter TODO: Catch partial date search
-            if (!String.IsNullOrEmpty(searchDateEnd) && !String.IsNullOrEmpty(searchDateStart)) {
-                DateTime dtStart = Convert.ToDateTime(searchDateStart); //TODO: DateTimetype
-                DateTime dtEnd = Convert.ToDateTime(searchDateEnd);
-                shipwrecks = shipwrecks.Where(s => s.DateLost >= dtStart && s.DateLost <= dtEnd);
-            }
-
-            if (String.IsNullOrEmpty(searchDateEnd) && !String.IsNullOrEmpty(searchDateStart)) {
-                DateTime dt = Convert.ToDateTime(searchDateStart); //TODO: DateTimetype
-                shipwrecks = shipwrecks.Where(s => s.DateLost == dt);
-            }
-
-            switch (sortOrder) {
-                case "name_desc":
-                    shipwrecks = shipwrecks.OrderBy(s => s.Name);
-                    break;
-                case "Date":
-                    shipwrecks = shipwrecks.OrderBy(s => s.DateLost);
-                    break;
-                case "date_desc":
-                    shipwrecks = shipwrecks.OrderByDescending(s => s.DateLost);
-                    break;
-                default:
-                    shipwrecks = shipwrecks.OrderBy(s => s.Name);
-                    break;
+            else
+            {
+                shipwrecks = _db.Shipwrecks.Where(s => s.Name == "347**");
             }
             return shipwrecks.ToList();
         }

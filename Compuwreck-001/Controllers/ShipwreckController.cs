@@ -75,11 +75,10 @@ namespace Compuwreck_001.Controllers
             ViewBag.currentDateStart = searchDateStart;
             ViewBag.currentDateEnd = searchDateEnd;
 
-            //var shipwrecks = db.Shipwrecks.Include(s => s.County).Include(s => s.Event);
-
             var shipwrecks = _shipwreckRepository.GetShipwrecks(searchString, searchCounty, searchDateStart, searchDateEnd, sortOrder);
 
             int pageNumber = (page ?? 1);
+
             return View(shipwrecks.ToPagedList(pageNumber, PageSize));
         }
 
