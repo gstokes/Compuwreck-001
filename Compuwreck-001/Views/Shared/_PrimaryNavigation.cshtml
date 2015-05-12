@@ -1,17 +1,13 @@
 ﻿@using Microsoft.AspNet.Identity
 <div class="contain-to-grid sticky">
     <nav class="top-bar" data-topbar data-options="is_hover: false, mobile_show_parent_link: true">
-        <ul class="title-area">
-            <li class="name">
-                IRISHWRECKS
-            </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-        </ul>
-
+        
         <section class="top-bar-section">
-            <ul class="left">
-                <li>@Html.ActionLink("Search", "Index", "Shipwreck")</li>
+            <ul class="publicNav">
+                <li>@Html.ActionLink("HOME", "Index", "Shipwreck")</li>
+                <li>@Html.ActionLink("SEARCH", "Index", "Shipwreck")</li>
+                <li>@Html.ActionLink("ABOUT", "Index", "Shipwreck")</li>
+                <li>@Html.ActionLink("CONTACT", "Index", "Shipwreck")</li>
             </ul>
             @if (Request.IsAuthenticated)
             {
@@ -26,18 +22,18 @@
                     {
                         <li>@Html.ActionLink("Account Admin", "Index", "Account")</li>
                          <li>@Html.ActionLink("Add Shipwreck", "Create", "Shipwreck")</li>
-                    }
-                        @*</ul>
-                    </li>*@</ul>
+                    }@*</ul>
+                    </li>*@
+                        </ul>
                 <!-- Left Nav Section -->
 
             }
             else
             {
-                <ul class="right">
+                @*<ul class="right">
                     <li>@Html.ActionLink("Login", "Login", "Account")</li>
                     <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                </ul>
+                </ul>*@
             }
         </section>
     </nav>

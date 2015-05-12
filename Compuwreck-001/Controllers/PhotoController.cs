@@ -67,7 +67,7 @@ namespace Compuwreck_001.Controllers
                 if (ModelState.IsValid) {
                     db.Photos.Add(photo);
                     db.SaveChanges();
-                    return RedirectToAction("Index", "Shipwreck");
+                    return RedirectToAction("Edit", "Shipwreck", new { id = photo.Shipwreck_id});
                 }
             }
             else

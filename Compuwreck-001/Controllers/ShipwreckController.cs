@@ -118,7 +118,7 @@ namespace Compuwreck_001.Controllers
                 if (ModelState.IsValid) {
                     _shipwreckRepository.InsertShipwreck(shipwreck);
                     //_shipwreckRepository.Save();
-                    return RedirectToAction("Index");
+                   return RedirectToAction("Create", "Photo", new { shipwreckId = shipwreck.Shipwreck_id });
                 }
 
                 ViewBag.County_FK = new SelectList(_countyRepository.GetCounties(), "County_id", "Location", shipwreck.County_FK);
@@ -132,7 +132,6 @@ namespace Compuwreck_001.Controllers
             }
 
             return View(shipwreck);
-
         }
 
         // GET: /Shipwreck/Edit/5

@@ -113,12 +113,13 @@
     </div>
     <div class="row">
         <div class="large-12 columns">
-            @Html.LabelFor(model => model.County_FK, "County_FK", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.County_FK, "County_FK", new {@class = "control-label col-md-2"})
             @Html.DropDownList("County_FK", String.Empty)
             @Html.ValidationMessageFor(model => model.County_FK)
         </div>
-        <hr />
+        <hr/>
     </div>
+    
     <div class="row">
         <div class="large-6 columns">
             @Html.ActionLink("Back to List", "Index", null, new { @class = "button left" })
@@ -128,9 +129,7 @@
         </div>
     </div>
 }
-
 <div>
-
 </div>
 
 @section Scripts {

@@ -236,6 +236,7 @@
     <Content Include="Content\css\foundation-datepicker.css" />
     <Content Include="Content\css\foundation.css" />
     <Content Include="Content\css\normalize.css" />
+    <Content Include="Content\images\darkSeaHeader.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
