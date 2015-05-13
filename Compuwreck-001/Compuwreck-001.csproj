@@ -235,8 +235,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\foundation-datepicker.css" />
     <Content Include="Content\css\foundation.css" />
+    <Content Include="Content\css\navStyles.css" />
     <Content Include="Content\css\normalize.css" />
+    <Content Include="Content\css\responsive-nav.css" />
     <Content Include="Content\images\darkSeaHeader.jpg" />
+    <Content Include="Content\images\headerLogo.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -296,11 +299,13 @@
     <Content Include="Scripts\vendor\jquery.js" />
     <Content Include="Scripts\vendor\modernizr.js" />
     <Content Include="Scripts\vendor\placeholder.js" />
+    <Content Include="Scripts\vendor\responsive-nav.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="shipwreckImages\2149\snowCat.jpg" />
     <Content Include="shipwreckImages\2149\test.jpg" />
     <Content Include="shipwreckImages\2149\thumbs\snowCat.jpg" />
     <Content Include="shipwreckImages\2149\thumbs\test.jpg" />
+    <Content Include="testNav.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

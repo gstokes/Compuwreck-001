@@ -1694,9 +1694,8 @@ meta.foundation-mq-topbar {
 /* Wrapped around .top-bar to contain to grid width */
 .contain-to-grid {
   width: 100%;
-  background-image: url("../../Content/images/darkSeaHeader.jpg");
-  height: 200px;
 }
+
   .contain-to-grid .top-bar {
     margin-bottom: 0;
     padding-top: 20px;
@@ -6252,3 +6251,4 @@ th.hide-for-touch {
 
   th.show-for-print {
     display: table-cell !important; } }
+
