@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/css")
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    @Scripts.Render("~/Scripts")
+    @Scripts.Render("~/ScriptsJS")
 </head>
 <body>
 
@@ -16,12 +16,14 @@
 
 
     @RenderBody()
-    <div class="row">
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - IrishWrecks</p>
-        </footer>
+
+
+
+    <div class="footer" >
+        <p>&copy; @DateTime.Now.Year - IrishWrecks</p>
     </div>
+
+
     @RenderSection("scripts", required: false)
 
 

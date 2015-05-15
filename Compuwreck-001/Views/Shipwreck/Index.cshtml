@@ -6,32 +6,35 @@
     ViewBag.Title = "Search";
 }
 <div class="row">
-    <h2 class="pageTitle">Search Shipwrecks</h2>
+    <div class="large-12 columns">
+        <h2 class="searchTitle">Search Shipwrecks</h2>
 
-    @using (Html.BeginForm()) {
-        <fieldset class="search">
-            <div class="large-3 columns">
-                @Html.Label("Find by name")
-                @Html.TextBox("searchString")
-            </div>
-            <div class="small-3 columns">
-                @Html.Label("Find By County")
-                @Html.DropDownList("searchCounty", "-select county-")
-            </div>
-            <div class="large-2 columns">
-                @Html.Label("Find by Start Date")
-                @Html.TextBox("searchDateStart", null, new { @class = "fdatepicker", @placeholder = "01/01/1900" })
-            </div>
-            <div class="large-2 columns">
-                @Html.Label("Find by End Date")
-                @Html.TextBox("searchDateEnd", null, new { @class = "fdatepicker left", @placeholder = "01/01/1900" })
-            </div>
-            <div class="large-2 columns" style="padding-top: 20px;">
-                <input type="submit" value="Search" class="button" />
-            </div>
-        </fieldset> <br />
-    }
-</div>
+        @using (Html.BeginForm()) {
+            <fieldset class="search">
+                <div class="large-3 columns">
+                    @Html.Label("Find by name")
+                    @Html.TextBox("searchString")
+                </div>
+                <div class="small-3 columns">
+                    @Html.Label("Find By County")
+                    @Html.DropDownList("searchCounty", "-select county-")
+                </div>
+                <div class="large-2 columns">
+                    @Html.Label("Find by Start Date")
+                    @Html.TextBox("searchDateStart", null, new { @class = "fdatepicker", @placeholder = "01/01/1900" })
+                </div>
+                <div class="large-2 columns">
+                    @Html.Label("Find by End Date")
+                    @Html.TextBox("searchDateEnd", null, new { @class = "fdatepicker left", @placeholder = "01/01/1900" })
+                </div>
+                <div class="large-2 columns" style="padding-top: 20px;">
+                    <input type="submit" value="Search" class="button search" />
+                </div>
+            </fieldset>
+            <br />
+        }
+     </div>
+    </div>
 <div class="row">
     <div class="large-12 columns">
         <div class="pageCount">
@@ -46,10 +49,10 @@
         <table class="table">
             <tr>
                 <th width="30%">
-                    @Html.ActionLink("Last Name", "Index", new {sortOrder = ViewBag.NameSortParm})
+                    @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm })
                 </th>
                 <th width="10%">
-                    @Html.ActionLink("Date Lost", "Index", new {sortOrder = ViewBag.DateSortParm})
+                    @Html.ActionLink("Date Lost", "Index", new { sortOrder = ViewBag.DateSortParm })
                 </th>
                 <th width="30%">
                     Type
@@ -61,8 +64,7 @@
                 <th></th>
             </tr>
 
-            @foreach (var item in Model)
-            {
+            @foreach (var item in Model) {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
@@ -78,29 +80,32 @@
                     </td>
                     <td>
                         @if (@User.IsInRole("Admin")) {
-                            @Html.ActionLink("Edit", "Edit", new {id = item.Shipwreck_id, @class="button"})
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Shipwreck_id}, new { @class = "button tiny" })
                         }
-                        
-                        @Html.ActionLink("Details", "Details", new {id = item.Shipwreck_id})
 
-                        @if (@User.IsInRole("Admin"))
-                        {
-                            @Html.ActionLink("Delete", "Delete", new {id = item.Shipwreck_id})
+                        @Html.ActionLink("Details", "Details", null, new { id = item.Shipwreck_id }, new { @class = "button tiny" })
+
+                        @if (@User.IsInRole("Admin")) {
+                            @Html.ActionLink("Delete", "Delete", null, new { id = item.Shipwreck_id }, new { @class = "button tiny" })
                         }
                     </td>
                 </tr>
             }
 
         </table>
-        <br/>
+        <br />
         <div class="pageCount">
             Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
         </div>
         @Html.PagedListPager(Model, page => Url.Action("Index",
-            new {page, sortOrder = ViewBag.currentSort, currentFilter = ViewBag.currentFilter, currentCounty = ViewBag.currentCounty, dateEnd = ViewBag.dateEnd}))
+            new { page, sortOrder = ViewBag.currentSort, currentFilter = ViewBag.currentFilter, currentCounty = ViewBag.currentCounty, dateEnd = ViewBag.dateEnd }))
 
     </div>
 </div>
+
+
+
+
 
 
 

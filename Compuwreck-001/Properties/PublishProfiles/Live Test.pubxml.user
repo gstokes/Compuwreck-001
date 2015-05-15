@@ -14,7 +14,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:17:07</publishTime>
     </File>
     <File Include="bin/Compuwreck-001.dll">
-      <publishTime>05/12/2015 14:50:58</publishTime>
+      <publishTime>05/15/2015 16:36:31</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/10/2015 16:25:52</publishTime>
@@ -104,13 +104,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/19/2015 11:45:15</publishTime>
     </File>
     <File Include="Content/css/foundation-datepicker.css">
-      <publishTime>12/11/2014 04:38:52</publishTime>
+      <publishTime>11/12/2014 04:38:52</publishTime>
     </File>
     <File Include="Content/css/foundation.css">
-      <publishTime>03/27/2015 11:48:21</publishTime>
+      <publishTime>05/15/2015 16:46:41</publishTime>
+    </File>
+    <File Include="Content/css/navStyles.css">
+      <publishTime>05/15/2015 15:10:17</publishTime>
     </File>
     <File Include="Content/css/normalize.css">
-      <publishTime>02/02/2015 20:57:46</publishTime>
+      <publishTime>05/14/2015 15:04:28</publishTime>
+    </File>
+    <File Include="Content/css/responsive-nav.css">
+      <publishTime>05/13/2015 16:37:18</publishTime>
+    </File>
+    <File Include="Content/images/darkSeaHeader.jpg">
+      <publishTime>05/12/2015 15:59:24</publishTime>
+    </File>
+    <File Include="Content/images/headerLogo.png">
+      <publishTime>05/12/2015 16:04:04</publishTime>
+    </File>
+    <File Include="Content/images/icon_addTitle.png">
+      <publishTime>05/15/2015 09:53:44</publishTime>
+    </File>
+    <File Include="Content/images/icon_deleteTitle.png">
+      <publishTime>05/15/2015 15:53:48</publishTime>
+    </File>
+    <File Include="Content/images/icon_detailsTitle.png">
+      <publishTime>05/15/2015 09:38:18</publishTime>
+    </File>
+    <File Include="Content/images/icon_editTitle.png">
+      <publishTime>05/15/2015 09:48:32</publishTime>
+    </File>
+    <File Include="Content/images/icon_loginTitle.png">
+      <publishTime>05/15/2015 16:18:50</publishTime>
+    </File>
+    <File Include="Content/images/icon_searchTitle.png">
+      <publishTime>05/14/2015 12:06:31</publishTime>
+    </File>
+    <File Include="Content/images/pageTitleIcon.png">
+      <publishTime>05/14/2015 12:06:31</publishTime>
     </File>
     <File Include="Content/PagedList.css">
       <publishTime>03/10/2015 16:44:00</publishTime>
@@ -250,8 +283,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/vendor/placeholder.js">
       <publishTime>02/02/2015 20:57:46</publishTime>
     </File>
+    <File Include="Scripts/vendor/responsive-nav.js">
+      <publishTime>04/09/2015 09:33:44</publishTime>
+    </File>
     <File Include="Scripts/_references.js">
-      <publishTime>03/19/2015 16:33:22</publishTime>
+      <publishTime>05/15/2015 16:35:34</publishTime>
     </File>
     <File Include="shipwreckImages/2149/snowCat.jpg">
       <publishTime>03/20/2015 14:51:45</publishTime>
@@ -264,6 +300,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="shipwreckImages/2149/thumbs/test.jpg">
       <publishTime>03/20/2015 14:54:24</publishTime>
+    </File>
+    <File Include="testNav.html">
+      <publishTime>05/13/2015 10:03:08</publishTime>
     </File>
     <File Include="Views/Account/Delete.cshtml">
       <publishTime>03/25/2015 17:15:30</publishTime>
@@ -281,7 +320,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/26/2015 09:59:30</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>03/26/2015 12:43:05</publishTime>
+      <publishTime>05/15/2015 16:20:15</publishTime>
     </File>
     <File Include="Views/Account/LogOff.cshtml">
       <publishTime>03/26/2015 11:54:50</publishTime>
@@ -320,7 +359,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/20/2015 12:10:36</publishTime>
     </File>
     <File Include="Views/Photo/Delete.cshtml">
-      <publishTime>03/20/2015 14:43:18</publishTime>
+      <publishTime>05/15/2015 16:06:08</publishTime>
     </File>
     <File Include="Views/Photo/Details.cshtml">
       <publishTime>03/13/2015 16:19:46</publishTime>
@@ -338,31 +377,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/26/2015 12:44:17</publishTime>
+      <publishTime>05/15/2015 15:34:33</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>03/10/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Shared/_PrimaryNavigation.cshtml">
-      <publishTime>03/27/2015 11:45:43</publishTime>
+      <publishTime>05/13/2015 17:00:34</publishTime>
     </File>
     <File Include="Views/Shipwreck/Create.cshtml">
-      <publishTime>05/12/2015 11:13:02</publishTime>
+      <publishTime>05/15/2015 14:59:47</publishTime>
     </File>
     <File Include="Views/Shipwreck/Delete.cshtml">
-      <publishTime>03/19/2015 15:40:25</publishTime>
+      <publishTime>05/15/2015 16:35:20</publishTime>
     </File>
     <File Include="Views/Shipwreck/Details.cshtml">
-      <publishTime>03/27/2015 12:32:04</publishTime>
+      <publishTime>05/15/2015 16:29:36</publishTime>
     </File>
     <File Include="Views/Shipwreck/Dump.cshtml">
       <publishTime>03/23/2015 14:31:21</publishTime>
     </File>
     <File Include="Views/Shipwreck/Edit.cshtml">
-      <publishTime>03/20/2015 15:21:56</publishTime>
+      <publishTime>05/15/2015 16:32:55</publishTime>
     </File>
     <File Include="Views/Shipwreck/Index.cshtml">
-      <publishTime>04/17/2015 15:18:49</publishTime>
+      <publishTime>05/15/2015 16:23:52</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>03/10/2015 16:16:57</publishTime>
@@ -371,7 +410,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:16:57</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/12/2015 14:51:01</publishTime>
+      <publishTime>05/15/2015 16:36:34</publishTime>
     </File>
   </ItemGroup>
 </Project>

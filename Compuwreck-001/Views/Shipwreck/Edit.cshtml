@@ -7,8 +7,7 @@
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     <div class="row">
-        <h2 class="pageTitle">Edit Shipwreck Record</h2>
-        <hr />
+        <h2 class="editTitle">Edit Shipwreck Record</h2>
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Shipwreck_id)
     </div>
@@ -19,7 +18,7 @@
             @Html.ValidationMessageFor(model => model.Name)
         </div>
     </div>
-
+    
     <div class="row">
         <div class="large-4 columns">
             @Html.LabelFor(model => model.Type)
@@ -36,7 +35,7 @@
             @Html.EditorFor(model => model.Tonnage)
             @Html.ValidationMessageFor(model => model.Tonnage)
         </div>
-        <hr />
+        <hr class="dotted" />
     </div>
     <div class="row">
         <div class="large-4 columns left">
@@ -55,7 +54,7 @@
             @Html.EditorFor(model => model.Locality)
             @Html.ValidationMessageFor(model => model.Locality)
         </div>
-        <hr />
+        <hr class="dotted" />
     </div>
 
     <div class="row">
@@ -108,9 +107,15 @@
             @Html.EditorFor(model => model.U_Boat)
             @Html.ValidationMessageFor(model => model.U_Boat)
         </div>
-        <hr />
+        <hr class="dotted" />
     </div>
 
+    
+    <div class="row">
+        <div class="large-12 columns">
+            <h3 class="related">Related Images:</h3>
+        </div>
+    </div>
     <div class="row">
         <div class="large-12 columns">
             <table class="table">
@@ -123,15 +128,15 @@
                     <tr>
                         <td width="30%"><img src="@Url.Content(item.URL + "/thumbs/" + item.FileName)" width="100" height="90" /></td>
                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                        <td width ="20%">@Html.ActionLink("Delete Photo", "Delete", "Photo", new { photoId = item.Photo_id }, null)</td>
+                        <td width ="20%">@Html.ActionLink("Delete Photo", "Delete", "Photo", new { photoId = item.Photo_id }, new { @class = "button tiny right" })</td>
                     </tr>
                 }
             </table>
             @Html.ActionLink("Add new Photo", "Create", "Photo", new { shipwreckId = Model.Shipwreck_id }, new { @class = "button right" })
             <br /><br />
-
+            <br />
         </div>
-        <hr />
+        <hr class="dotted"/>
     </div>
 
     <div class="row">

@@ -8,8 +8,7 @@
     @Html.AntiForgeryToken()
 
     <div class="row">
-        <h2 class="pageTitle">Add Shipwreck</h2>
-        <hr />
+        <h2 class="addTitle">Add Shipwreck</h2>
         @Html.ValidationSummary(true)
     </div>
 
@@ -20,106 +19,97 @@
             @Html.ValidationMessageFor(model => model.Name)
         </div>
     </div>
-
+    
     <div class="row">
         <div class="large-4 columns">
-            @Html.LabelFor(model => model.Type, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Type)
             @Html.EditorFor(model => model.Type)
             @Html.ValidationMessageFor(model => model.Type)
         </div>
         <div class="large-4 columns">
-            @Html.LabelFor(model => model.Dimensions, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Dimensions)
             @Html.EditorFor(model => model.Dimensions)
             @Html.ValidationMessageFor(model => model.Dimensions)
         </div>
         <div class="large-4 columns">
-            @Html.LabelFor(model => model.Tonnage, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Tonnage)
             @Html.EditorFor(model => model.Tonnage)
             @Html.ValidationMessageFor(model => model.Tonnage)
         </div>
+        <hr class="dotted" />
     </div>
-
     <div class="row">
-        <div class="large-4 columns">
-            @Html.LabelFor(model => model.Armament, new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.Armament)
-            @Html.ValidationMessageFor(model => model.Armament)
-        </div>
-        <div class="large-4 columns">
-            @Html.LabelFor(model => model.DateLost, new { @class = "control-label col-md-2" })
+        <div class="large-4 columns left">
+            @Html.LabelFor(model => model.DateLost)
             @Html.EditorFor(model => model.DateLost)
             @Html.ValidationMessageFor(model => model.DateLost)
         </div>
 
         <div class="large-4 columns">
-            @Html.LabelFor(model => model.DateExtn, new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.DateExtn)
-            @Html.ValidationMessageFor(model => model.DateExtn)
+            @Html.LabelFor(model => model.County_FK, "County")
+            @Html.DropDownList("County_FK", String.Empty)
+        </div>
+
+        <div class="large-4 columns">
+            @Html.LabelFor(model => model.Locality)
+            @Html.EditorFor(model => model.Locality)
+            @Html.ValidationMessageFor(model => model.Locality)
+        </div>
+        <hr class="dotted" />
+    </div>
+
+    <div class="row">
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.WindDir, "Wind Direction")
+            @Html.EditorFor(model => model.WindDir)
+            @Html.ValidationMessageFor(model => model.WindDir)
+        </div>
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.WindForce, "Wind Force")
+            @Html.EditorFor(model => model.WindForce)
+            @Html.ValidationMessageFor(model => model.WindForce)
         </div>
     </div>
 
     <div class="row">
-        <div class="large-4 columns">
-            @Html.LabelFor(model => model.Locality, new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.Locality)
-            @Html.ValidationMessageFor(model => model.Locality)
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.Armament)
+            @Html.EditorFor(model => model.Armament)
+            @Html.ValidationMessageFor(model => model.Armament)
         </div>
-        <div class="large-4 columns">
-            @Html.LabelFor(model => model.PosExtn, new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.PosExtn)
-            @Html.ValidationMessageFor(model => model.PosExtn)
-        </div>
-        <div class="large-4 columns">
-            @Html.LabelFor(model => model.Cargo, new { @class = "control-label col-md-2" })
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.Cargo)
             @Html.EditorFor(model => model.Cargo)
             @Html.ValidationMessageFor(model => model.Cargo)
         </div>
     </div>
 
     <div class="row">
-        <div class="large-4 columns">
-            @Html.LabelFor(model => model.WindDir, new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.WindDir)
-            @Html.ValidationMessageFor(model => model.WindDir)
-        </div>
-        <div class="large-4 columns">
-            @Html.LabelFor(model => model.WindForce, new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.WindForce)
-            @Html.ValidationMessageFor(model => model.WindForce)
-        </div>
-        <div class="large-4 columns">
-            @Html.LabelFor(model => model.References, new { @class = "control-label col-md-2" })
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.References)
             @Html.EditorFor(model => model.References)
             @Html.ValidationMessageFor(model => model.References)
+        </div>
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.Remarks)
+            @Html.EditorFor(model => model.Remarks)
+            @Html.ValidationMessageFor(model => model.Remarks)
         </div>
     </div>
 
     <div class="row">
-        <div class="large-4 columns">
-            @Html.LabelFor(model => model.Remarks, new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.Remarks)
-            @Html.ValidationMessageFor(model => model.Remarks)
-        </div>
-        <div class="large-4 columns">
-            @Html.LabelFor(model => model.U_Boat, new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.U_Boat)
-            @Html.ValidationMessageFor(model => model.U_Boat)
-        </div>
-        <div class="large-4 columns">
-            @Html.LabelFor(model => model.Event_FK, "Event_FK", new { @class = "control-label col-md-2" })
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.Event_FK, "Event Type")
             @Html.DropDownList("Event_FK", String.Empty)
             @Html.ValidationMessageFor(model => model.Event_FK)
         </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            @Html.LabelFor(model => model.County_FK, "County_FK", new {@class = "control-label col-md-2"})
-            @Html.DropDownList("County_FK", String.Empty)
-            @Html.ValidationMessageFor(model => model.County_FK)
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.U_Boat)
+            @Html.EditorFor(model => model.U_Boat)
+            @Html.ValidationMessageFor(model => model.U_Boat)
         </div>
-        <hr/>
+        <hr class="dotted" />
     </div>
-    
     <div class="row">
         <div class="large-6 columns">
             @Html.ActionLink("Back to List", "Index", null, new { @class = "button left" })

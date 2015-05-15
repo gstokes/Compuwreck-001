@@ -19,12 +19,12 @@ namespace Compuwreck_001
             //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
             //            "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/Scripts").Include(
+            bundles.Add(new ScriptBundle("~/ScriptsJS").Include(
                 "~/Scripts/foundation/foundation.js",
                 "~/Scripts/foundation/foundation.reveal.js",
                 "~/Scripts/vendor/responsive-nav.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/css").Include(
                       "~/Content/css/foundation.css",
                       "~/Content/css/responsive-nav.css",
                       "~/Content/css/navStyles.css"

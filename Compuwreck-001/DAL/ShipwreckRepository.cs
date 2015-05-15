@@ -13,14 +13,10 @@ namespace Compuwreck_001.DAL {
             _db = db;
         }
 
-        public IEnumerable<Shipwreck> GetShipwrecks(string searchString, int? searchCounty, string searchDateStart, string searchDateEnd, string sortOrder) {
-
-            IQueryable<Shipwreck> shipwrecks;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-
-                shipwrecks = _db.Shipwrecks.Include(s => s.County).Include(s => s.Event);
+        public IEnumerable<Shipwreck> GetShipwrecks(string searchString, int? searchCounty, string searchDateStart, string searchDateEnd, string sortOrder) 
+        {
+            var shipwrecks = _db.Shipwrecks.Include(s => s.County).Include(s => s.Event);
+            
 
                 // Keyword filter
                 if (!String.IsNullOrEmpty(searchString))
@@ -63,14 +59,8 @@ namespace Compuwreck_001.DAL {
                         shipwrecks = shipwrecks.OrderBy(s => s.Name);
                         break;
                 }
-            }
-            else
-            {
-                shipwrecks = _db.Shipwrecks.Where(s => s.Name == "347**");
-            }
             return shipwrecks.ToList();
         }
-
 
         public Shipwreck GetShipwreckById(int id) {
             var shipwreck = _db.Shipwrecks.Find(id);

@@ -1,44 +1,41 @@
 ﻿@using Microsoft.AspNet.Identity
-<div class="contain-to-grid sticky">
-    <nav class="top-bar" data-topbar data-options="is_hover: false, mobile_show_parent_link: true">
-        <ul class="title-area">
-            <li class="name">
-                IRISHWRECKS
-            </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-        </ul>
-
-        <section class="top-bar-section">
-            <ul class="left">
-                <li>@Html.ActionLink("Search", "Index", "Shipwreck")</li>
-            </ul>
-            @if (Request.IsAuthenticated)
-            {
-                <!-- Right Nav Section -->
-                <ul class="right logged">
-                    @*<li class="has-dropdown">
-                        <a href="#"><img src="~/Content/Themes/Default/images/icon_user.png" width="30" height="20" />@User.Identity.Name logged In</a>
-                        <ul class="dropdown">*@
-                    <li>@Html.ActionLink("Logout", "LogOff", "Account")</li>
-                    <li>@Html.ActionLink("Profile", "Edit", "Account", new {id = @User.Identity.Name}, null)</li>
-                    @if (@User.IsInRole("Admin"))
-                    {
-                        <li>@Html.ActionLink("Account Admin", "Index", "Account")</li>
-                         <li>@Html.ActionLink("Add Shipwreck", "Create", "Shipwreck")</li>
-                    }
-                        @*</ul>
-                    </li>*@</ul>
-                <!-- Left Nav Section -->
-
-            }
-            else
-            {
+<div class="header">
+    <div class="row">
+        <div id="navAdmin">
+            @if (Request.IsAuthenticated) {
                 <ul class="right">
-                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    @*<li class="has-dropdown">
+                    <a href="#"><img src="~/Content/Themes/Default/images/icon_user.png" width="30" height="20" />@User.Identity.Name logged In</a>
+                    <ul class="dropdown">*@
+                    <li>@Html.ActionLink("Logout", "LogOff", "Account")</li>
+                    <li>@Html.ActionLink("Profile", "Edit", "Account", new { id = @User.Identity.Name }, null)</li>
+                    @if (@User.IsInRole("Admin")) {
+                        <li>@Html.ActionLink("Account Admin", "Index", "Account")</li>
+                        <li>@Html.ActionLink("Add Shipwreck", "Create", "Shipwreck")</li>
+                    }@*</ul>
+                    </li>*@
                 </ul>
             }
-        </section>
-    </nav>
+            else {
+                <ul class="right">
+                    <li>@Html.ActionLink("LOGIN", "Login", "Account")</li>
+                    <li>@Html.ActionLink("REGISTER", "Register", "Account")</li>
+                </ul>
+            }
+        </div>
+
+
+        <div class="headerLogo">
+            <img src="~/Content/images/headerLogo.png"/>
+        </div>
+
+        <nav class="nav-collapse">
+            <ul>
+                <li>@Html.ActionLink("HOME", "Index", "Shipwreck")</li>
+                <li>@Html.ActionLink("SEARCH", "Index", "Shipwreck")</li>
+                <li>@Html.ActionLink("ABOUT", "Index", "Shipwreck")</li>
+                <li>@Html.ActionLink("CONTACT", "Index", "Shipwreck")</li>
+            </ul>
+        </nav>
+    </div>
 </div>

@@ -4,12 +4,13 @@
     ViewBag.Title = "Log in";
 }
 <div class="row">
-    <h2 class="pageTitle"> @ViewBag.Title .</h2>
+    
+   
 
     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
         <div class="large-6 small-centered columns">
-
-            <div class="panel callout radius">
+            <h2 class="loginTitle"> @ViewBag.Title</h2>
+            <div class="panel radius">
                 Please enter your user name and password. @Html.ActionLink("Register", "Register") if you don't have an account
                 or @Html.ActionLink("have your login emailed to you", "ForgotLogin") if you have forgotten it.
             </div>

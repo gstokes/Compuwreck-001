@@ -182,6 +182,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\StringExtensions.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs">
@@ -240,6 +241,12 @@
     <Content Include="Content\css\responsive-nav.css" />
     <Content Include="Content\images\darkSeaHeader.jpg" />
     <Content Include="Content\images\headerLogo.png" />
+    <Content Include="Content\images\icon_addTitle.png" />
+    <Content Include="Content\images\icon_deleteTitle.png" />
+    <Content Include="Content\images\icon_detailsTitle.png" />
+    <Content Include="Content\images\icon_editTitle.png" />
+    <Content Include="Content\images\icon_loginTitle.png" />
+    <Content Include="Content\images\icon_searchTitle.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -301,10 +308,6 @@
     <Content Include="Scripts\vendor\placeholder.js" />
     <Content Include="Scripts\vendor\responsive-nav.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="shipwreckImages\2149\snowCat.jpg" />
-    <Content Include="shipwreckImages\2149\test.jpg" />
-    <Content Include="shipwreckImages\2149\thumbs\snowCat.jpg" />
-    <Content Include="shipwreckImages\2149\thumbs\test.jpg" />
     <Content Include="testNav.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -350,6 +353,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="shipwreckImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
