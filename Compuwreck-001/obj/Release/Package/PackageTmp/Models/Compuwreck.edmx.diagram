@@ -5,19 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="51c08507992742c5bb4dd611548678e3" Name="Diagram1">
-        <EntityTypeShape EntityType="CompuwreckModel.County" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CompuwreckModel.Event" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CompuwreckModel.Location" Width="1.5" PointX="5.375" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="CompuwreckModel.Photo" Width="1.5" PointX="5.375" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CompuwreckModel.Shipwreck" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompuwreckModel.County" Width="1.5" PointX="1.125" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompuwreckModel.Event" Width="1.5" PointX="1.125" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompuwreckModel.Location" Width="1.5" PointX="1.125" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompuwreckModel.Photo" Width="1.5" PointX="5.125" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompuwreckModel.Shipwreck" Width="1.5" PointX="3.125" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="CompuwreckModel.fk_County" ManuallyRouted="false" />
         <AssociationConnector Association="CompuwreckModel.FK__SHIPWRECK__Event__07020F21" ManuallyRouted="false" />
         <AssociationConnector Association="CompuwreckModel.FK_Location_Shipwreck" ManuallyRouted="false" />
         <AssociationConnector Association="CompuwreckModel.FK_ShipwreckID" />
-        <EntityTypeShape EntityType="CompuwreckModel.AspNetRole" Width="1.5" PointX="7.25" PointY="0.625" />
-        <EntityTypeShape EntityType="CompuwreckModel.AspNetUserClaim" Width="1.5" PointX="7.25" PointY="2.875" />
-        <EntityTypeShape EntityType="CompuwreckModel.AspNetUserLogin" Width="1.5" PointX="9.375" PointY="3.5" />
-        <EntityTypeShape EntityType="CompuwreckModel.AspNetUser" Width="1.5" PointX="9.375" PointY="0.625" />
+        <EntityTypeShape EntityType="CompuwreckModel.AspNetRole" Width="1.5" PointX="11.75" PointY="5.875" />
+        <EntityTypeShape EntityType="CompuwreckModel.AspNetUserClaim" Width="1.5" PointX="11.75" PointY="1.375" />
+        <EntityTypeShape EntityType="CompuwreckModel.AspNetUserLogin" Width="1.5" PointX="11.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CompuwreckModel.AspNetUser" Width="1.5" PointX="9.75" PointY="1.375" />
         <AssociationConnector Association="CompuwreckModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" />
         <AssociationConnector Association="CompuwreckModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="CompuwreckModel.AspNetUserRoles" />

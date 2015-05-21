@@ -6,7 +6,7 @@ using System.Web;
 using Compuwreck_001.Models;
 
 namespace Compuwreck_001.DAL {
-    public class ShipwreckRepository : IShipwreckRepository, IDisposable {
+    public class ShipwreckRepository : IShipwreckRepository{
         private readonly CompuwreckEntities _db;
 
         public ShipwreckRepository(CompuwreckEntities db) {
@@ -60,6 +60,13 @@ namespace Compuwreck_001.DAL {
                         break;
                 }
             return shipwrecks.ToList();
+        }
+
+        public IEnumerable<Shipwreck> ShipwreckMapData(int? shipwreckId) {
+            var results = new List<Shipwreck>();
+
+            results = _db.Shipwrecks.OrderBy(s => s.Name).ToList();
+            return results;
         }
 
         public Shipwreck GetShipwreckById(int id) {

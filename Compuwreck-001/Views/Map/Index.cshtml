@@ -1,0 +1,34 @@
+﻿
+@section AddToHead{
+    <link href="../compuwreck/Scripts/vendor/leaflet-0.7.2/leaflet.css" rel="stylesheet" />
+    <script src="../compuwreck/Scripts/jquery-1.10.2.js"></script>
+    <script src="../compuwreck/Scripts/vendor/leaflet-0.7.2/leaflet.js"></script>
+    <script src="../compuwreck/Scripts/vendor/leaflet-0.7.2/leaflet-google.js"></script>
+    <script src="../compuwreck/Scripts/vendor/leaflet-0.7.2/easy-button.js"></script>
+    <script src="../compuwreck/Scripts/vendor/JQuery/jquery.blockUI.js"></script>
+    <script src="../compuwreck/Scripts/vendor/mapviewer.js"></script>
+    <script src="../compuwreck/Scripts/json2.js"></script>
+
+    <!-- CLUSTERING ASSETS -->
+    <link rel="stylesheet" href="../compuwreck/Scripts/vendor/cluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="../compuwreck/Scripts/vendor/cluster/MarkerCluster.Default.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="/cluster/MarkerCluster.Default.ie.css" /><![endif]-->
+    <script src="../compuwreck/Scripts/vendor/cluster/leaflet.markercluster-src.js"></script>
+    <style type="text/css">
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    html, body, form, #map {
+        height: 100%;
+    }
+</style>
+
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="width: 100%;" id="map"></div>

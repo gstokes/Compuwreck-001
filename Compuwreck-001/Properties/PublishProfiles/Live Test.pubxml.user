@@ -11,181 +11,190 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>03/10/2015 16:17:07</publishTime>
+      <publishTime>10/03/2015 16:17:07</publishTime>
     </File>
     <File Include="bin/Compuwreck-001.dll">
-      <publishTime>05/15/2015 16:36:31</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>03/10/2015 16:25:52</publishTime>
+      <publishTime>10/03/2015 16:25:52</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>03/10/2015 16:25:52</publishTime>
+      <publishTime>10/03/2015 16:25:52</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
-      <publishTime>03/10/2015 16:17:09</publishTime>
+      <publishTime>10/03/2015 16:17:09</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
-      <publishTime>03/10/2015 16:17:09</publishTime>
+      <publishTime>10/03/2015 16:17:09</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
-      <publishTime>03/10/2015 16:17:09</publishTime>
+      <publishTime>10/03/2015 16:17:09</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
-      <publishTime>03/10/2015 16:17:09</publishTime>
+      <publishTime>10/03/2015 16:17:09</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.dll">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Google.dll">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>03/10/2015 16:17:06</publishTime>
+      <publishTime>10/03/2015 16:17:06</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>03/10/2015 16:17:07</publishTime>
+      <publishTime>10/03/2015 16:17:07</publishTime>
     </File>
     <File Include="bin/Owin.dll">
-      <publishTime>03/10/2015 16:17:09</publishTime>
+      <publishTime>10/03/2015 16:17:09</publishTime>
     </File>
     <File Include="bin/PagedList.dll">
-      <publishTime>03/10/2015 16:43:59</publishTime>
+      <publishTime>10/03/2015 16:43:59</publishTime>
     </File>
     <File Include="bin/PagedList.Mvc.dll">
-      <publishTime>03/10/2015 16:43:59</publishTime>
+      <publishTime>10/03/2015 16:43:59</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>03/10/2015 16:17:06</publishTime>
+      <publishTime>10/03/2015 16:17:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>03/10/2015 16:17:06</publishTime>
+      <publishTime>10/03/2015 16:17:06</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>03/10/2015 16:17:06</publishTime>
+      <publishTime>10/03/2015 16:17:06</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>03/10/2015 16:17:06</publishTime>
+      <publishTime>10/03/2015 16:17:06</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>03/10/2015 16:17:06</publishTime>
+      <publishTime>10/03/2015 16:17:06</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>03/10/2015 16:17:06</publishTime>
+      <publishTime>10/03/2015 16:17:06</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>03/10/2015 16:17:06</publishTime>
+      <publishTime>10/03/2015 16:17:06</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>03/10/2015 16:17:07</publishTime>
+      <publishTime>10/03/2015 16:17:07</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>03/10/2015 16:17:03</publishTime>
+      <publishTime>10/03/2015 16:17:03</publishTime>
     </File>
     <File Include="Content/css/bootstrap.css">
-      <publishTime>03/19/2015 11:45:15</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/css/foundation-datepicker.css">
       <publishTime>11/12/2014 04:38:52</publishTime>
     </File>
     <File Include="Content/css/foundation.css">
-      <publishTime>05/15/2015 16:46:41</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/css/navStyles.css">
-      <publishTime>05/15/2015 15:10:17</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/css/normalize.css">
-      <publishTime>05/14/2015 15:04:28</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/css/responsive-nav.css">
-      <publishTime>05/13/2015 16:37:18</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/images/darkSeaHeader.jpg">
-      <publishTime>05/12/2015 15:59:24</publishTime>
+      <publishTime>12/05/2015 15:59:24</publishTime>
     </File>
     <File Include="Content/images/headerLogo.png">
-      <publishTime>05/12/2015 16:04:04</publishTime>
+      <publishTime>12/05/2015 16:04:04</publishTime>
     </File>
     <File Include="Content/images/icon_addTitle.png">
-      <publishTime>05/15/2015 09:53:44</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/images/icon_deleteTitle.png">
-      <publishTime>05/15/2015 15:53:48</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/images/icon_detailsTitle.png">
-      <publishTime>05/15/2015 09:38:18</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/images/icon_editTitle.png">
-      <publishTime>05/15/2015 09:48:32</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/images/icon_loginTitle.png">
-      <publishTime>05/15/2015 16:18:50</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/images/icon_searchTitle.png">
-      <publishTime>05/14/2015 12:06:31</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/images/pageTitleIcon.png">
-      <publishTime>05/14/2015 12:06:31</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/PagedList.css">
-      <publishTime>03/10/2015 16:44:00</publishTime>
+      <publishTime>10/03/2015 16:44:00</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>03/10/2015 16:17:08</publishTime>
+      <publishTime>10/03/2015 16:17:08</publishTime>
     </File>
     <File Include="Controllers/AccountController.cs">
-      <publishTime>03/27/2015 12:37:58</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="favicon.ico">
-      <publishTime>03/10/2015 16:16:57</publishTime>
+      <publishTime>10/03/2015 16:16:57</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
-      <publishTime>03/10/2015 16:17:03</publishTime>
+      <publishTime>10/03/2015 16:17:03</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.svg">
-      <publishTime>03/10/2015 16:17:03</publishTime>
+      <publishTime>10/03/2015 16:17:03</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>03/10/2015 16:17:03</publishTime>
+      <publishTime>10/03/2015 16:17:03</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.woff">
-      <publishTime>03/10/2015 16:17:03</publishTime>
+      <publishTime>10/03/2015 16:17:03</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>03/10/2015 16:16:57</publishTime>
     </File>
     <File Include="Models/Compuwreck.edmx.diagram">
-      <publishTime>03/25/2015 17:15:30</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>03/10/2015 16:44:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
-      <publishTime>03/10/2015 16:17:03</publishTime>
+      <publishTime>10/03/2015 16:17:03</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
-      <publishTime>03/10/2015 16:17:02</publishTime>
+      <publishTime>10/03/2015 16:17:02</publishTime>
     </File>
     <File Include="Scripts/foundation/foundation-datepicker.js">
-      <publishTime>02/27/2015 09:33:42</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/foundation/foundation.abide.js">
       <publishTime>02/02/2015 20:57:46</publishTime>
@@ -239,34 +248,52 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2015 20:57:46</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
-      <publishTime>03/10/2015 16:17:04</publishTime>
+      <publishTime>10/03/2015 16:17:04</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.min.js">
-      <publishTime>03/10/2015 16:17:04</publishTime>
+      <publishTime>10/03/2015 16:17:04</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.min.map">
-      <publishTime>03/10/2015 16:17:04</publishTime>
+      <publishTime>10/03/2015 16:17:04</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.js">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.min.js">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.js">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.min.js">
-      <publishTime>03/10/2015 16:17:10</publishTime>
+      <publishTime>10/03/2015 16:17:10</publishTime>
+    </File>
+    <File Include="Scripts/json2.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.6.2.js">
-      <publishTime>03/10/2015 16:17:07</publishTime>
+      <publishTime>10/03/2015 16:17:07</publishTime>
     </File>
     <File Include="Scripts/respond.js">
-      <publishTime>03/10/2015 16:17:08</publishTime>
+      <publishTime>10/03/2015 16:17:08</publishTime>
     </File>
     <File Include="Scripts/respond.min.js">
-      <publishTime>03/10/2015 16:17:07</publishTime>
+      <publishTime>10/03/2015 16:17:07</publishTime>
+    </File>
+    <File Include="Scripts/vendor/cluster/leaflet.markercluster-src.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/cluster/leaflet.markercluster.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/cluster/MarkerCluster.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/cluster/MarkerCluster.Default.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/cluster/MarkerCluster.Default.ie.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/vendor/fastclick.js">
       <publishTime>02/02/2015 20:57:46</publishTime>
@@ -276,6 +303,69 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/vendor/jquery.js">
       <publishTime>02/02/2015 20:57:46</publishTime>
+    </File>
+    <File Include="Scripts/vendor/JQuery/jquery-1.10.2.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/JQuery/jquery-placeholder.js">
+      <publishTime>12/03/2014 09:36:28</publishTime>
+    </File>
+    <File Include="Scripts/vendor/JQuery/jquery-ui-1.10.3.custom.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/JQuery/jquery-ui-1.10.3.custom.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/JQuery/jquery-ui.custom.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/JQuery/jquery.blockUI.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/JQuery/jquery.placeholder.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/JQuery/jquery.ui.datepicker-en-GB.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/JQuery/jquery.watermark.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/JQuery/jquery.watermarkinput.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/leaflet-0.7.2/easy-button.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/leaflet-0.7.2/images/layers-2x.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/leaflet-0.7.2/images/layers.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/leaflet-0.7.2/images/marker-icon-2x.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/leaflet-0.7.2/images/marker-icon.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/leaflet-0.7.2/images/marker-shadow.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/leaflet-0.7.2/leaflet-google.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/leaflet-0.7.2/leaflet-src.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/leaflet-0.7.2/leaflet.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/leaflet-0.7.2/leaflet.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/vendor/mapviewer.js">
+      <publishTime>05/21/2015 15:24:57</publishTime>
     </File>
     <File Include="Scripts/vendor/modernizr.js">
       <publishTime>02/02/2015 20:57:46</publishTime>
@@ -287,130 +377,136 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/09/2015 09:33:44</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>05/15/2015 16:35:34</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="shipwreckImages/2149/snowCat.jpg">
-      <publishTime>03/20/2015 14:51:45</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="shipwreckImages/2149/test.jpg">
-      <publishTime>03/20/2015 14:54:21</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="shipwreckImages/2149/thumbs/snowCat.jpg">
-      <publishTime>03/20/2015 14:51:47</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="shipwreckImages/2149/thumbs/test.jpg">
-      <publishTime>03/20/2015 14:54:24</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="test.html">
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="testNav.html">
-      <publishTime>05/13/2015 10:03:08</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Account/Delete.cshtml">
-      <publishTime>03/25/2015 17:15:30</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Account/Edit.cshtml">
-      <publishTime>03/26/2015 10:07:22</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
-      <publishTime>03/10/2015 16:17:08</publishTime>
+      <publishTime>10/03/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Account/ExternalLoginFailure.cshtml">
-      <publishTime>03/10/2015 16:17:08</publishTime>
+      <publishTime>10/03/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Account/Index.cshtml">
-      <publishTime>03/26/2015 09:59:30</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>05/15/2015 16:20:15</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Account/LogOff.cshtml">
-      <publishTime>03/26/2015 11:54:50</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Account/Manage.cshtml">
-      <publishTime>03/25/2015 17:15:30</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>03/27/2015 12:39:31</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Account/UserRoles.cshtml">
-      <publishTime>03/26/2015 10:00:44</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Account/_ChangePasswordPartial.cshtml">
-      <publishTime>03/10/2015 16:17:08</publishTime>
+      <publishTime>10/03/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
-      <publishTime>03/10/2015 16:17:08</publishTime>
+      <publishTime>10/03/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Account/_RemoveAccountPartial.cshtml">
-      <publishTime>03/10/2015 16:17:08</publishTime>
+      <publishTime>10/03/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Account/_SetPasswordPartial.cshtml">
-      <publishTime>03/10/2015 16:17:08</publishTime>
+      <publishTime>10/03/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>03/10/2015 16:16:57</publishTime>
+      <publishTime>10/03/2015 16:16:57</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
-      <publishTime>03/10/2015 16:16:57</publishTime>
+      <publishTime>10/03/2015 16:16:57</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>03/27/2015 12:04:11</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Views/Map/Index.cshtml">
+      <publishTime>05/21/2015 15:26:38</publishTime>
     </File>
     <File Include="Views/Photo/Create.cshtml">
-      <publishTime>03/20/2015 12:10:36</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Photo/Delete.cshtml">
-      <publishTime>05/15/2015 16:06:08</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Photo/Details.cshtml">
-      <publishTime>03/13/2015 16:19:46</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Photo/Edit.cshtml">
-      <publishTime>03/13/2015 16:34:53</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Photo/Index.cshtml">
-      <publishTime>03/13/2015 16:19:47</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/EditorTemplates/SelectRoleEditorViewModel.cshtml">
-      <publishTime>03/25/2015 17:15:30</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>03/10/2015 16:17:08</publishTime>
+      <publishTime>10/03/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/15/2015 15:34:33</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>03/10/2015 16:17:08</publishTime>
+      <publishTime>10/03/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Shared/_PrimaryNavigation.cshtml">
-      <publishTime>05/13/2015 17:00:34</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shipwreck/Create.cshtml">
-      <publishTime>05/15/2015 14:59:47</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shipwreck/Delete.cshtml">
-      <publishTime>05/15/2015 16:35:20</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shipwreck/Details.cshtml">
-      <publishTime>05/15/2015 16:29:36</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shipwreck/Dump.cshtml">
-      <publishTime>03/23/2015 14:31:21</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shipwreck/Edit.cshtml">
-      <publishTime>05/15/2015 16:32:55</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shipwreck/Index.cshtml">
-      <publishTime>05/15/2015 16:23:52</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>03/10/2015 16:16:57</publishTime>
+      <publishTime>10/03/2015 16:16:57</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>03/10/2015 16:16:57</publishTime>
+      <publishTime>10/03/2015 16:16:57</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/15/2015 16:36:34</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
   </ItemGroup>
 </Project>

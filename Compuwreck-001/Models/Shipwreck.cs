@@ -7,9 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
 namespace Compuwreck_001.Models
 {
     using System;
@@ -22,42 +19,26 @@ namespace Compuwreck_001.Models
             this.Locations = new HashSet<Location>();
             this.Photos = new HashSet<Photo>();
         }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
+    
         public int Shipwreck_id { get; set; }
         public string Name { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
         public string Type { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
         public string Dimensions { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
         public string Tonnage { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
         public string Armament { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-", ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
-        [DisplayName ("Date Lost")]
         public Nullable<System.DateTime> DateLost { get; set; }
         public string DateExtn { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
         public string Locality { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
         public string PosExtn { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
         public string Cargo { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
-        [DisplayName("Wind Direction")]
         public string WindDir { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
-        [DisplayName("Wind Force")]
         public string WindForce { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
         public string References { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
         public string Remarks { get; set; }
-        [DisplayFormat(NullDisplayText = "-No Value-")]
         public string U_Boat { get; set; }
         public Nullable<int> Event_FK { get; set; }
         public Nullable<int> County_FK { get; set; }
-
+    
         public virtual County County { get; set; }
         public virtual Event Event { get; set; }
         public virtual ICollection<Location> Locations { get; set; }
