@@ -22,7 +22,7 @@ function init() {
 
 function doAjaxCall() {
     $.ajax({
-        url: "http://localhost:62208/Api/Shipwreck",
+        url: "../compuwreck/Api/Shipwreck",
         type: 'GET',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
