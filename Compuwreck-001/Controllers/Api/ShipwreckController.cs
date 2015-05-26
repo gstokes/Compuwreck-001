@@ -26,44 +26,35 @@ namespace Compuwreck_001.Controllers.Api
 
         }
 
-        public IHttpActionResult Get() 
+        public IHttpActionResult Get(string searchName, int county) 
         {
+            
             int? shipwreckId = null;
+
 
             var locationsDto = new List<LocationDto>();
             var locationsDto002 = new List<LocationDto>();
             var shipwreckDto = new List<ShipwreckDto>();
             var locationsList = _locationRepo.GetLocations();
-            var shipwrecksList = _shipwreckRepo.ShipwreckMapData(shipwreckId);
+            var shipwrecksList = _shipwreckRepo.ShipwreckMapData(shipwreckId, searchName, county);
 
-            locationsDto = locationsList.OrderBy(l => l.Shipwreck_FK).ToDtoList();
-            shipwreckDto = shipwrecksList.OrderBy(s => s.Shipwreck_id).ToDtoList(); //TODO:: REMOVE TAKE
+            if (shipwrecksList != null) { 
+                locationsDto = locationsList.OrderBy(l => l.Shipwreck_FK).ToDtoList();
+                shipwreckDto = shipwrecksList.OrderBy(s => s.Shipwreck_id).ToDtoList(); //TODO:: REMOVE TAKE
 
-            foreach (var shipwreck in shipwreckDto){
-                foreach (var location in locationsDto){
-                    if (location.ShipwreckFk == shipwreck.ShipwreckId)
-                    {
-                        location.ShipwreckName = shipwreck.Name;
+                foreach (var shipwreck in shipwreckDto){
+                    foreach (var location in locationsDto){
+                        if (location.ShipwreckFk == shipwreck.ShipwreckId)
+                        {
+                            location.ShipwreckName = shipwreck.Name;
+                            if (location.Lng != 0d && location.Lng != null) {
+                                locationsDto002.Add(location);
+                            }
+                        }
                     }
                 }
             }
-
-            foreach (var location in locationsDto)
-            {
-                if (location.Lng != 0d && location.Lng != null)
-                {
-                    locationsDto002.Add(location);
-                }
-            }
-
             return Ok(locationsDto002);
-
-
-            //var shipwrecks = new List<ShipwreckDto>();
-            //var shipwrecksList = _shipwreckRepo.ShipwreckMapData(shipwreckId);
-
-            //shipwrecks = shipwrecksList.OrderBy(s => s.DateLost).ToDtoList();
-            //return Ok(shipwrecks);
         }
     }
 }

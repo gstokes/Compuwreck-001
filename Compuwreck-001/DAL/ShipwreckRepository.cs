@@ -62,10 +62,23 @@ namespace Compuwreck_001.DAL {
             return shipwrecks.ToList();
         }
 
-        public IEnumerable<Shipwreck> ShipwreckMapData(int? shipwreckId) {
+        public IEnumerable<Shipwreck> ShipwreckMapData(int? shipwreckId, string searchName, int? county) {
             var results = new List<Shipwreck>();
-
             results = _db.Shipwrecks.OrderBy(s => s.Name).ToList();
+            
+            if (searchName != "none")
+            {
+                results =
+                    _db.Shipwrecks.Where(s => s.Name.ToLower().Contains(searchName.ToLower()))
+                        .OrderBy(s => s.Name)
+                        .ToList();
+            }
+
+            if (county != 0)
+            {
+                results = results.Where(s => s.County_FK == county).ToList();
+            }
+
             return results;
         }
 

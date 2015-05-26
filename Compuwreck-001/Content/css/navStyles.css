@@ -228,7 +228,15 @@ fieldset {
     font-weight: bold;
     padding: 0 0.1875rem;
     margin: 0;
-    margin-left: -0.1875rem; }
+    margin-left: -0.1875rem; 
+
+  }
+
+fieldset.mapsearch {
+    background-color: #fff;
+    width: 60%;
+    margin: auto;
+}
 
   /* COLOR
    
