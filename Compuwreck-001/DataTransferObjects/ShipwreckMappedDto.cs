@@ -6,6 +6,7 @@ using System.Web;
 namespace Compuwreck_001.DataTransferObjects {
     public class ShipwreckMappedDto {
         public int LocationId { get; set; }
+        public int ShipwreckId { get; set; }
         public string ShipwreckName { get; set; }
         public double? Ltd { get; set; }
         public double? Lng { get; set; }

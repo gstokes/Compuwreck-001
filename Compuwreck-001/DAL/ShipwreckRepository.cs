@@ -62,11 +62,12 @@ namespace Compuwreck_001.DAL {
             return shipwrecks.ToList();
         }
 
-        public IEnumerable<Shipwreck> ShipwreckMapData(int? shipwreckId, string searchName, int? county) {
+        public IEnumerable<Shipwreck> ShipwreckMapData(int? shipwreckId, string searchName, int? searchCounty, string searchDateStart, string searchDateEnd) {
             var results = new List<Shipwreck>();
             results = _db.Shipwrecks.OrderBy(s => s.Name).ToList();
             
-            if (searchName != "none")
+            // Filter on name or part of
+            if (searchName != null)
             {
                 results =
                     _db.Shipwrecks.Where(s => s.Name.ToLower().Contains(searchName.ToLower()))
@@ -74,9 +75,22 @@ namespace Compuwreck_001.DAL {
                         .ToList();
             }
 
-            if (county != 0)
+            // Filter on County id
+            if (searchCounty != 0)
             {
-                results = results.Where(s => s.County_FK == county).ToList();
+                results = results.Where(s => s.County_FK == searchCounty).ToList();
+            }
+
+            // Filter on Dates TODO: Catch partial date search
+            if (!String.IsNullOrEmpty(searchDateEnd) && !String.IsNullOrEmpty(searchDateStart)) {
+                DateTime dtStart = Convert.ToDateTime(searchDateStart); //TODO: DateTimetype
+                DateTime dtEnd = Convert.ToDateTime(searchDateEnd);
+                results = results.Where(s => s.DateLost >= dtStart && s.DateLost <= dtEnd).ToList();
+            }
+
+            if (String.IsNullOrEmpty(searchDateEnd) && !String.IsNullOrEmpty(searchDateStart)) {
+                DateTime dt = Convert.ToDateTime(searchDateStart); //TODO: DateTimetype
+                results = results.Where(s => s.DateLost == dt).ToList();
             }
 
             return results;

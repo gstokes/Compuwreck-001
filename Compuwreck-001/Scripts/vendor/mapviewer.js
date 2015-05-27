@@ -7,51 +7,18 @@ function init() {
 }
 
 
-function doAjaxCall() {
-    $.ajax({
-        url: "http://localhost:62208/Api/Shipwreck?" + 'searchName=test&'+'county=0',
-        type: 'GET',
-        contentType: "application/json; charset=utf-8",
-        dataType: 'json',
-        success: function (data) {
 
-            for (var i = 0; i < data.length; i++) {
-                var title = data[i].ShipwreckName;
-                var marker = L.marker(new L.LatLng(data[i].Ltd, data[i].Lng), {
-                    icon: L.mapbox.marker.icon({ 'marker-symbol': 'marker', 'marker-color': '0044FF' }),
-                    title: title
-                });
-
-                marker.bindPopup(title);
-                markers.addLayer(marker);
-            }
-
-            map.addLayer(markers);
-            L.control.scale().addTo(map);
-        },
-
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert('error - ' + textStatus);
-        }
-    });
-}
-
-
-function search(searchName, searchCounty) {
+function search(searchName, searchCounty, searchDateStart, searchDateEnd) {
     markers.clearLayers();
-
-    if (searchName === "") {
-        searchName = "none";
-    }
 
     if (searchCounty === "") {
         searchCounty = 0;
     }
-    console.log(searchName);
-    console.log(searchCounty);
+
+
 
     $.ajax({
-        url: "http://localhost:62208/Api/Shipwreck?" + 'searchName=' + searchName + '&county=' + searchCounty,
+        url: "../compuwreck/Api/Shipwreck?" + 'searchName=' + searchName + '&county=' + searchCounty + '&dateStart=' + searchDateStart + '&dateEnd=' + searchDateEnd,
         type: 'GET',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
@@ -59,12 +26,17 @@ function search(searchName, searchCounty) {
 
             for (var i = 0; i < data.length; i++) {
                 var title = data[i].ShipwreckName;
+                var shipwreckId = data[i].ShipwreckId;
                 var marker = L.marker(new L.LatLng(data[i].Ltd, data[i].Lng), {
                     icon: L.mapbox.marker.icon({ 'marker-symbol': 'marker', 'marker-color': '0044FF' }),
                     title: title
                 });
 
-                marker.bindPopup(title);
+                var link = '<div class="mapbutton"><a href="../compuwreck/Shipwreck/Details/' + shipwreckId + '"  >VIEW</a></div>';
+                var lng = data[i].Lng;
+                var Ltd = data[i].Ltd;
+
+                marker.bindPopup("<h3>" + title + "</h3>" + "<br />" + "<strong>LNG: </strong>" + lng + "<br />" + "<strong>LTD: </strong>" + Ltd + "<br />" + link);
                 markers.addLayer(marker);
             }
 

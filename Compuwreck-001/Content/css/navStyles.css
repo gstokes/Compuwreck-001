@@ -176,6 +176,7 @@ a:hover {
 .header{
   background-image: url("http://www.gavinstokes.info/compuwreck/Content/images/darkSeaHeader.jpg");/*../../Content/images/darkSeaHeader.jpg*/
   height: 180px;
+    border-bottom: 4px solid #31476b;
 }
 
 .headerLogo {

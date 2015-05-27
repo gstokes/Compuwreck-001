@@ -26,7 +26,7 @@ namespace Compuwreck_001.Controllers.Api
 
         }
 
-        public IHttpActionResult Get(string searchName, int county) 
+        public IHttpActionResult Get(string searchName, int county, string dateStart, string dateEnd) 
         {
             
             int? shipwreckId = null;
@@ -36,7 +36,7 @@ namespace Compuwreck_001.Controllers.Api
             var locationsDto002 = new List<LocationDto>();
             var shipwreckDto = new List<ShipwreckDto>();
             var locationsList = _locationRepo.GetLocations();
-            var shipwrecksList = _shipwreckRepo.ShipwreckMapData(shipwreckId, searchName, county);
+            var shipwrecksList = _shipwreckRepo.ShipwreckMapData(shipwreckId, searchName, county, dateStart, dateEnd);
 
             if (shipwrecksList != null) { 
                 locationsDto = locationsList.OrderBy(l => l.Shipwreck_FK).ToDtoList();

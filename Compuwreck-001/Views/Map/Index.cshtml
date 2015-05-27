@@ -1,8 +1,8 @@
 ﻿
 @section AddToHead{
 
-    <script src="/Scripts/jquery-1.10.2.js"></script>
-    <script src="/Scripts/vendor/mapviewer.js"></script>
+    <script src="../compuwreck/Scripts/jquery-1.10.2.js"></script>
+    <script src="../compuwreck/Scripts/vendor/mapviewer.js"></script>
     <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
 
@@ -23,6 +23,30 @@
        padding:10px;
        margin: 0 0 10px 15px;
        min-width: 100px;
+        }
+
+    .leaflet-popup-content {
+        background-color: #ccc;
+        min-width: 200px;
+    }
+
+        .leaflet-popup-content h3{
+            font-weight: 900;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mapbutton {
+            width: 60px;
+            margin: auto;
+            margin-top: 1rem;
+            padding-top: 0.65rem;
+            padding-right: 1.75rem;
+            padding-bottom: 0.45rem;
+            padding-left: 0.75rem;
+            font-size: 0.8125rem;
+            background-color: #fff;
+            text-align: center;
         }
 </style>
 
@@ -70,10 +94,12 @@
 
         $("#mapSerach").on('click', function () {
             var searchName = $("#searchString").val();
+            var dateStart = $("#searchDateStart").val();
+            var dateEnd = $("#searchDateEnd").val();
             var e = document.getElementById("searchCounty");
             var searchCounty = e.options[e.selectedIndex].value;
 
-            search(searchName, searchCounty);
+            search(searchName, searchCounty, dateStart, dateEnd);
         });
     });
 </script>

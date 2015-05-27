@@ -33,6 +33,7 @@ namespace Compuwreck_001.DataTransferObjects {
         public static LocationDto ToDto(this Location location) {
             return new LocationDto
             {
+                ShipwreckId = location.Shipwreck.Shipwreck_id,
                 LocationId = location.Location_id,
                 Ltd = location.LTD,
                 Lng = location.LNG,

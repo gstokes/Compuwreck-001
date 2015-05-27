@@ -14,7 +14,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:17:07</publishTime>
     </File>
     <File Include="bin/Compuwreck-001.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/27/2015 15:52:30</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/10/2015 16:25:52</publishTime>
@@ -74,16 +74,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:43:59</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/18/2015 09:43:44</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>03/10/2015 16:17:06</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/18/2015 09:43:44</publishTime>
     </File>
     <File Include="bin/System.Web.Http.WebHost.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/18/2015 09:43:44</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
       <publishTime>03/10/2015 16:17:06</publishTime>
@@ -110,22 +110,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:17:03</publishTime>
     </File>
     <File Include="Content/css/bootstrap.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/19/2015 11:45:15</publishTime>
     </File>
     <File Include="Content/css/foundation-datepicker.css">
-      <publishTime>12/11/2014 04:38:52</publishTime>
+      <publishTime>11/12/2014 04:38:52</publishTime>
     </File>
     <File Include="Content/css/foundation.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 16:46:41</publishTime>
     </File>
     <File Include="Content/css/navStyles.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/27/2015 09:32:40</publishTime>
     </File>
     <File Include="Content/css/normalize.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/14/2015 15:04:28</publishTime>
     </File>
     <File Include="Content/css/responsive-nav.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/13/2015 16:37:18</publishTime>
     </File>
     <File Include="Content/images/darkSeaHeader.jpg">
       <publishTime>05/12/2015 15:59:24</publishTime>
@@ -134,22 +134,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/12/2015 16:04:04</publishTime>
     </File>
     <File Include="Content/images/icon_addTitle.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 09:53:44</publishTime>
     </File>
     <File Include="Content/images/icon_deleteTitle.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 15:53:48</publishTime>
     </File>
     <File Include="Content/images/icon_detailsTitle.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 09:38:18</publishTime>
     </File>
     <File Include="Content/images/icon_editTitle.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 09:48:32</publishTime>
     </File>
     <File Include="Content/images/icon_loginTitle.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 16:18:50</publishTime>
     </File>
     <File Include="Content/images/icon_searchTitle.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/14/2015 12:06:31</publishTime>
     </File>
     <File Include="Content/images/pageTitleIcon.png">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -179,13 +179,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:17:03</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>10/03/2015 16:16:57</publishTime>
+      <publishTime>03/10/2015 16:16:57</publishTime>
     </File>
     <File Include="Models/Compuwreck.edmx.diagram">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/20/2015 14:49:09</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/18/2015 09:43:45</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>03/10/2015 16:17:03</publishTime>
@@ -194,7 +194,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:17:02</publishTime>
     </File>
     <File Include="Scripts/foundation/foundation-datepicker.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/27/2015 09:33:42</publishTime>
     </File>
     <File Include="Scripts/foundation/foundation.abide.js">
       <publishTime>02/02/2015 20:57:46</publishTime>
@@ -269,7 +269,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:17:10</publishTime>
     </File>
     <File Include="Scripts/json2.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/20/2015 12:29:38</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.6.2.js">
       <publishTime>03/10/2015 16:17:07</publishTime>
@@ -281,19 +281,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:17:07</publishTime>
     </File>
     <File Include="Scripts/vendor/cluster/leaflet.markercluster-src.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2013 21:22:06</publishTime>
     </File>
     <File Include="Scripts/vendor/cluster/leaflet.markercluster.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2013 21:22:06</publishTime>
     </File>
     <File Include="Scripts/vendor/cluster/MarkerCluster.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2013 21:22:06</publishTime>
     </File>
     <File Include="Scripts/vendor/cluster/MarkerCluster.Default.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2013 21:22:06</publishTime>
     </File>
     <File Include="Scripts/vendor/cluster/MarkerCluster.Default.ie.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2013 21:22:06</publishTime>
     </File>
     <File Include="Scripts/vendor/fastclick.js">
       <publishTime>02/02/2015 20:57:46</publishTime>
@@ -305,67 +305,67 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2015 20:57:46</publishTime>
     </File>
     <File Include="Scripts/vendor/JQuery/jquery-1.10.2.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>12/16/2014 15:58:14</publishTime>
     </File>
     <File Include="Scripts/vendor/JQuery/jquery-placeholder.js">
-      <publishTime>03/12/2014 09:36:28</publishTime>
+      <publishTime>12/03/2014 09:36:28</publishTime>
     </File>
     <File Include="Scripts/vendor/JQuery/jquery-ui-1.10.3.custom.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2013 01:25:42</publishTime>
     </File>
     <File Include="Scripts/vendor/JQuery/jquery-ui-1.10.3.custom.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2013 01:25:42</publishTime>
     </File>
     <File Include="Scripts/vendor/JQuery/jquery-ui.custom.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2013 01:25:42</publishTime>
     </File>
     <File Include="Scripts/vendor/JQuery/jquery.blockUI.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2013 15:42:08</publishTime>
     </File>
     <File Include="Scripts/vendor/JQuery/jquery.placeholder.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/22/2014 05:18:02</publishTime>
     </File>
     <File Include="Scripts/vendor/JQuery/jquery.ui.datepicker-en-GB.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2013 03:36:08</publishTime>
     </File>
     <File Include="Scripts/vendor/JQuery/jquery.watermark.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/13/2012 11:53:46</publishTime>
     </File>
     <File Include="Scripts/vendor/JQuery/jquery.watermarkinput.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/19/2013 12:09:06</publishTime>
     </File>
     <File Include="Scripts/vendor/leaflet-0.7.2/easy-button.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/28/2014 16:14:52</publishTime>
     </File>
     <File Include="Scripts/vendor/leaflet-0.7.2/images/layers-2x.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/17/2014 11:40:12</publishTime>
     </File>
     <File Include="Scripts/vendor/leaflet-0.7.2/images/layers.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/17/2014 11:40:12</publishTime>
     </File>
     <File Include="Scripts/vendor/leaflet-0.7.2/images/marker-icon-2x.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/17/2014 11:40:12</publishTime>
     </File>
     <File Include="Scripts/vendor/leaflet-0.7.2/images/marker-icon.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/17/2014 11:40:12</publishTime>
     </File>
     <File Include="Scripts/vendor/leaflet-0.7.2/images/marker-shadow.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/17/2014 11:40:12</publishTime>
     </File>
     <File Include="Scripts/vendor/leaflet-0.7.2/leaflet-google.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/25/2014 09:15:52</publishTime>
     </File>
     <File Include="Scripts/vendor/leaflet-0.7.2/leaflet-src.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/27/2015 09:14:20</publishTime>
     </File>
     <File Include="Scripts/vendor/leaflet-0.7.2/leaflet.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/27/2015 09:14:18</publishTime>
     </File>
     <File Include="Scripts/vendor/leaflet-0.7.2/leaflet.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/27/2015 09:14:20</publishTime>
     </File>
     <File Include="Scripts/vendor/mapviewer.js">
-      <publishTime>05/22/2015 15:54:28</publishTime>
+      <publishTime>05/27/2015 15:56:16</publishTime>
     </File>
     <File Include="Scripts/vendor/modernizr.js">
       <publishTime>02/02/2015 20:57:46</publishTime>
@@ -374,10 +374,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2015 20:57:46</publishTime>
     </File>
     <File Include="Scripts/vendor/responsive-nav.js">
-      <publishTime>09/04/2015 09:33:44</publishTime>
+      <publishTime>04/09/2015 09:33:44</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/21/2015 14:49:53</publishTime>
     </File>
     <File Include="shipwreckImages/2149/snowCat.jpg">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -392,16 +392,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="test.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/20/2015 13:01:52</publishTime>
     </File>
     <File Include="testNav.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/13/2015 10:03:08</publishTime>
     </File>
     <File Include="Views/Account/Delete.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/25/2015 17:15:30</publishTime>
     </File>
     <File Include="Views/Account/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/26/2015 10:07:22</publishTime>
     </File>
     <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
       <publishTime>03/10/2015 16:17:08</publishTime>
@@ -410,22 +410,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Account/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/26/2015 09:59:30</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 16:20:15</publishTime>
     </File>
     <File Include="Views/Account/LogOff.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/26/2015 11:54:50</publishTime>
     </File>
     <File Include="Views/Account/Manage.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/25/2015 17:15:30</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/27/2015 12:39:31</publishTime>
     </File>
     <File Include="Views/Account/UserRoles.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/26/2015 10:00:44</publishTime>
     </File>
     <File Include="Views/Account/_ChangePasswordPartial.cshtml">
       <publishTime>03/10/2015 16:17:08</publishTime>
@@ -446,58 +446,58 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:16:57</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/27/2015 12:04:11</publishTime>
     </File>
     <File Include="Views/Map/Index.cshtml">
-      <publishTime>05/22/2015 15:57:01</publishTime>
+      <publishTime>05/27/2015 15:51:15</publishTime>
     </File>
     <File Include="Views/Photo/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2015 12:10:36</publishTime>
     </File>
     <File Include="Views/Photo/Delete.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 16:06:08</publishTime>
     </File>
     <File Include="Views/Photo/Details.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/13/2015 16:19:46</publishTime>
     </File>
     <File Include="Views/Photo/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/13/2015 16:34:53</publishTime>
     </File>
     <File Include="Views/Photo/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/13/2015 16:19:47</publishTime>
     </File>
     <File Include="Views/Shared/EditorTemplates/SelectRoleEditorViewModel.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/25/2015 17:15:30</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>03/10/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/20/2015 14:43:15</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>03/10/2015 16:17:08</publishTime>
     </File>
     <File Include="Views/Shared/_PrimaryNavigation.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/13/2015 17:00:34</publishTime>
     </File>
     <File Include="Views/Shipwreck/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 14:59:47</publishTime>
     </File>
     <File Include="Views/Shipwreck/Delete.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 16:35:20</publishTime>
     </File>
     <File Include="Views/Shipwreck/Details.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 16:29:36</publishTime>
     </File>
     <File Include="Views/Shipwreck/Dump.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/23/2015 14:31:21</publishTime>
     </File>
     <File Include="Views/Shipwreck/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 16:32:55</publishTime>
     </File>
     <File Include="Views/Shipwreck/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/15/2015 16:23:52</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>03/10/2015 16:16:57</publishTime>
@@ -506,7 +506,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2015 16:16:57</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/27/2015 15:52:33</publishTime>
     </File>
   </ItemGroup>
 </Project>
