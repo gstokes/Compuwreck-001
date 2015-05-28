@@ -18,7 +18,7 @@ function search(searchName, searchCounty, searchDateStart, searchDateEnd) {
 
 
     $.ajax({
-        url: "../compuwreck/Api/Shipwreck?" + 'searchName=' + searchName + '&county=' + searchCounty + '&dateStart=' + searchDateStart + '&dateEnd=' + searchDateEnd,
+        url: "http://localhost:62208/Api/Shipwreck?" + 'searchName=' + searchName + '&county=' + searchCounty + '&dateStart=' + searchDateStart + '&dateEnd=' + searchDateEnd,
         type: 'GET',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
@@ -32,11 +32,11 @@ function search(searchName, searchCounty, searchDateStart, searchDateEnd) {
                     title: title
                 });
 
-                var link = '<div class="mapbutton"><a href="../compuwreck/Shipwreck/Details/' + shipwreckId + '"  >VIEW</a></div>';
+                var link = '<div class="mapButton"><a href="~/compuwreck/Shipwreck/Details/' + shipwreckId + '" class="button tiny">VIEW</a></div>';
                 var lng = data[i].Lng;
                 var Ltd = data[i].Ltd;
 
-                marker.bindPopup("<h3>" + title + "</h3>" + "<br />" + "<strong>LNG: </strong>" + lng + "<br />" + "<strong>LTD: </strong>" + Ltd + "<br />" + link);
+                marker.bindPopup("<h3>" + title + "</h3>" + "<br />" + "<strong>LNG: </strong>" + lng + "  " + "<strong>LTD: </strong>" + Ltd + "<br />" + link);
                 markers.addLayer(marker);
             }
 

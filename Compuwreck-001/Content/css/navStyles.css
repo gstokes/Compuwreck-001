@@ -220,7 +220,7 @@ a:hover {
 fieldset {
   border: 1px solid #738288;
   padding: 1.25rem;
-  margin: 1.125rem 0; 
+  margin: 1.125rem 0 0 0 ; 
   -moz-border-radius:4px;  
   border-radius: 4px;  
   -webkit-border-radius: 4px; 
@@ -230,13 +230,27 @@ fieldset {
     padding: 0 0.1875rem;
     margin: 0;
     margin-left: -0.1875rem; 
-
   }
 
 fieldset.mapsearch {
     background-color: #fff;
     width: 60%;
     margin: auto;
+}
+
+.searchByMap {
+    float: right;
+    padding: 0 0 .5em 2.5em;
+    background-image: url("http://localhost:62208/Content/images/icon_map.png");
+    background-repeat: no-repeat;
+    font-size:.9em;
+    font-family: Oswald;
+    font-weight: 900;
+    color: #293847;
+}
+
+.searchByMap a{
+    color: #293847;
 }
 
   /* COLOR

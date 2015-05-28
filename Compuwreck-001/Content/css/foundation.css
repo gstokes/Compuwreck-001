@@ -1179,14 +1179,34 @@ button, .button {
   color: #FFFFFF;
   text-transform: uppercase;
 }
-.button.search {
-   margin-top: 0.175rem;
-   padding-top: 0.475rem;
-   padding-right: 1.75rem;
-   padding-bottom: 0.4375rem;
-   padding-left: 1.75rem;
-   font-size: 0.8125rem; 
-}
+    .button.search {
+       margin-top: 0.175rem;
+       padding-top: 0.475rem;
+       padding-right: 1.75rem;
+       padding-bottom: 0.4375rem;
+       padding-left: 1.75rem;
+       font-size: 0.8125rem; 
+    }
+
+
+    .mapButton {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+        padding-top: 0.45rem;
+        padding-right: 0.65rem;
+        padding-bottom: 0.35rem;
+        padding-left: 0.65rem;
+        font-size: 0.8125rem;
+        border-top: 1px solid #738288;
+        /*background-color: #31476b;*/
+        text-align: center;
+            }
+
+        .mapButton a:link {
+        color: #fff;
+    }
+
   button:hover, button:focus, .button:hover, .button:focus {
     background-color: #007095; 
     border: 2px solid #007095;
@@ -5398,7 +5418,7 @@ border-collapse: collapse;
       padding: 0.5rem 0.625rem 0.625rem;
       font-size: 0.875rem;
       font-weight: bold;
-      color: #222222; }
+      color: #293847; }
   table tfoot {
     background: #F5F5F5; }
     table tfoot tr th,
@@ -5406,19 +5426,20 @@ border-collapse: collapse;
       padding: 0.5rem 0.625rem 0.625rem;
       font-size: 0.875rem;
       font-weight: bold;
-      color: #222222;
+       color: #293847;
       
     }
 table tr th {
     background-color: transparent;/* #738288;*/
     padding: 15px;
+     color: #293847;
 }
 
   table tr th,
   table tr td {
     padding: 0.8625rem 0.7625rem;
     font-size: 0.875rem;
-    color: #222222;
+     color: #293847;
     text-align: left; 
     border-bottom: solid 1px #b1b1b1;
     border-right:  solid 1px #b1b1b1;

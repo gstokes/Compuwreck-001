@@ -267,6 +267,7 @@
     <Content Include="Content\images\icon_detailsTitle.png" />
     <Content Include="Content\images\icon_editTitle.png" />
     <Content Include="Content\images\icon_loginTitle.png" />
+    <Content Include="Content\images\icon_map.png" />
     <Content Include="Content\images\icon_searchTitle.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
@@ -351,6 +352,8 @@
     <Content Include="Scripts\vendor\leaflet-0.7.2\leaflet-src.js" />
     <Content Include="Scripts\vendor\leaflet-0.7.2\leaflet.css" />
     <Content Include="Scripts\vendor\leaflet-0.7.2\leaflet.js" />
+    <Content Include="Scripts\vendor\mapBox\mapbox.css" />
+    <Content Include="Scripts\vendor\mapBox\mapbox.js" />
     <Content Include="Scripts\vendor\mapviewer.js" />
     <Content Include="Scripts\vendor\modernizr.js" />
     <Content Include="Scripts\vendor\placeholder.js" />
