@@ -195,7 +195,7 @@
     <Compile Include="DAL\IShipwreckRepository.cs" />
     <Compile Include="DAL\LocationRepository.cs" />
     <Compile Include="DAL\ShipwreckRepository.cs" />
-    <Compile Include="DataTransferObjects\LocationDto.cs" />
+    <Compile Include="DataTransferObjects\shipwreckLocationDto.cs" />
     <Compile Include="DataTransferObjects\MappingExtensions.cs" />
     <Compile Include="DataTransferObjects\ShipwreckDto.cs" />
     <Compile Include="DataTransferObjects\ShipwreckMappedDto.cs" />

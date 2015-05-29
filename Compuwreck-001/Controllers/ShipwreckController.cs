@@ -186,13 +186,9 @@ namespace Compuwreck_001.Controllers
         // GET: /Shipwreck/Delete/5
         [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id, bool? saveChangesError = false) {
-            //if (id == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-
-            if (saveChangesError.GetValueOrDefault()) {
-                ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator.";
+            
+            if (id == null) {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
             Shipwreck shipwreck = _shipwreckRepository.GetShipwreckById(id);
@@ -206,7 +202,7 @@ namespace Compuwreck_001.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id) {
+        public ActionResult DeleteConfirmed(int id) {
             try {
                 Shipwreck shipwreck = _shipwreckRepository.GetShipwreckById(id);
                 _shipwreckRepository.DeleteShipwreck(id);

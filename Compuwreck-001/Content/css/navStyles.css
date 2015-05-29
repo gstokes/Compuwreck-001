@@ -230,11 +230,12 @@ fieldset {
     padding: 0 0.1875rem;
     margin: 0;
     margin-left: -0.1875rem; 
+    font-family: Oswald;
+    color:#354248;
   }
 
 fieldset.mapsearch {
     background-color: #fff;
-    width: 60%;
     margin: auto;
 }
 

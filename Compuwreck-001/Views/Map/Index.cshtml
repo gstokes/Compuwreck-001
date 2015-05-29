@@ -57,41 +57,44 @@
 <div style="width: 100%;" id="map"></div>
 
 <div id="over_map">
-    <fieldset class="mapsearch">
-        <div class="large-3 columns">
-            @Html.Label("Find by name")
-            @Html.TextBox("searchString")
-        </div>
-        <div class="small-3 columns">
-            @Html.Label("Find By County")
-            @Html.DropDownList("searchCounty", "-select county-")
+    <div class="row">
+        <div class="large-12 columns">
+            <fieldset class="mapsearch">
+                <div class="large-3 columns">
+                    @Html.Label("Find by name")
+                    @Html.TextBox("searchString")
+                </div>
+                <div class="large-3 columns">
+                    @Html.Label("Find By County")
+                    @Html.DropDownList("searchCounty", "-select county-")
 
+                </div>
+                <div class="large-2 columns">
+                    @Html.Label("Find by Start Date")
+                    @Html.TextBox("searchDateStart", null, new { @class = "fdatepicker", @placeholder = "01/01/1900" })
+                </div>
+                <div class="large-2 columns">
+                    @Html.Label("Find by End Date")
+                    @Html.TextBox("searchDateEnd", null, new { @class = "fdatepicker left", @placeholder = "01/01/1900" })
+                </div>
+                <div class="large-2 columns" style="padding-top: 20px;">
+                    <input type="submit" value="Search" class="button search" id="mapSerach" />
+                </div>
+            </fieldset>
         </div>
-        <div class="large-2 columns">
-            @Html.Label("Find by Start Date")
-            @Html.TextBox("searchDateStart", null, new {@class = "fdatepicker", @placeholder = "01/01/1900"})
-        </div>
-        <div class="large-2 columns">
-            @Html.Label("Find by End Date")
-            @Html.TextBox("searchDateEnd", null, new {@class = "fdatepicker left", @placeholder = "01/01/1900"})
-        </div>
-        <div class="large-2 columns" style="padding-top: 20px;">
-            <input type="submit" value="Search" class="button search" id="mapSerach"/>
-        </div>
-    </fieldset>
+    </div>
 </div>
+        <script>
+            $(document).on('ready', function () {
 
-<script>
-    $(document).on('ready', function () {
+                $("#mapSerach").on('click', function () {
+                    var searchName = $("#searchString").val();
+                    var dateStart = $("#searchDateStart").val();
+                    var dateEnd = $("#searchDateEnd").val();
+                    var e = document.getElementById("searchCounty");
+                    var searchCounty = e.options[e.selectedIndex].value;
 
-        $("#mapSerach").on('click', function () {
-            var searchName = $("#searchString").val();
-            var dateStart = $("#searchDateStart").val();
-            var dateEnd = $("#searchDateEnd").val();
-            var e = document.getElementById("searchCounty");
-            var searchCounty = e.options[e.selectedIndex].value;
-
-            search(searchName, searchCounty, dateStart, dateEnd);
-        });
-    });
-</script>
+                    search(searchName, searchCounty, dateStart, dateEnd);
+                });
+            });
+        </script>

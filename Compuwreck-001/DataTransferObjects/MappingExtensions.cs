@@ -30,8 +30,8 @@ namespace Compuwreck_001.DataTransferObjects {
             };
         }
 
-        public static LocationDto ToDto(this Location location) {
-            return new LocationDto
+        public static shipwreckLocationDto ToDto(this Location location) {
+            return new shipwreckLocationDto
             {
                 ShipwreckId = location.Shipwreck.Shipwreck_id,
                 LocationId = location.Location_id,
@@ -46,7 +46,7 @@ namespace Compuwreck_001.DataTransferObjects {
             return shipwrecks.Select(r => r.ToDto()).ToList();
         }
 
-        public static List<LocationDto> ToDtoList(this IEnumerable<Location> locations) {
+        public static List<shipwreckLocationDto> ToDtoList(this IEnumerable<Location> locations) {
             return locations.Select(l => l.ToDto()).ToList();
         }
     }

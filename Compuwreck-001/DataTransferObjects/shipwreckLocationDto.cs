@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 namespace Compuwreck_001.DataTransferObjects {
-    public class LocationDto {
+    public class shipwreckLocationDto {
         public int ShipwreckId { get; set; }
         public int LocationId { get; set; }
         public string ShipwreckName { get; set; }

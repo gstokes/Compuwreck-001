@@ -62,7 +62,7 @@ namespace Compuwreck_001.DAL {
             return shipwrecks.ToList();
         }
 
-        public IEnumerable<Shipwreck> ShipwreckMapData(int? shipwreckId, string searchName, int? searchCounty, string searchDateStart, string searchDateEnd) {
+        public IEnumerable<Shipwreck> ShipwreckMapData(string searchName, int? searchCounty, string searchDateStart, string searchDateEnd) {
             var results = new List<Shipwreck>();
             results = _db.Shipwrecks.OrderBy(s => s.Name).ToList();
             
