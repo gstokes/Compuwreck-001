@@ -8,6 +8,8 @@ namespace Compuwreck_001.DAL {
     public interface ILocationRepository : IDisposable {
         IEnumerable<Location> GetLocations();
         Location GetLocationById(int shipwreckId);
+        Location GetLocationByShipwreckId(int shipwreckId);
+       
         //void InsertLocation(Shipwreck shipwreck);
         //void DeleteLocation(int shipwreckId);
         //void UpdateLocation(Shipwreck shipwreck);

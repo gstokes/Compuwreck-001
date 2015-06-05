@@ -2,22 +2,48 @@
 @using Compuwreck_001.Helpers
 @model Compuwreck_001.Models.Shipwreck
 
+@section AddToHead{
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/vendor/mapviewer.js"></script>
+    <script src="~/Scripts/vendor/mapbox/mapbox.js"></script>
+    <link href="~/Scripts/vendor/mapbox/mapbox.css" rel='stylesheet'/>
+
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet'/>
+
+    <style type="text/css">
+        #map {
+            height: 400px;
+            border: 4px solid #293847;
+        }
+    </style>
+}
+
 @{
     ViewBag.Title = "Details";
 }
-
-<div class="row">
-    <h2 class="detailsTitle">Details</h2>
-</div>
-<div class="row">
+<br />
+<div class="row color">
     <div class="large-12 columns">
-        <h4 class="font">Ship Name: @Html.DisplayFor(model => model.Name)</h4>
-        <hr class="dotted" />
+        <h2 class="title details">Details</h2>
+        <div class="buttonsRight">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "button" })
+            @if (@User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new {id = Model.Shipwreck_id}, new {@class = "button"})
+            }
+        </div>
     </div>
 </div>
-<div class="row">
+<br />
+<div class="row color ">
     <div class="large-6 columns">
         <dl class="dlleft">
+            @Html.HiddenFor(model => model.Shipwreck_id)
+            <dt>Ship Name @Html.DisplayFor(model => model.Name)</dt>
+            <dd>@Html.DisplayFor(model => model.Name)</dd>
             <dt>@Html.DisplayNameFor(model => model.DateLost)</dt>
             <dd>@Html.DisplayFor(model => model.DateLost)</dd>
 
@@ -26,11 +52,7 @@
 
             <dt>@Html.DisplayNameFor(model => model.Locality)</dt>
             <dd>@Html.DisplayFor(model => model.Locality)</dd>
-        </dl>
-    </div>
 
-    <div class="large-6 columns">
-        <dl class="dlleft">
             <dt>@Html.DisplayNameFor(model => model.Type)</dt>
             <dd>@Html.DisplayFor(model => model.Type)</dd>
 
@@ -41,12 +63,13 @@
             <dd>@Html.DisplayFor(model => model.Tonnage)</dd>
         </dl>
     </div>
-    <hr class="dotted"/>
+    <div class="large-6 columns">
+        <div style="width: 100%;" id="map"></div>
+    </div>
 </div>
+<br/>
 
-
-
-<div class="row">
+<div class="row color">
     <div class="large-6 columns">
         <dl class="dlleft">
             <dt>@Html.DisplayNameFor(model => model.Armament)</dt>
@@ -64,11 +87,10 @@
             <dd>@Html.DisplayFor(model => model.WindForce)</dd>
         </dl>
     </div>
-    <hr class="dotted" />
 </div>
 
-
-<div class="row">
+<br />
+<div class="row color">
     <div class="large-12 columns">
         <dl class="dlleft">
             <dt>@Html.DisplayNameFor(model => model.References)</dt>
@@ -78,17 +100,14 @@
             <dd>@Html.DisplayFor(model => model.Remarks)</dd>
         </dl>
     </div>
-    <hr class="dotted"/>
 </div>
+<br/>
+<div class="row color">
+        <h3 class="related">Related Images:</h3>
 
-@if (Model.Photos.Count > 0) {
-    <div class="row">
-        <div class="large-12 columns">
-            <h3 class="related">Related Images:</h3>
-        </div>
-    </div>
 
-    <div class="row">
+    @if (Model.Photos.Count > 0) {
+
         <div class="large-12 columns">
             <table class="table">
                 <tr>
@@ -96,10 +115,9 @@
                     <th>Name</th>
                     <th>Action</th>
                 </tr>
-                @foreach (var item in Model.Photos)
-                {
-                    <tr >
-                        <td width="30%"><img src="@Url.Content(item.URL + "/thumbs/" + item.FileName)" width="100" height="90"/></td>
+                @foreach (var item in Model.Photos) {
+                    <tr>
+                        <td width="30%"><img src="@Url.Content(item.URL + "/thumbs/" + item.FileName)" width="100" height="90" /></td>
                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
                         <td width="15%">
                             <textarea readonly="readonly" class="@item.Photo_id" style="display: none;">@item.FileName</textarea>
@@ -109,23 +127,16 @@
                 }
             </table>
         </div>
-        <hr class="dotted"/>
         <br />
-    </div>
-}
-else {
-    <div class="row">
+    }
+    else {
+
         <div class="panel radius">
             <p>There are no images associated with this shipwreck</p>
         </div>
-    </div>
-}
-<div class="row">
-    <p>
-        @Html.ActionLink("Back to List", "Index", null, new { @class = "button " })
-        @Html.ActionLink("Edit", "Edit", null, new { id = Model.Shipwreck_id, @class = "button right" })
+        <br />
 
-    </p>
+    }
 </div>
 
 <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
@@ -133,10 +144,16 @@ else {
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
+    <script>
+        $(document).on('ready', function () {
+            var shipWreckId = $("#Shipwreck_id").val();
+            console.log()
+            getShipwreck(shipWreckId);
+        });
+    </script>
 
 
-
-<script>
+    <script>
     $(".editForm").click(function () {
             //--Declare vars and assign values
             var photoId = this.id;

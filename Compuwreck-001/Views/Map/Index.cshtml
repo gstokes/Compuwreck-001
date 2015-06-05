@@ -1,56 +1,22 @@
 ﻿
 @section AddToHead{
-
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script src="~/Scripts/vendor/mapviewer.js"></script>
-    <script src="~/Scripts/vendor/mapbox/mapbox.js"></script>
-    <link href="~/Scripts/vendor/mapbox/mapbox.css" rel='stylesheet'/>
-
-    <style type="text/css">
-
-
-        html, body, form, #map {
-            height: 100%;
-        }
-        #over_map {
-            position: absolute;
-            top: 200px;
-            left: 10px;
-            z-index: 99;
-            width: 100%;
-        }
-        .leaflet-control-scale-line {
-            padding: 10px;
-            margin: 0 0 10px 15px;
-            min-width: 100px;
-        }
-
-        .leaflet-popup-content {
-            background-color: #dedede;
-            min-width: 200px;
-        }
-
-        .leaflet-popup-content h3 {
-            font-weight: 900;
-            margin: 0;
-            padding: 0;
-            color: #354248;
-        }
-
-        .leaflet-popup-content strong {
-            color: #354248;
-        }
-    </style>
-
-}
+    <script src="../compuwreck/Scripts/vendor/mapviewer.js"></script>
+    <script src="../compuwreck/Scripts/vendor/mapbox/mapbox.js"></script>
+    <link href="../compuwreck/Scripts/vendor/mapbox/mapbox.css" rel='stylesheet'/>
+@*<script src="~/Scripts/vendor/mapviewer.js"></script>
+<script src="~/Scripts/vendor/mapbox/mapbox.js"></script>
+<link href="~/Scripts/vendor/mapbox/mapbox.css" rel='stylesheet' />*@
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+    }
 
 @{
     ViewBag.Title = "Index";
 }
 
-<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
-<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+
+
 
 
 

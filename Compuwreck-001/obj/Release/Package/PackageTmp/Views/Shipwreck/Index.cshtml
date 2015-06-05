@@ -5,9 +5,10 @@
 @{
     ViewBag.Title = "Search";
 }
-<div class="row">
+<br />
+<div class="row  color">
     <div class="large-12 columns">
-        <h2 class="searchTitle">Search Shipwrecks</h2>
+        <h2 class="title search">Search Shipwrecks</h2>
 
         @using (Html.BeginForm()) {
             <fieldset class="search">
@@ -15,7 +16,7 @@
                     @Html.Label("Find by name")
                     @Html.TextBox("searchString")
                 </div>
-                <div class="small-3 columns">
+                <div class="large-3 columns">
                     @Html.Label("Find By County")
                     @Html.DropDownList("searchCounty", "-select county-")
                 </div>
@@ -33,9 +34,15 @@
             </fieldset>
             <br />
         }
-     </div>
     </div>
-<div class="row">
+    <div class="large-12 columns">
+        <div class="searchByMap"><a href="">@Html.ActionLink("SEARCH BY MAP", "Index", "Map")</div>
+    </div>
+</div>
+<br/>
+
+
+<div class="row  color">
     <div class="large-12 columns">
         <div class="pageCount">
             Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
@@ -43,8 +50,7 @@
         @Html.PagedListPager(Model, page => Url.Action("Index",
             new { page, sortOrder = ViewBag.currentSort, currentFilter = ViewBag.currentFilter, currentCounty = ViewBag.currentCounty, currentDateStart = ViewBag.currentDateStart, currentDateEnd = ViewBag.currentDateEnd }))
     </div>
-</div>
-<div class="row">
+
     <div class="large-12 columns">
         <table class="table">
             <tr>

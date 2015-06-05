@@ -14,7 +14,7 @@ namespace Compuwreck_001.DAL {
         }
 
         public IEnumerable<Location> GetLocations() {
-            var locations = _db.Locations.OrderBy(l => l.Location_id);
+            var locations = _db.Locations.Where(l => l.LTD != 0).OrderBy(l => l.Shipwreck_FK);
             return locations.ToList();
         }
 
@@ -22,6 +22,12 @@ namespace Compuwreck_001.DAL {
             var location = _db.Locations.Find(locationId);
             return location;
         }
+
+        public Location GetLocationByShipwreckId(int ShipwreckId) {
+            var location = _db.Locations.Single(l => l.Shipwreck_FK == ShipwreckId);
+            return location;
+        }
+
 
 
         public void Save() {

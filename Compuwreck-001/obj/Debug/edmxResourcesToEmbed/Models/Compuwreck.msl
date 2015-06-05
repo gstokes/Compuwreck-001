@@ -47,6 +47,7 @@
     <EntitySetMapping Name="Shipwrecks">
       <EntityTypeMapping TypeName="CompuwreckModel.Shipwreck">
         <MappingFragment StoreEntitySet="Shipwreck">
+          <ScalarProperty Name="GPS" ColumnName="GPS" />
           <ScalarProperty Name="Shipwreck_id" ColumnName="Shipwreck_id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Type" ColumnName="Type" />

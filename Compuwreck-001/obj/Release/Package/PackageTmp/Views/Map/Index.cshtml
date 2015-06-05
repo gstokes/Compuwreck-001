@@ -1,105 +1,66 @@
 ﻿
 @section AddToHead{
-
-    <script src="../compuwreck/Scripts/jquery-1.10.2.js"></script>
     <script src="../compuwreck/Scripts/vendor/mapviewer.js"></script>
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
-
-    <style type="text/css">
-
-
-    html, body, form, #map {
-        height: 100%;
+    <script src="../compuwreck/Scripts/vendor/mapbox/mapbox.js"></script>
+    <link href="../compuwreck/Scripts/vendor/mapbox/mapbox.css" rel='stylesheet'/>
+@*<script src="~/Scripts/vendor/mapviewer.js"></script>
+<script src="~/Scripts/vendor/mapbox/mapbox.js"></script>
+<link href="~/Scripts/vendor/mapbox/mapbox.css" rel='stylesheet' />*@
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
     }
-        #over_map {
-            position: absolute;
-            top: 200px;
-            left: 10px;
-            z-index: 99;
-            width: 100%;
-        }
-   .leaflet-control-scale-line {
-       padding:10px;
-       margin: 0 0 10px 15px;
-       min-width: 100px;
-        }
-
-    .leaflet-popup-content {
-        background-color: #ccc;
-        min-width: 200px;
-    }
-
-        .leaflet-popup-content h3{
-            font-weight: 900;
-            margin: 0;
-            padding: 0;
-        }
-
-        .mapbutton {
-            width: 60px;
-            margin: auto;
-            margin-top: 1rem;
-            padding-top: 0.65rem;
-            padding-right: 1.75rem;
-            padding-bottom: 0.45rem;
-            padding-left: 0.75rem;
-            font-size: 0.8125rem;
-            background-color: #fff;
-            text-align: center;
-        }
-</style>
-
-}
 
 @{
     ViewBag.Title = "Index";
 }
 
-<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
-<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+
+
 
 
 
 <div style="width: 100%;" id="map"></div>
 
 <div id="over_map">
-    <fieldset class="mapsearch">
-        <div class="large-3 columns">
-            @Html.Label("Find by name")
-            @Html.TextBox("searchString")
-        </div>
-        <div class="small-3 columns">
-            @Html.Label("Find By County")
-            @Html.DropDownList("searchCounty", "-select county-")
+    <div class="row">
+        <div class="large-12 columns">
+            <fieldset class="mapsearch">
+                <div class="large-3 columns">
+                    @Html.Label("Find by name")
+                    @Html.TextBox("searchString")
+                </div>
+                <div class="large-3 columns">
+                    @Html.Label("Find By County")
+                    @Html.DropDownList("searchCounty", "-select county-")
 
+                </div>
+                <div class="large-2 columns">
+                    @Html.Label("Find by Start Date")
+                    @Html.TextBox("searchDateStart", null, new { @class = "fdatepicker", @placeholder = "01/01/1900" })
+                </div>
+                <div class="large-2 columns">
+                    @Html.Label("Find by End Date")
+                    @Html.TextBox("searchDateEnd", null, new { @class = "fdatepicker left", @placeholder = "01/01/1900" })
+                </div>
+                <div class="large-2 columns" style="padding-top: 20px;">
+                    <input type="submit" value="Search" class="button search" id="mapSerach" />
+                </div>
+            </fieldset>
         </div>
-        <div class="large-2 columns">
-            @Html.Label("Find by Start Date")
-            @Html.TextBox("searchDateStart", null, new {@class = "fdatepicker", @placeholder = "01/01/1900"})
-        </div>
-        <div class="large-2 columns">
-            @Html.Label("Find by End Date")
-            @Html.TextBox("searchDateEnd", null, new {@class = "fdatepicker left", @placeholder = "01/01/1900"})
-        </div>
-        <div class="large-2 columns" style="padding-top: 20px;">
-            <input type="submit" value="Search" class="button search" id="mapSerach"/>
-        </div>
-    </fieldset>
+    </div>
 </div>
+        <script>
+            $(document).on('ready', function () {
 
-<script>
-    $(document).on('ready', function () {
+                $("#mapSerach").on('click', function () {
+                    var searchName = $("#searchString").val();
+                    var dateStart = $("#searchDateStart").val();
+                    var dateEnd = $("#searchDateEnd").val();
+                    var e = document.getElementById("searchCounty");
+                    var searchCounty = e.options[e.selectedIndex].value;
 
-        $("#mapSerach").on('click', function () {
-            var searchName = $("#searchString").val();
-            var dateStart = $("#searchDateStart").val();
-            var dateEnd = $("#searchDateEnd").val();
-            var e = document.getElementById("searchCounty");
-            var searchCounty = e.options[e.selectedIndex].value;
-
-            search(searchName, searchCounty, dateStart, dateEnd);
-        });
-    });
-</script>
+                    search(searchName, searchCounty, dateStart, dateEnd);
+                });
+            });
+        </script>
