@@ -3,24 +3,19 @@
 @{
     ViewBag.Title = "Delete";
 }
-<br />
-<div class="row color">
+
+<div class="row">
+    <h2 class="deleteTitle">Delete Shipwreck Record</h2>
+</div>
+<div class="row">
     <div class="large-12 columns">
-        <h2 class="title details">Details</h2>
-        <div class="buttonsRight">
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "button" })
-            <input type="submit" value="Delete" class="button" />
-        </div>
+        <h4>@Html.DisplayFor(model => model.Name)</h4>
+        <hr />
     </div>
 </div>
-<br />
-<div class="row color ">
+<div class="row">
     <div class="large-6 columns">
         <dl class="dlleft">
-            @Html.HiddenFor(model => model.Shipwreck_id)
-
-            <dt>Ship Name @Html.DisplayFor(model => model.Name)</dt>
-            <dd>@Html.DisplayFor(model => model.Name)</dd>
             <dt>@Html.DisplayNameFor(model => model.DateLost)</dt>
             <dd>@Html.DisplayFor(model => model.DateLost)</dd>
 
@@ -31,6 +26,7 @@
             <dd>@Html.DisplayFor(model => model.Locality)</dd>
         </dl>
     </div>
+
     <div class="large-6 columns">
         <dl class="dlleft">
             <dt>@Html.DisplayNameFor(model => model.Type)</dt>
@@ -43,13 +39,12 @@
             <dd>@Html.DisplayFor(model => model.Tonnage)</dd>
         </dl>
     </div>
-    <div class="large-6 columns">
-
-    </div>
+    <hr />
 </div>
-<br />
 
-<div class="row color">
+
+
+<div class="row">
     <div class="large-6 columns">
         <dl class="dlleft">
             <dt>@Html.DisplayNameFor(model => model.Armament)</dt>
@@ -63,14 +58,19 @@
         <dl class="dlleft">
             <dt>@Html.DisplayNameFor(model => model.WindDir)</dt>
             <dd>@Html.DisplayFor(model => model.WindDir)</dd>
+
             <dt>@Html.DisplayNameFor(model => model.WindForce)</dt>
             <dd>@Html.DisplayFor(model => model.WindForce)</dd>
         </dl>
     </div>
+    <hr />
 </div>
 
-<br />
-<div class="row color">
+
+
+
+
+<div class="row">
     <div class="large-12 columns">
         <dl class="dlleft">
             <dt>@Html.DisplayNameFor(model => model.References)</dt>
@@ -78,44 +78,48 @@
 
             <dt>@Html.DisplayNameFor(model => model.Remarks)</dt>
             <dd>@Html.DisplayFor(model => model.Remarks)</dd>
+
+            @*<dt>@Html.DisplayNameFor(model => model.U_Boat)</dt>
+                <dd>@Html.DisplayFor(model => model.U_Boat)</dd>*@
+
+            @*<dt>@Html.DisplayNameFor(model => model.Event.Event1)</dt>
+                <dd>@Html.DisplayFor(model => model.Event.Event1)</dd>*@
         </dl>
     </div>
+    <hr />
 </div>
-<br />
-<div class="row color">
-    <h3 class="related">Related Images:</h3>
+
+<div class="row">
+    <div class="large-12 columns">
+        <table class="table">
+            <tr>
+                <th>Photo Name</th>
+                <th>Shipwreck ID</th>
+                <th>Photo ID</th>
+            </tr>
+            @foreach (var item in Model.Photos) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Shipwreck_id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Photo_id)</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <hr />
+</div>
 
 
-    @if (Model.Photos.Count > 0) {
+<div class="row">
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
 
         <div class="large-12 columns">
-            <table class="table">
-                <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Action</th>
-                </tr>
-                @foreach (var item in Model.Photos) {
-                    <tr>
-                        <td width="30%"><img src="@Url.Content(item.URL + "/thumbs/" + item.FileName)" width="100" height="90" /></td>
-                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                        <td width="15%">
-                            <textarea readonly="readonly" class="@item.Photo_id" style="display: none;">@item.FileName</textarea>
-                            <a href="#" data-reveal-id="myModal" id="@item.Photo_id" class="@item.Shipwreck_id editForm"><span class="button tiny">View</span></a>
-                        </td>
-                    </tr>
-                }
-            </table>
-        </div>
-        <br />
-    }
-    else {
+            <input type="submit" value="Delete" class="button  right" />
+            @Html.ActionLink("Back to List", "Index", null, new {@class = "button"})
 
-        <div class="panel radius">
-            <p>There are no images associated with this shipwreck</p>
         </div>
-        <br />
-
     }
 </div>
 

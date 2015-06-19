@@ -69,7 +69,6 @@
     <NavigationProperty Name="Event" Relationship="Self.FK__SHIPWRECK__Event__07020F21" FromRole="Shipwreck" ToRole="Event" />
     <NavigationProperty Name="Locations" Relationship="Self.FK_Location_Shipwreck" FromRole="Shipwreck" ToRole="Location" />
     <NavigationProperty Name="Photos" Relationship="CompuwreckModel.FK_ShipwreckID" FromRole="Shipwreck" ToRole="Photo" />
-    <Property Name="GPS" Type="Int32" />
   </EntityType>
   <Association Name="fk_County">
     <End Role="County" Type="Self.County" Multiplicity="0..1" />

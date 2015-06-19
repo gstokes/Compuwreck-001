@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Compuwreck_001.Models
 {
     using System;
@@ -26,6 +28,8 @@ namespace Compuwreck_001.Models
         public string Dimensions { get; set; }
         public string Tonnage { get; set; }
         public string Armament { get; set; }
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public Nullable<System.DateTime> DateLost { get; set; }
         public string DateExtn { get; set; }
         public string Locality { get; set; }
@@ -38,7 +42,6 @@ namespace Compuwreck_001.Models
         public string U_Boat { get; set; }
         public Nullable<int> Event_FK { get; set; }
         public Nullable<int> County_FK { get; set; }
-        public Nullable<int> GPS { get; set; }
     
         public virtual County County { get; set; }
         public virtual Event Event { get; set; }

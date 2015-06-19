@@ -30,9 +30,8 @@ namespace Compuwreck_001.Controllers.Api
         {
 
             var shipwrecklocationsDto = new List<shipwreckLocationDto>();
+            var shipwreckLocationsDto002 = new List<shipwreckLocationDto>();
             var shipwreckDto = new List<ShipwreckDto>();
-            var shipwreckLocationsResultDto = new List<shipwreckLocationDto>();
-           
             var locationsList = _locationRepo.GetLocations();
             var shipwrecksList = _shipwreckRepo.ShipwreckMapData(searchName, county, dateStart, dateEnd);
 
@@ -45,17 +44,19 @@ namespace Compuwreck_001.Controllers.Api
                         if (location.ShipwreckFk == shipwreck.ShipwreckId)
                         {
                             location.ShipwreckName = shipwreck.Name;
-                            shipwreckLocationsResultDto.Add(location);
+                            if (location.Lng != 0d && location.Lng != null) {
+                                shipwreckLocationsDto002.Add(location);
+                            }
                         }
                     }
                 }
             }
-            return Ok(shipwreckLocationsResultDto);
+            return Ok(shipwreckLocationsDto002);
         }
 
         public IHttpActionResult Get(int shipwreckId) {
             var shipwreck = _shipwreckRepo.GetShipwreckById(shipwreckId);
-            var locationsList = _locationRepo.GetLocationByShipwreckId(shipwreckId);
+            var locationsList = _locationRepo.GetLocationById(shipwreckId);
             var shipwreckLocationDto = new shipwreckLocationDto();
 
 

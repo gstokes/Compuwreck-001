@@ -64,66 +64,35 @@ namespace Compuwreck_001.DAL {
 
         public IEnumerable<Shipwreck> ShipwreckMapData(string searchName, int? searchCounty, string searchDateStart, string searchDateEnd) {
             var results = new List<Shipwreck>();
-
-            if (searchName == null && searchCounty == 0 && String.IsNullOrEmpty(searchDateEnd) && String.IsNullOrEmpty(searchDateStart)) {
-                results = _db.Shipwrecks.Where(s => s .GPS != 0).OrderBy(s => s.Name).ToList();
-            }
-
+            results = _db.Shipwrecks.OrderBy(s => s.Name).ToList();
+            
             // Filter on name or part of
             if (searchName != null)
             {
-                if (results.Count == 0)
-                {
-                    results =
-                        _db.Shipwrecks.Where(s => s.Name.ToLower().Contains(searchName.ToLower()))
-                            .OrderBy(s => s.Name)
-                            .ToList();
-                }
-                else
-                {
-                    results = results.Where(s => s.Name.ToLower().Contains(searchName.ToLower()))
-                           .OrderBy(s => s.Name)
-                           .ToList();
-                }
+                results =
+                    _db.Shipwrecks.Where(s => s.Name.ToLower().Contains(searchName.ToLower()))
+                        .OrderBy(s => s.Name)
+                        .ToList();
             }
 
             // Filter on County id
             if (searchCounty != 0)
             {
-                if (results.Count == 0){
-                    results =
-                        _db.Shipwrecks.Where(s => s.County_FK == searchCounty)
-                            .OrderBy(s => s.Name)
-                            .ToList();
-                }
-                else{
-                    results = results.Where(s => s.County_FK == searchCounty).ToList();
-                }
+                results = results.Where(s => s.County_FK == searchCounty).ToList();
             }
 
-            // Filter on Date range TODO: Catch partial date search
+            // Filter on Dates TODO: Catch partial date search
             if (!String.IsNullOrEmpty(searchDateEnd) && !String.IsNullOrEmpty(searchDateStart)) {
                 DateTime dtStart = Convert.ToDateTime(searchDateStart); //TODO: DateTimetype
                 DateTime dtEnd = Convert.ToDateTime(searchDateEnd);
-
-                if (results.Count == 0){
-                    results = _db.Shipwrecks.Where(s => s.DateLost >= dtStart && s.DateLost <= dtEnd).ToList();
-                }
-                else{
-                    results = results.Where(s => s.DateLost >= dtStart && s.DateLost <= dtEnd).ToList(); 
-                }
+                results = results.Where(s => s.DateLost >= dtStart && s.DateLost <= dtEnd).ToList();
             }
 
-            // Filter on only start Date TODO: Catch partial date search
             if (String.IsNullOrEmpty(searchDateEnd) && !String.IsNullOrEmpty(searchDateStart)) {
                 DateTime dt = Convert.ToDateTime(searchDateStart); //TODO: DateTimetype
-                if (results.Count == 0){
-                    results = _db.Shipwrecks.Where(s => s.DateLost == dt).ToList();
-                }
-                else {
-                    results = results.Where(s => s.DateLost == dt).ToList();
-                } 
+                results = results.Where(s => s.DateLost == dt).ToList();
             }
+
             return results;
         }
 

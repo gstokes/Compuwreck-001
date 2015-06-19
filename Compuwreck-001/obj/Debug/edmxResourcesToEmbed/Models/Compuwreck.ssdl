@@ -108,7 +108,6 @@
     <Property Name="U-Boat" Type="nvarchar" MaxLength="255" />
     <Property Name="Event_FK" Type="int" />
     <Property Name="County_FK" Type="int" />
-    <Property Name="GPS" Type="int" />
   </EntityType>
   <Association Name="FK__SHIPWRECK__Event__07020F21">
     <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
