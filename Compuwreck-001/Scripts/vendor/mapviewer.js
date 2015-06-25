@@ -17,15 +17,16 @@ function search(searchName, searchCounty, searchDateStart, searchDateEnd) {
 
 
     $.ajax({
-        url: "http://localhost:62208/Api/Shipwreck?" + 'searchName=' + searchName + '&county=' + searchCounty + '&dateStart=' + searchDateStart + '&dateEnd=' + searchDateEnd,
+        //url: "http://www.gavinstokes.info/compuwreck/Api/Shipwreck?" + 'searchName=' + searchName + '&county=' + searchCounty + '&dateStart=' + searchDateStart + '&dateEnd=' + searchDateEnd,
+        url: "/Api/Shipwreck?" + 'searchName=' + searchName + '&county=' + searchCounty + '&dateStart=' + searchDateStart + '&dateEnd=' + searchDateEnd,
         type: 'GET',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
         success: function (data) {
 
             for (var i = 0; i < data.length; i++) {
-                var title = data[i].ShipwreckName;
-                var shipwreckId = data[i].ShipwreckId;
+                var title = "test"; //data[i].ShipwreckName;
+                var shipwreckId = 1;//data[i].ShipwreckId;
                 var marker = L.marker(new L.LatLng(data[i].Ltd, data[i].Lng), {
                     icon: L.mapbox.marker.icon({ 'marker-symbol': 'marker', 'marker-color': '0044FF' }),
                     title: title
@@ -52,7 +53,8 @@ function search(searchName, searchCounty, searchDateStart, searchDateEnd) {
 function getShipwreck(shipwreckId) {
 
     $.ajax({
-        url: "http://localhost:62208/Api/Shipwreck?" + 'shipwreckId=' + shipwreckId,
+        //url: "http://www.gavinstokes.info/compuwreck/Api/Shipwreck?" + 'shipwreckId=' + shipwreckId,
+        url: "/Api/Shipwreck?" + 'shipwreckId=' + shipwreckId,
         type: 'GET',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',

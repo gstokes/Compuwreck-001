@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="51c08507992742c5bb4dd611548678e3" Name="Diagram1">
+      <Diagram DiagramId="51c08507992742c5bb4dd611548678e3" Name="Diagram1" ZoomLevel="94">
         <EntityTypeShape EntityType="CompuwreckModel.County" Width="1.5" PointX="1.125" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CompuwreckModel.Event" Width="1.5" PointX="1.125" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CompuwreckModel.Location" Width="1.5" PointX="1.125" PointY="5.5" IsExpanded="true" />
@@ -21,6 +21,8 @@
         <AssociationConnector Association="CompuwreckModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" />
         <AssociationConnector Association="CompuwreckModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="CompuwreckModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="CompuwreckModel.Page" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="CompuwreckModel.Reference" Width="1.5" PointX="8" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

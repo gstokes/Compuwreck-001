@@ -30,28 +30,27 @@ namespace Compuwreck_001.Controllers.Api
         {
 
             var shipwrecklocationsDto = new List<shipwreckLocationDto>();
-            var shipwreckLocationsDto002 = new List<shipwreckLocationDto>();
+            var shipwreckLocations = new List<shipwreckLocationDto>();
             var shipwreckDto = new List<ShipwreckDto>();
             var locationsList = _locationRepo.GetLocations();
             var shipwrecksList = _shipwreckRepo.ShipwreckMapData(searchName, county, dateStart, dateEnd);
 
+            //shipwrecklocationsDto = locationsList.OrderBy(l => l.Shipwreck_FK).ToDtoList();
+
             if (shipwrecksList != null) {
                 shipwrecklocationsDto = locationsList.OrderBy(l => l.Shipwreck_FK).ToDtoList();
-                shipwreckDto = shipwrecksList.OrderBy(s => s.Shipwreck_id).ToDtoList(); //TODO:: REMOVE TAKE
+                shipwreckDto = shipwrecksList.OrderBy(s => s.Shipwreck_id).ToDtoList();
 
-                foreach (var shipwreck in shipwreckDto){
+                foreach (var shipwreck in shipwreckDto) {
                     foreach (var location in shipwrecklocationsDto) {
-                        if (location.ShipwreckFk == shipwreck.ShipwreckId)
-                        {
+                        if (location.ShipwreckFk == shipwreck.ShipwreckId) {
                             location.ShipwreckName = shipwreck.Name;
-                            if (location.Lng != 0d && location.Lng != null) {
-                                shipwreckLocationsDto002.Add(location);
-                            }
+                            shipwreckLocations.Add(location);
                         }
                     }
                 }
             }
-            return Ok(shipwreckLocationsDto002);
+            return Ok(shipwreckLocations);
         }
 
         public IHttpActionResult Get(int shipwreckId) {

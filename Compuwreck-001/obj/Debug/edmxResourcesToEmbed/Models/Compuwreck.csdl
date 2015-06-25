@@ -69,6 +69,7 @@
     <NavigationProperty Name="Event" Relationship="Self.FK__SHIPWRECK__Event__07020F21" FromRole="Shipwreck" ToRole="Event" />
     <NavigationProperty Name="Locations" Relationship="Self.FK_Location_Shipwreck" FromRole="Shipwreck" ToRole="Location" />
     <NavigationProperty Name="Photos" Relationship="CompuwreckModel.FK_ShipwreckID" FromRole="Shipwreck" ToRole="Photo" />
+    <Property Name="GPS" Type="Int32" />
   </EntityType>
   <Association Name="fk_County">
     <End Role="County" Type="Self.County" Multiplicity="0..1" />
@@ -144,6 +145,8 @@
       <End Role="AspNetRole" EntitySet="AspNetRoles" />
       <End Role="AspNetUser" EntitySet="AspNetUsers" />
     </AssociationSet>
+    <EntitySet Name="Pages" EntityType="CompuwreckModel.Page" />
+    <EntitySet Name="References" EntityType="CompuwreckModel.Reference" />
   </EntityContainer>
   <Association Name="FK_ShipwreckID">
     <End Type="CompuwreckModel.Shipwreck" Role="Shipwreck" Multiplicity="1" />
@@ -234,4 +237,32 @@
     <End Type="CompuwreckModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
     <End Type="CompuwreckModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
   </Association>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageTitle" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PublishDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UnPublishDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="Published" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reference">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AbreviatedTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LongTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Author" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PublisherSource" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PublishersAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Source" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DatePublished" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RelevantMaterial" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ISBN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

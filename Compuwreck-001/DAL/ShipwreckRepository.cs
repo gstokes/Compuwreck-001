@@ -63,37 +63,45 @@ namespace Compuwreck_001.DAL {
         }
 
         public IEnumerable<Shipwreck> ShipwreckMapData(string searchName, int? searchCounty, string searchDateStart, string searchDateEnd) {
-            var results = new List<Shipwreck>();
-            results = _db.Shipwrecks.OrderBy(s => s.Name).ToList();
+            var results = (from dbo in _db.Shipwrecks
+                select new {dbo.Name, dbo.Shipwreck_id, dbo.County_FK, dbo.DateLost});
             
+            //_db.Shipwrecks.OrderBy(s => s.Name).ToList();
             // Filter on name or part of
             if (searchName != null)
             {
-                results =
-                    _db.Shipwrecks.Where(s => s.Name.ToLower().Contains(searchName.ToLower()))
-                        .OrderBy(s => s.Name)
-                        .ToList();
+                results = results.Where(s => s.Name.ToLower().Contains(searchName.ToLower()))
+                        .OrderBy(s => s.Name);
             }
 
             // Filter on County id
             if (searchCounty != 0)
             {
-                results = results.Where(s => s.County_FK == searchCounty).ToList();
+                results = results.Where(s => s.County_FK == searchCounty);
             }
 
             // Filter on Dates TODO: Catch partial date search
             if (!String.IsNullOrEmpty(searchDateEnd) && !String.IsNullOrEmpty(searchDateStart)) {
                 DateTime dtStart = Convert.ToDateTime(searchDateStart); //TODO: DateTimetype
                 DateTime dtEnd = Convert.ToDateTime(searchDateEnd);
-                results = results.Where(s => s.DateLost >= dtStart && s.DateLost <= dtEnd).ToList();
+                results = results.Where(s => s.DateLost >= dtStart && s.DateLost <= dtEnd);
             }
 
             if (String.IsNullOrEmpty(searchDateEnd) && !String.IsNullOrEmpty(searchDateStart)) {
                 DateTime dt = Convert.ToDateTime(searchDateStart); //TODO: DateTimetype
-                results = results.Where(s => s.DateLost == dt).ToList();
+                results = results.Where(s => s.DateLost == dt);
             }
 
-            return results;
+            var shipwrecks = new List<Shipwreck>();
+            foreach (var item in results)
+            {
+                shipwrecks.Add(new Shipwreck()
+                {
+                    Shipwreck_id = item.Shipwreck_id,
+                    Name = item.Name,
+                });
+            }
+            return shipwrecks;
         }
 
         public Shipwreck GetShipwreckById(int id) {

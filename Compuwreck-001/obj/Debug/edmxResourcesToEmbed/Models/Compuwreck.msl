@@ -47,6 +47,7 @@
     <EntitySetMapping Name="Shipwrecks">
       <EntityTypeMapping TypeName="CompuwreckModel.Shipwreck">
         <MappingFragment StoreEntitySet="Shipwreck">
+          <ScalarProperty Name="GPS" ColumnName="GPS" />
           <ScalarProperty Name="Shipwreck_id" ColumnName="Shipwreck_id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Type" ColumnName="Type" />
@@ -117,5 +118,35 @@
         <ScalarProperty Name="Id" ColumnName="RoleId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Pages">
+      <EntityTypeMapping TypeName="CompuwreckModel.Page">
+        <MappingFragment StoreEntitySet="Page">
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="UnPublishDate" ColumnName="UnPublishDate" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="References">
+      <EntityTypeMapping TypeName="CompuwreckModel.Reference">
+        <MappingFragment StoreEntitySet="Reference">
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="RelevantMaterial" ColumnName="RelevantMaterial" />
+          <ScalarProperty Name="DatePublished" ColumnName="DatePublished" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="PublishersAddress" ColumnName="PublishersAddress" />
+          <ScalarProperty Name="PublisherSource" ColumnName="PublisherSource" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="LongTitle" ColumnName="LongTitle" />
+          <ScalarProperty Name="AbreviatedTitle" ColumnName="AbreviatedTitle" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

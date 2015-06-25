@@ -185,6 +185,7 @@
     <Compile Include="Controllers\Api\ShipwreckController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MapController.cs" />
+    <Compile Include="Controllers\PagesController.cs" />
     <Compile Include="Controllers\PhotoController.cs" />
     <Compile Include="Controllers\ShipwreckController.cs" />
     <Compile Include="DAL\CountyRepository.cs" />
@@ -243,7 +244,13 @@
     <Compile Include="Models\Location.cs">
       <DependentUpon>Compuwreck.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Page.cs">
+      <DependentUpon>Compuwreck.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Photo.cs">
+      <DependentUpon>Compuwreck.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reference.cs">
       <DependentUpon>Compuwreck.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Shipwreck.cs">
@@ -403,6 +410,11 @@
     <Content Include="Views\Shared\_PrimaryNavigation.cshtml" />
     <Content Include="Views\Account\LogOff.cshtml" />
     <Content Include="Views\Map\Index.cshtml" />
+    <Content Include="Views\Pages\Create.cshtml" />
+    <Content Include="Views\Pages\Delete.cshtml" />
+    <Content Include="Views\Pages\Details.cshtml" />
+    <Content Include="Views\Pages\Edit.cshtml" />
+    <Content Include="Views\Pages\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

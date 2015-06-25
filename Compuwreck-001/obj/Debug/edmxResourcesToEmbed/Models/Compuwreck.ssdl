@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="CompuwreckModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="CompuwreckModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="AspNetRoles">
     <Key>
       <PropertyRef Name="Id" />
@@ -74,6 +74,19 @@
     <Property Name="long" Type="nvarchar(max)" />
     <Property Name="GeoLocation" Type="geography" />
   </EntityType>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageTitle" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Body" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar" MaxLength="50" />
+    <Property Name="PublishDate" Type="datetime" Nullable="false" />
+    <Property Name="UnPublishDate" Type="datetime" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="Published" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="Photo">
     <Key>
       <PropertyRef Name="Photo_id" />
@@ -85,6 +98,23 @@
     <Property Name="URL" Type="nvarchar" MaxLength="50" />
     <Property Name="Source" Type="nvarchar(max)" />
     <Property Name="Shipwreck_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CompuwreckTest.dbo.Reference' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Reference">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AbreviatedTitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="LongTitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="Author" Type="nvarchar" MaxLength="255" />
+    <Property Name="PublisherSource" Type="nvarchar" MaxLength="255" />
+    <Property Name="PublishersAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="Source" Type="nvarchar" MaxLength="255" />
+    <Property Name="DatePublished" Type="nvarchar" MaxLength="255" />
+    <Property Name="RelevantMaterial" Type="nvarchar" MaxLength="255" />
+    <Property Name="ISBN" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="Shipwreck">
     <Key>
@@ -108,6 +138,7 @@
     <Property Name="U-Boat" Type="nvarchar" MaxLength="255" />
     <Property Name="Event_FK" Type="int" />
     <Property Name="County_FK" Type="int" />
+    <Property Name="GPS" Type="int" />
   </EntityType>
   <Association Name="FK__SHIPWRECK__Event__07020F21">
     <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
@@ -222,8 +253,23 @@
     <EntitySet Name="County" EntityType="Self.County" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Page" EntityType="Self.Page" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Photo" EntityType="Self.Photo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Shipwreck" EntityType="Self.Shipwreck" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reference" EntityType="Self.Reference" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Reference].[ID] AS [ID], 
+    [Reference].[AbreviatedTitle] AS [AbreviatedTitle], 
+    [Reference].[LongTitle] AS [LongTitle], 
+    [Reference].[Author] AS [Author], 
+    [Reference].[PublisherSource] AS [PublisherSource], 
+    [Reference].[PublishersAddress] AS [PublishersAddress], 
+    [Reference].[Source] AS [Source], 
+    [Reference].[DatePublished] AS [DatePublished], 
+    [Reference].[RelevantMaterial] AS [RelevantMaterial], 
+    [Reference].[ISBN] AS [ISBN]
+    FROM [dbo].[Reference] AS [Reference]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__SHIPWRECK__Event__07020F21" Association="Self.FK__SHIPWRECK__Event__07020F21">
       <End Role="Event" EntitySet="Event" />
       <End Role="Shipwreck" EntitySet="Shipwreck" />

@@ -1,0 +1,71 @@
+﻿@model Compuwreck_001.Models.Page
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <br/>
+    <div class="row color">
+        <h2 class="title add">Add New Page</h2>
+        @Html.ValidationSummary(true)
+    </div>
+    <br />
+    <div class="row color">
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.PageTitle, htmlAttributes: new {@class = "control-label col-md-2"})
+            @Html.EditorFor(model => model.PageTitle)
+            @Html.ValidationMessageFor(model => model.PageTitle)
+        </div>
+        <div class="large-3 columns">
+            @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Type)
+            @Html.ValidationMessageFor(model => model.Type)
+        </div>
+    </div>
+    <br />
+    <div class="row color">
+        <div class="large-12 columns">
+            @Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextAreaFor(model => model.Body, new {@rows = 10 })
+            @Html.ValidationMessageFor(model => model.Body)
+        </div>
+    </div>
+    <br />
+    <div class="row color">
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.Image, htmlAttributes: new {@class = "control-label col-md-2"})
+            @Html.EditorFor(model => model.Image)
+            @Html.ValidationMessageFor(model => model.Image)
+        </div>
+    </div>
+    <br />
+    <div class="row color">
+       
+        <div class="large-3 columns">
+            @Html.LabelFor(model => model.PublishDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.PublishDate)
+            @Html.ValidationMessageFor(model => model.PublishDate)
+        </div>
+        <div class="large-3 columns">
+            @Html.LabelFor(model => model.UnPublishDate, htmlAttributes: new {@class = "control-label col-md-2"})
+            @Html.EditorFor(model => model.UnPublishDate)
+            @Html.ValidationMessageFor(model => model.UnPublishDate)
+        </div>
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.Published, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.Published)
+            @Html.ValidationMessageFor(model => model.Published)
+        </div>
+    </div>
+    <br />
+    <div class="row color">
+        <div class="large-12 columns">
+            <input type="submit" value="Create" class="button right"/>
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "button" })
+        </div>
+        
+    </div>
+}

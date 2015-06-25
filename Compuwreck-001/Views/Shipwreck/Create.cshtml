@@ -6,21 +6,21 @@
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
-
-    <div class="row">
-        <h2 class="addTitle">Add Shipwreck</h2>
+    <br />
+    <div class="row color">
+        <h2 class="title add">Add Shipwreck</h2>
         @Html.ValidationSummary(true)
     </div>
-
-    <div class="row">
+    <br />
+    <div class="row color">
         <div class="large-6 columns">
             @Html.LabelFor(model => model.Name)
             @Html.EditorFor(model => model.Name)
             @Html.ValidationMessageFor(model => model.Name)
         </div>
     </div>
-    
-    <div class="row">
+    <br/>
+    <div class="row color">
         <div class="large-4 columns">
             @Html.LabelFor(model => model.Type)
             @Html.EditorFor(model => model.Type)
@@ -36,9 +36,9 @@
             @Html.EditorFor(model => model.Tonnage)
             @Html.ValidationMessageFor(model => model.Tonnage)
         </div>
-        <hr class="dotted" />
     </div>
-    <div class="row">
+    <br />
+    <div class="row color">
         <div class="large-4 columns left">
             @Html.LabelFor(model => model.DateLost)
             @Html.EditorFor(model => model.DateLost)
@@ -55,10 +55,10 @@
             @Html.EditorFor(model => model.Locality)
             @Html.ValidationMessageFor(model => model.Locality)
         </div>
-        <hr class="dotted" />
     </div>
 
-    <div class="row">
+    <br />
+    <div class="row color">
         <div class="large-6 columns">
             @Html.LabelFor(model => model.WindDir, "Wind Direction")
             @Html.EditorFor(model => model.WindDir)
@@ -69,9 +69,6 @@
             @Html.EditorFor(model => model.WindForce)
             @Html.ValidationMessageFor(model => model.WindForce)
         </div>
-    </div>
-
-    <div class="row">
         <div class="large-6 columns">
             @Html.LabelFor(model => model.Armament)
             @Html.EditorFor(model => model.Armament)
@@ -83,8 +80,8 @@
             @Html.ValidationMessageFor(model => model.Cargo)
         </div>
     </div>
-
-    <div class="row">
+    <br />
+    <div class="row color">
         <div class="large-6 columns">
             @Html.LabelFor(model => model.References)
             @Html.EditorFor(model => model.References)
@@ -96,8 +93,8 @@
             @Html.ValidationMessageFor(model => model.Remarks)
         </div>
     </div>
-
-    <div class="row">
+    <br />
+    <div class="row color">
         <div class="large-6 columns">
             @Html.LabelFor(model => model.Event_FK, "Event Type")
             @Html.DropDownList("Event_FK", String.Empty)
@@ -108,9 +105,9 @@
             @Html.EditorFor(model => model.U_Boat)
             @Html.ValidationMessageFor(model => model.U_Boat)
         </div>
-        <hr class="dotted" />
     </div>
-    <div class="row">
+    <br />
+    <div class="row color">
         <div class="large-6 columns">
             @Html.ActionLink("Back to List", "Index", null, new { @class = "button left" })
         </div>
