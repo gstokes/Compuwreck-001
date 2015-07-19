@@ -122,3 +122,9 @@ C:\Users\gstokes.SDCCW2K\Documents\Visual Studio 2013\Projects\Compuwreck-001\Co
 C:\Users\gstokes.SDCCW2K\Documents\Visual Studio 2013\Projects\Compuwreck-001\Compuwreck-001\obj\Debug\Compuwreck-001.dll
 C:\Users\gstokes.SDCCW2K\Documents\Visual Studio 2013\Projects\Compuwreck-001\Compuwreck-001\obj\Debug\Compuwreck-001.pdb
 C:\Users\gstokes.SDCCW2K\Documents\Visual Studio 2013\Projects\Compuwreck-001\Compuwreck-001\obj\Debug\Compuwreck-001.csprojResolveAssemblyReference.cache
+D:\Websites\Compuwreck-001\Compuwreck-001\bin\System.Net.Http.Formatting.dll
+D:\Websites\Compuwreck-001\Compuwreck-001\bin\System.Web.Http.dll
+D:\Websites\Compuwreck-001\Compuwreck-001\bin\System.Web.Http.WebHost.dll
+D:\Websites\Compuwreck-001\Compuwreck-001\bin\System.Net.Http.Formatting.xml
+D:\Websites\Compuwreck-001\Compuwreck-001\bin\System.Web.Http.xml
+D:\Websites\Compuwreck-001\Compuwreck-001\bin\System.Web.Http.WebHost.xml

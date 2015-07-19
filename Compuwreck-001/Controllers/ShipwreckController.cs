@@ -12,8 +12,7 @@ using PagedList;
 
 namespace Compuwreck_001.Controllers
 {
-    public class ShipwreckController : Controller
-    {
+    public class ShipwreckController : Controller{
 
         private const int PageSize = 10;
         private readonly IShipwreckRepository _shipwreckRepository;

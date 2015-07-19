@@ -63,8 +63,6 @@ namespace Compuwreck_001.Helpers {
 
         public static void CreateThumbNail(HttpPostedFileBase file, Photo photo) {
 
-            
-
             using (var image = Image.FromStream(file.InputStream, true, true))
             {
                 using (var thumb = image.GetThumbnailImage(

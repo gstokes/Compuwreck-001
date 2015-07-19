@@ -185,7 +185,7 @@
     <Compile Include="Controllers\Api\ShipwreckController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MapController.cs" />
-    <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PhotoController.cs" />
     <Compile Include="Controllers\ShipwreckController.cs" />
     <Compile Include="DAL\CountyRepository.cs" />
@@ -193,8 +193,10 @@
     <Compile Include="DAL\ICountyRepository.cs" />
     <Compile Include="DAL\IEventRepository.cs" />
     <Compile Include="DAL\ILocationRepository.cs" />
+    <Compile Include="DAL\IPageRepository.cs" />
     <Compile Include="DAL\IShipwreckRepository.cs" />
     <Compile Include="DAL\LocationRepository.cs" />
+    <Compile Include="DAL\PageRepository.cs" />
     <Compile Include="DAL\ShipwreckRepository.cs" />
     <Compile Include="DataTransferObjects\shipwreckLocationDto.cs" />
     <Compile Include="DataTransferObjects\MappingExtensions.cs" />
@@ -410,11 +412,7 @@
     <Content Include="Views\Shared\_PrimaryNavigation.cshtml" />
     <Content Include="Views\Account\LogOff.cshtml" />
     <Content Include="Views\Map\Index.cshtml" />
-    <Content Include="Views\Pages\Create.cshtml" />
-    <Content Include="Views\Pages\Delete.cshtml" />
-    <Content Include="Views\Pages\Details.cshtml" />
-    <Content Include="Views\Pages\Edit.cshtml" />
-    <Content Include="Views\Pages\Index.cshtml" />
+    <Content Include="Views\Page\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
