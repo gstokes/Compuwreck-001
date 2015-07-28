@@ -15,8 +15,8 @@ namespace Compuwreck_001.DAL
         }
 
         public IEnumerable<Page> GetAllPages(){
-            var AllPages = _db.Pages.Where(p => p.Published == true);
-            return AllPages;
+            var allPages = _db.Pages.Where(p => p.Published == true);
+            return allPages;
         }
 
         public Page GetPageById(int id){
