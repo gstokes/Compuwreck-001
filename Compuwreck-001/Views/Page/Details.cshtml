@@ -1,0 +1,78 @@
+﻿@using System.Threading
+@using Compuwreck_001.Helpers
+@model Compuwreck_001.Models.Page
+
+@section AddToHead{
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+
+
+
+}
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<div class="row color">
+    <div class="large-12 columns">
+        <h2 class="title details">@Html.DisplayFor(model => model.PageTitle)</h2>
+        <div class="right">
+
+                Published:@Html.DisplayFor(model => model.PublishDate)
+
+            @if (@User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }, new { @class = "button" })
+            }
+        </div>
+    </div>
+</div>
+<br />
+<div class="row color ">
+    <div class="large-6 columns">
+        <dl class="dlleft">
+            <dt>Published</dt>
+            <dd>@Html.DisplayFor(model => model.PublishDate)</dd>
+        </dl>
+    </div>
+    <div class="large-12 columns">
+       
+            @Html.DisplayFor(model => model.Body)
+
+    </div>
+</div>
+<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

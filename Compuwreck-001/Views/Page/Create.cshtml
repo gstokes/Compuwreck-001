@@ -1,0 +1,71 @@
+﻿@model Compuwreck_001.Models.Page
+
+    @{
+    ViewBag.Title = "Create";
+    }
+
+    @using (Html.BeginForm())
+{
+        @Html.AntiForgeryToken()
+        <br />
+        <div class="row color">
+            <h2 class="title">Add New Page</h2>
+            @Html.ValidationSummary(true)
+        </div>
+        <br />
+        <div class="row color">
+            <div class="large-6 columns">
+                @Html.LabelFor(model => model.PageTitle)
+                @Html.EditorFor(model => model.PageTitle)
+                @Html.ValidationMessageFor(model => model.PageTitle)
+            </div>
+            <div class="large-4 columns">
+                @Html.LabelFor(model => model.Published)
+                @Html.EditorFor(model => model.Published)
+                @Html.ValidationMessageFor(model => model.Published)
+            </div>
+        </div>
+        <br />
+        <div class="row color">
+            <div class="large-12 columns">
+                @Html.LabelFor(model => model.Body)
+                @Html.TextAreaFor(model => model.Body)
+                @Html.ValidationMessageFor(model => model.Body)
+            </div>
+        </div>
+        <br />
+        <div class="row color">
+            <div class="large-4 columns">
+                @Html.LabelFor(model => model.PublishDate)
+                @Html.EditorFor(model => model.PublishDate)
+                @Html.ValidationMessageFor(model => model.PublishDate)
+            </div>
+            <div class="large-4 columns">
+                @Html.LabelFor(model => model.unPublishDate)
+                @Html.EditorFor(model => model.unPublishDate)
+                @Html.ValidationMessageFor(model => model.unPublishDate)
+            </div>
+        </div>
+        <br />
+
+        <div class="row color">
+            <div class="large-6 columns">
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "button left" })
+            </div>
+            <div class="large-6 columns">
+                <input type="submit" value="Create Page" class="button right" />
+            </div>
+        </div>
+}
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script src="~/ckeditor/adapters/jquery.js"></script>
+    <script>
+        $(function () {
+            $('#Body').ckeditor();
+        });
+    </script>
+

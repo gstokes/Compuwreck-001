@@ -1297,6 +1297,19 @@ button, .button {
     border: none;
     box-shadow: none;
   }
+
+button.tinyR, .button.tinyR {
+    padding-top: 0.5rem;
+    padding-right: .6rem;
+    padding-bottom: .5rem;
+    padding-left: .6rem;
+    margin-right:4px;
+    font-size: 0.6875rem;
+      background-color: #0a6279;
+    border: none;
+    box-shadow: none;
+    float:right;
+  }
   button.expand, .button.expand {
     padding-right: 0;
     padding-left: 0;
@@ -6426,4 +6439,39 @@ th.hide-for-touch {
 
 .borderBottom{
     border-bottom: 1px solid #293847;
+}
+
+/*BLOG ROLL STYLING*/
+.blogRollDate{
+    background-color:#333333;
+    color:#fff;
+    padding:14px;
+}
+
+    .blogRollDate h2{
+        color:#fff;
+        font-size:1rem;
+        font-weight:600;
+    }
+
+.blogRollTitle{
+    border: 1px solid #a7a7a7;
+    padding:14px;
+}
+
+    .blogRollTitle h2{
+        font-size:1rem;
+         text-transform: uppercase;
+    }
+
+.blogRollBody{
+    border-left: 1px solid #a7a7a7;
+    border-right: 1px solid #a7a7a7;
+    padding:14px;
+}
+
+.blogRollAction{
+    border: 1px solid #a7a7a7;
+    padding:14px;
+    margin-bottom:10px;
 }

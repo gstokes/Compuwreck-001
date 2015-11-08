@@ -4,48 +4,38 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="row  color">
+    <div class="large-12 columns">
+        <h2 class="title search">Search Site Pages</h2>
+    </div>
+</div>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="large-12 columns blogRollDate">
+             <h2>
+                @Html.DisplayFor(modelItem => item.PublishDate)
+            </h2>
+        </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PageTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PublishDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Published)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
+    <div class="large-12 columns blogRollTitle">
+        <h2>
             @Html.DisplayFor(modelItem => item.PageTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublishDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Published)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PostId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PostId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PostId })
-        </td>
-    </tr>
-}
+        </h2>
+    </div>
 
-</table>
+    <div class="large-12 columns blogRollBody">
+        @Html.DisplayFor(modelItem => item.Body)
+    </div>
+    <div class="large-12 columns blogRollAction right">
+        @Html.ActionLink("EDIT", "Edit", null, new { id = item.PostId }, new { @Class = "button tinyR" })
+        @Html.ActionLink("READ", "Details", null, new { id = item.PostId}, new { @Class = "button tinyR" })
+        @Html.ActionLink("DELETE", "Delete", null, new { id = item.PostId }, new { @Class = "button tinyR" })
+
+    </div>
+    }
+    </div>
+

@@ -21,8 +21,7 @@
         <AssociationConnector Association="CompuwreckModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" />
         <AssociationConnector Association="CompuwreckModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="CompuwreckModel.AspNetUserRoles" />
-        <EntityTypeShape EntityType="CompuwreckModel.Page" Width="1.5" PointX="5.75" PointY="5.75" />
-        <EntityTypeShape EntityType="CompuwreckModel.Reference" Width="1.5" PointX="8" PointY="5.75" />
+        <EntityTypeShape EntityType="CompuwreckModel.Page" Width="1.5" PointX="5.25" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -34,6 +34,7 @@ namespace Compuwreck_001.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        [ValidateInput(false)]
         public ActionResult Create() {
             return View();
         }
@@ -66,11 +67,12 @@ namespace Compuwreck_001.Controllers
             return View(page);
         }
 
-       [HttpPost, ActionName("Edit")]
-       [ValidateAntiForgeryToken]
-       [Authorize(Roles = "Admin")]
-       public ActionResult EditPost(int id) {
-           var pageToUpdate = _pageRepository.GetPageById(id);
+       //[HttpPost, ActionName("Edit")]
+       //[ValidateAntiForgeryToken]
+       //[Authorize(Roles = "Admin")]
+       ////public ActionResult EditPost(int id) {
+       ////    var pageToUpdate = _pageRepository.GetPageById(id);
+       ////     }
+
        }
-    }
 }

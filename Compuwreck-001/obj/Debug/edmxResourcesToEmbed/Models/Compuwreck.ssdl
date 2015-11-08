@@ -79,13 +79,13 @@
       <PropertyRef Name="PostId" />
     </Key>
     <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PageTitle" Type="nvarchar" MaxLength="150" Nullable="false" />
-    <Property Name="Body" Type="nvarchar(max)" />
-    <Property Name="Image" Type="nvarchar" MaxLength="50" />
-    <Property Name="PublishDate" Type="datetime" Nullable="false" />
-    <Property Name="UnPublishDate" Type="datetime" Nullable="false" />
+    <Property Name="PageTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Body" Type="varchar(max)" />
+    <Property Name="Image" Type="varbinary" MaxLength="50" />
+    <Property Name="PublishDate" Type="datetime" />
+    <Property Name="unPublishDate" Type="datetime" />
     <Property Name="Type" Type="int" Nullable="false" />
-    <Property Name="Published" Type="bit" Nullable="false" />
+    <Property Name="Published" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Photo">
     <Key>
@@ -98,23 +98,6 @@
     <Property Name="URL" Type="nvarchar" MaxLength="50" />
     <Property Name="Source" Type="nvarchar(max)" />
     <Property Name="Shipwreck_id" Type="int" Nullable="false" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'CompuwreckTest.dbo.Reference' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="Reference">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="AbreviatedTitle" Type="nvarchar" MaxLength="255" />
-    <Property Name="LongTitle" Type="nvarchar" MaxLength="255" />
-    <Property Name="Author" Type="nvarchar" MaxLength="255" />
-    <Property Name="PublisherSource" Type="nvarchar" MaxLength="255" />
-    <Property Name="PublishersAddress" Type="nvarchar" MaxLength="255" />
-    <Property Name="Source" Type="nvarchar" MaxLength="255" />
-    <Property Name="DatePublished" Type="nvarchar" MaxLength="255" />
-    <Property Name="RelevantMaterial" Type="nvarchar" MaxLength="255" />
-    <Property Name="ISBN" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="Shipwreck">
     <Key>
@@ -256,20 +239,6 @@ warning 6002: The table/view 'CompuwreckTest.dbo.Reference' does not have a prim
     <EntitySet Name="Page" EntityType="Self.Page" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Photo" EntityType="Self.Photo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Shipwreck" EntityType="Self.Shipwreck" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Reference" EntityType="Self.Reference" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Reference].[ID] AS [ID], 
-    [Reference].[AbreviatedTitle] AS [AbreviatedTitle], 
-    [Reference].[LongTitle] AS [LongTitle], 
-    [Reference].[Author] AS [Author], 
-    [Reference].[PublisherSource] AS [PublisherSource], 
-    [Reference].[PublishersAddress] AS [PublishersAddress], 
-    [Reference].[Source] AS [Source], 
-    [Reference].[DatePublished] AS [DatePublished], 
-    [Reference].[RelevantMaterial] AS [RelevantMaterial], 
-    [Reference].[ISBN] AS [ISBN]
-    FROM [dbo].[Reference] AS [Reference]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK__SHIPWRECK__Event__07020F21" Association="Self.FK__SHIPWRECK__Event__07020F21">
       <End Role="Event" EntitySet="Event" />
       <End Role="Shipwreck" EntitySet="Shipwreck" />

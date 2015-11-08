@@ -83,7 +83,7 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.County.Location)
-                    </td>
+                    </td>F
                     <td>
                         @if (@User.IsInRole("Admin")) {
                             @Html.ActionLink("Edit", "Edit", new { id = item.Shipwreck_id}, new { @class = "button tiny" })
@@ -108,11 +108,6 @@
 
     </div>
 </div>
-
-
-
-
-
 
 
 <script src="~/Scripts/foundation/foundation-datepicker.js"></script>

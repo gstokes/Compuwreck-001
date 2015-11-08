@@ -1,19 +1,40 @@
-﻿@{
+﻿
+@model Compuwreck_001.viewModels.homeAll
+
+@{
     ViewBag.Title = "Home Page";
 }
 <br/>
+@using (Html.BeginForm())
+    {
 <div class="row">
-    <div class="large-7 columns">
-        <div class="panel">
-            <h3>Latest News</h3>
-            <ul>
-                <li><strong>Item 001</strong><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </li>
-                <li><strong>Item 002</strong><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </li>
-                <li><strong>Item 003</strong><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </li>
-            </ul>
-        </div>
+    <div class="large-9 columns">
+        @foreach (var item in Model.Pages)
+        {
+            <div class="large-12 columns blogRollDate">
+                <h2>
+                    @Html.DisplayFor(modelItem => item.PublishDate)
+                </h2>
+            </div>
+
+            <div class="large-12 columns blogRollTitle">
+                <h2>
+                    @Html.DisplayFor(modelItem => item.PageTitle)
+                </h2>
+            </div>
+
+            <div class="large-12 columns blogRollBody">
+                @Html.DisplayFor(modelItem => item.Body)
+            </div>
+            <div class="large-12 columns blogRollAction right">
+                @Html.ActionLink("EDIT", "Edit", "Page", new { id = item.PostId }, new { @Class = "button tinyR" })
+                @Html.ActionLink("READ", "Details", "Page", new { id = item.PostId }, new { @Class = "button tinyR" })
+                @Html.ActionLink("DELETE", "Delete", "Page", new { id = item.PostId }, new { @Class = "button tinyR" })
+            </div>
+        }
+
     </div>
-    <div class="large-5 columns">
+    <div class="large-3 columns">
         <div class="panel">
             <h3>Featured Shipwreck</h3>
             <div class="panel callout">
@@ -34,3 +55,4 @@
         </div>
     </div>
 </div>
+}

@@ -146,7 +146,6 @@
       <End Role="AspNetUser" EntitySet="AspNetUsers" />
     </AssociationSet>
     <EntitySet Name="Pages" EntityType="CompuwreckModel.Page" />
-    <EntitySet Name="References" EntityType="CompuwreckModel.Reference" />
   </EntityContainer>
   <Association Name="FK_ShipwreckID">
     <End Type="CompuwreckModel.Shipwreck" Role="Shipwreck" Multiplicity="1" />
@@ -242,27 +241,12 @@
       <PropertyRef Name="PostId" />
     </Key>
     <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PageTitle" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PublishDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="UnPublishDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PageTitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="PublishDate" Type="DateTime" Precision="3" />
+    <Property Name="unPublishDate" Type="DateTime" Precision="3" />
     <Property Name="Type" Type="Int32" Nullable="false" />
-    <Property Name="Published" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Reference">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AbreviatedTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="LongTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Author" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="PublisherSource" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="PublishersAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Source" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="DatePublished" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="RelevantMaterial" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="ISBN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Published" Type="Int32" Nullable="false" />
   </EntityType>
 </Schema>
