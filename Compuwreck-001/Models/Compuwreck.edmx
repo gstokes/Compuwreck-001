@@ -90,7 +90,7 @@
           <Property Name="PublishDate" Type="datetime" />
           <Property Name="unPublishDate" Type="datetime" />
           <Property Name="Type" Type="int" Nullable="false" />
-          <Property Name="Published" Type="int" Nullable="false" />
+          <Property Name="Published" Type="bit" />
         </EntityType>
         <EntityType Name="Photo">
           <Key>
@@ -528,7 +528,7 @@
           <Property Name="PublishDate" Type="DateTime" Precision="3" />
           <Property Name="unPublishDate" Type="DateTime" Precision="3" />
           <Property Name="Type" Type="Int32" Nullable="false" />
-          <Property Name="Published" Type="Int32" Nullable="false" />
+          <Property Name="Published" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

@@ -10,9 +10,7 @@ using Compuwreck_001.DAL;
 namespace Compuwreck_001.Controllers {
     public class HomeController : Controller {
 
-        private readonly IShipwreckRepository _shipwreckRepository;
-        private readonly ICountyRepository _countyRepository;
-        private readonly IEventRepository _eventRepository;
+
         private readonly IPageRepository _pageRepository;
 
         private CompuwreckEntities db = new CompuwreckEntities();

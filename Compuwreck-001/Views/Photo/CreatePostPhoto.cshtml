@@ -1,0 +1,59 @@
+﻿@model Compuwreck_001.Models.Photo
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm("Create", "Photo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <h2 class="pageTitle">Add Image</h2>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Shipwreck_id)
+    </div>
+    <div class="row">
+        <div class="large-6 columns">
+            <label for="file">Upload Image:</label>
+            <input type="file" name="file" id="file" style="width: 100%;" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.Details, new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Details)
+            @Html.ValidationMessageFor(model => model.Details)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.Source, new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Source)
+            @Html.ValidationMessageFor(model => model.Source)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-6 columns">
+            @Html.ActionLink("Back to Shipwreck", "Index", null, new { @Class = "button" })
+        </div>
+        <div class="large-6 columns">
+            <input type="submit" value="Add Image" class="button right" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

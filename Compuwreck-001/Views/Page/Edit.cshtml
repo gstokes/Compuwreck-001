@@ -1,7 +1,90 @@
-﻿
+﻿@model Compuwreck_001.Models.Page
+<link rel="stylesheet" href="~/Content/css/foundation-datepicker.css">
+
+
+
+
 @{
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+
+
+
+    @Html.AntiForgeryToken()
+    <br />
+    <div class="row color">
+        <h2 class="title">Edit Page</h2>
+        @Html.ValidationSummary(true)
+    </div>
+    <br />
+    <div class="row color">
+        <div class="large-6 columns">
+            @Html.LabelFor(model => model.PageTitle)
+            @Html.EditorFor(model => model.PageTitle)
+            @Html.ValidationMessageFor(model => model.PageTitle)
+        </div>
+        <div class="large-4 columns">
+            @Html.LabelFor(model => model.Published)
+            @Html.RadioButtonFor(model => model.Published, true) Yes
+            @Html.RadioButtonFor(model => model.Published, false) No
+        </div>
+    </div>
+    <br />
+    <div class="row color">
+        <div class="large-12 columns">
+            @Html.LabelFor(model => model.Body)
+            @Html.TextAreaFor(model => model.Body)
+            @Html.ValidationMessageFor(model => model.Body)
+        </div>
+    </div>
+    <br />
+    <div class="row color">
+        <div class="large-4 columns">
+            @Html.Label("Publish Date ")
+            @Html.TextBoxFor(model => model.PublishDate, new { @class = "fdatepicker", @placeholder = "01/01/1900" })
+            @Html.ValidationMessageFor(model => model.PublishDate)
+        </div>
+        <div class="large-4 columns">
+            @Html.Label("Un-Publish Date ")
+            @Html.TextBoxFor(model => model.unPublishDate, new { @class = "fdatepicker", @placeholder = "01/01/1900" })
+            @Html.ValidationMessageFor(model => model.unPublishDate)
+        </div>
+    </div>
+    <br />
+
+    <div class="row color">
+        <div class="large-6 columns">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "button left" })
+        </div>
+        <div class="large-6 columns">
+            <input type="submit" value="Edit Page" class="button right" />
+        </div>
+    </div>
+
+    <div class="row color">
+        @Html.ActionLink("Add new Photo", "CreatePostPhoto", "Photo", new { id = Model.PostId }, new { @class = "button right" })
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script src="~/ckeditor/ckeditor.js"></script>
+<script src="~/ckeditor/adapters/jquery.js"></script>
+<script>
+        $(function () {
+            $('#Body').ckeditor();
+        });
+</script>
+
+
+<script src="~/Scripts/foundation/foundation-datepicker.js"></script>
+<script>
+        $('.fdatepicker').fdatepicker()
+</script>
+
+
 

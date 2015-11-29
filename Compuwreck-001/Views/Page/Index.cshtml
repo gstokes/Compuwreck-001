@@ -3,15 +3,18 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<br />
 <div class="row  color">
     <div class="large-12 columns">
         <h2 class="title search">Search Site Pages</h2>
     </div>
 </div>
-        <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
+<br />
+<div class="row  color text-right">
+        @Html.ActionLink("Create New Page", "Create", null, new { @Class = "button" })
+        @Html.ActionLink("Show Unpublished", "Index", new { published = 0 }, new { @Class = "button" })
+</div>
+<br />
 <div class="row">
     @foreach (var item in Model)
     {
@@ -28,7 +31,7 @@
     </div>
 
     <div class="large-12 columns blogRollBody">
-        @Html.DisplayFor(modelItem => item.Body)
+        @Html.Raw(System.Web.HttpUtility.HtmlDecode(item.Body))...
     </div>
     <div class="large-12 columns blogRollAction right">
         @Html.ActionLink("EDIT", "Edit", null, new { id = item.PostId }, new { @Class = "button tinyR" })

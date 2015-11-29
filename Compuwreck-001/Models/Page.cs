@@ -7,7 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.ComponentModel.DataAnnotations;
 namespace Compuwreck_001.Models
 {
     using System;
@@ -19,10 +18,9 @@ namespace Compuwreck_001.Models
         public string PageTitle { get; set; }
         public string Body { get; set; }
         public byte[] Image { get; set; }
-        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public Nullable<System.DateTime> PublishDate { get; set; }
         public Nullable<System.DateTime> unPublishDate { get; set; }
         public int Type { get; set; }
-        public int Published { get; set; }
+        public Nullable<bool> Published { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace Compuwreck_001.DAL
 {
     public interface IPageRepository: IDisposable 
     {
-        IEnumerable<Page> GetAllPages();
+        IEnumerable<Page> GetAllPages(int? published);
         IEnumerable<Page> GetTop5Pages();
         Page GetPageById(int id);
         void InsertPage(Page page);

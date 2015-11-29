@@ -39,7 +39,7 @@ namespace Compuwreck_001.Controllers
         }
 
         // GET: /Photo/Create
-        public ActionResult Create(int shipwreckId)
+        public ActionResult Create(int shipwreckId, int photoTpye)
         {
             Photo photoModel = new Photo();
             photoModel.Shipwreck_id = shipwreckId;
@@ -68,6 +68,42 @@ namespace Compuwreck_001.Controllers
                     db.Photos.Add(photo);
                     db.SaveChanges();
                     return RedirectToAction("Edit", "Shipwreck", new { id = photo.Shipwreck_id});
+                }
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "There was Problem uplaoding, please contact Administrator";
+            }
+
+            ViewBag.Shipwreck_id = new SelectList(db.Shipwrecks, "Shipwreck_id", "Name", photo.Shipwreck_id);
+            return View(photo);
+        }
+
+
+        // POST: /Photo/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public ActionResult CreatePostPhoto(HttpPostedFileBase file, Photo photo)
+        {
+
+            photo.FileName = Path.GetFileName(file.FileName);
+            photo.URL = Path.Combine(("~/shipwreckImages/" + photo.Shipwreck_id));
+
+            int uploadStatus = ImageHelper.UploadImage(file, photo);
+
+            var changedFile = Path.ChangeExtension(photo.FileName, ".jpg");
+            photo.FileName = changedFile;
+
+            if (uploadStatus == 1)
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Photos.Add(photo);
+                    db.SaveChanges();
+                    return RedirectToAction("Edit", "Shipwreck", new { id = photo.Shipwreck_id });
                 }
             }
             else

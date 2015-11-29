@@ -13,8 +13,14 @@ namespace Compuwreck_001.DAL
         public PageRepository(CompuwreckEntities db){
             _db = db;
         }
-        public IEnumerable<Page> GetAllPages(){
-            var allPages = _db.Pages.Where(p => p.Published == 1);
+        public IEnumerable<Page> GetAllPages(int? published){
+            var allPages = _db.Pages.Where(p => p.Published != null);
+
+            if (published == 1)
+            {
+                allPages = allPages.Where(p => p.Published == true);
+            }
+           
             foreach (var item in allPages)
             {
                 //get only the first 128 chrs from each body item
@@ -26,7 +32,7 @@ namespace Compuwreck_001.DAL
 
         public IEnumerable<Page> GetTop5Pages()
         {
-            var Top5Page = _db.Pages.Where(p => p.Published == 1).Take(5);
+            var Top5Page = _db.Pages.Where(p => p.Published == true).Take(5);
             foreach (var item in Top5Page)
             {
                 //get only the first 128 chrs from each body item

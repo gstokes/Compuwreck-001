@@ -1,11 +1,15 @@
 ﻿@model Compuwreck_001.Models.Page
+<link rel="stylesheet" href="~/Content/css/foundation-datepicker.css">
+
+
 
     @{
     ViewBag.Title = "Create";
     }
 
-    @using (Html.BeginForm())
-{
+    @using (Html.BeginForm("Create", "Page", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+
+
         @Html.AntiForgeryToken()
         <br />
         <div class="row color">
@@ -21,11 +25,14 @@
             </div>
             <div class="large-4 columns">
                 @Html.LabelFor(model => model.Published)
-                @Html.EditorFor(model => model.Published)
-                @Html.ValidationMessageFor(model => model.Published)
+                @*@Html.EditorFor(model => model.Published)
+                @Html.ValidationMessageFor(model => model.Published)*@
+                @Html.RadioButtonFor(model =>model.Published, true) Yes
+                @Html.RadioButtonFor(model => model.Published, false) No
             </div>
         </div>
         <br />
+
         <div class="row color">
             <div class="large-12 columns">
                 @Html.LabelFor(model => model.Body)
@@ -36,13 +43,13 @@
         <br />
         <div class="row color">
             <div class="large-4 columns">
-                @Html.LabelFor(model => model.PublishDate)
-                @Html.EditorFor(model => model.PublishDate)
+                @Html.Label("Publish Date")
+                @Html.TextBoxFor(model => model.PublishDate, new { @class = "fdatepicker", @placeholder = "01/01/1900" })
                 @Html.ValidationMessageFor(model => model.PublishDate)
             </div>
             <div class="large-4 columns">
-                @Html.LabelFor(model => model.unPublishDate)
-                @Html.EditorFor(model => model.unPublishDate)
+                @Html.Label("Un-Publish Date")
+                @Html.TextBoxFor(model => model.unPublishDate, new { @class = "fdatepicker", @placeholder = "01/01/1900" })
                 @Html.ValidationMessageFor(model => model.unPublishDate)
             </div>
         </div>
@@ -56,7 +63,14 @@
                 <input type="submit" value="Create Page" class="button right" />
             </div>
         </div>
-}
+
+    <div class="row">
+        <div class="large-6 columns">
+            <label for="file">Upload Image:</label>
+            <input type="file" name="file" id="file" style="width: 100%;" />
+        </div>
+    </div>
+    }
 
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
@@ -67,5 +81,11 @@
         $(function () {
             $('#Body').ckeditor();
         });
+    </script>
+
+
+    <script src="~/Scripts/foundation/foundation-datepicker.js"></script>
+    <script>
+        $('.fdatepicker').fdatepicker()
     </script>
 

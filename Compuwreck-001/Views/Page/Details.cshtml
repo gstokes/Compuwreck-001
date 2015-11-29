@@ -37,9 +37,7 @@
         </dl>
     </div>
     <div class="large-12 columns">
-       
-            @Html.DisplayFor(model => model.Body)
-
+            @Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.Body))
     </div>
 </div>
 <br />

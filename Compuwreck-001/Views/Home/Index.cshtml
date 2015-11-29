@@ -24,7 +24,7 @@
             </div>
 
             <div class="large-12 columns blogRollBody">
-                @Html.DisplayFor(modelItem => item.Body)
+                @Html.Raw(System.Web.HttpUtility.HtmlDecode(item.Body))
             </div>
             <div class="large-12 columns blogRollAction right">
                 @Html.ActionLink("EDIT", "Edit", "Page", new { id = item.PostId }, new { @Class = "button tinyR" })
